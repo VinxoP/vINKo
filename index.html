@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="es">
+<script src="main.js?v=1.0.2"></script>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -223,38 +224,102 @@
           </div>
         </div>
 
-        <form class="form" id="earlyForm">
-          <label>
-            Nombre
-            <input type="text" name="name" placeholder="Tu nombre" required />
-          </label>
-          <label>
-            Email
-            <input type="email" name="email" placeholder="tu@email.com" required />
-          </label>
-          <label>
-            Soy...
-            <select name="role" required>
-              <option value="">Selecciona</option>
-              <option>Artista</option>
-              <option>Estudio</option>
-              <option>Distribuidor</option>
-              <option>Otro</option>
-            </select>
-          </label>
-          <label>
-            País
-            <input type="text" name="country" placeholder="España" />
-          </label>
-          <label>
-            Mensaje (opcional)
-            <textarea name="message" rows="4" placeholder="¿Qué te interesa probar o conseguir con vINKo?"></textarea>
-          </label>
+        <form class="form" id="earlyForm" autocomplete="on" novalidate>
+          <div class="form-fields" id="formFields">
+            <label>
+              Nombre *
+              <input
+                type="text"
+                name="name"
+                placeholder="Tu nombre"
+                autocomplete="name"
+                required
+                minlength="2"
+              />
+            </label>
 
-          <button class="btn primary full" type="submit">Unirme a la lista</button>
-          <p class="form-note" id="formNote">
-            Este formulario es local por defecto. Si quieres recibir emails reales, te explico cómo conectarlo sin SaaS.
-          </p>
+            <label>
+              Email *
+              <input
+                type="email"
+                name="email"
+                placeholder="tu@email.com"
+                autocomplete="email"
+                required
+              />
+            </label>
+
+            <label>
+              Soy... *
+              <select name="role" id="roleSelect" required>
+                <option value="">Selecciona</option>
+                <option value="Artista">Artista</option>
+                <option value="Estudio">Estudio</option>
+                <option value="Distribuidor">Distribuidor</option>
+                <option value="Otro">Otro</option>
+              </select>
+            </label>
+
+            <!-- Redes SOLO si es ARTISTA -->
+            <div id="socialsWrap" class="hidden">
+              <label>
+                Redes (IG/TikTok/etc.) (opcional)
+                <input
+                  type="text"
+                  name="socials"
+                  placeholder="@tuusuario o link"
+                  autocomplete="off"
+                />
+              </label>
+            </div>
+
+            <label>
+              País (opcional)
+              <input
+                type="text"
+                name="country"
+                placeholder="España"
+                autocomplete="country-name"
+              />
+            </label>
+
+            <!-- Teléfono opcional -->
+            <label>
+              Teléfono (opcional)
+              <input
+                type="tel"
+                name="phone"
+                placeholder="+34 6XX XXX XXX"
+                autocomplete="tel"
+              />
+            </label>
+
+            <label>
+              Mensaje (opcional)
+              <textarea
+                name="message"
+                rows="4"
+                placeholder="¿Qué te interesa probar o conseguir con vINKo?"
+              ></textarea>
+            </label>
+
+            <button class="btn primary full" id="submitBtn" type="submit">
+              Unirme a la lista
+            </button>
+
+            <p class="form-note" id="formNote">
+              Acceso early a la nueva generación de máquina integrada vINKo.
+            </p>
+          </div>
+
+          <!-- Panel de éxito -->
+          <div class="success-panel hidden" id="successPanel">
+            <h3>¡Hecho!</h3>
+            <p>
+              Formulario mandado con éxito.  
+              Muchas gracias por confiar en <strong>vINKo</strong>.
+            </p>
+          </div>
         </form>
       </div>
     </section>
