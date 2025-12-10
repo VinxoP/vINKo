@@ -329,23 +329,28 @@ textarea{resize: vertical; min-height: 90px}
   font-size: 12px;
   color: rgba(246,247,251,0.6);
 }
-/* Utilidad para ocultar */
+/* Utilidad universal */
 .hidden { display: none !important; }
 
-/* Fix legibilidad opciones del select */
+/* --- FIX SELECT DROPDOWN VISIBILITY --- */
+/* Forzamos que el control use esquema claro SOLO para el desplegable nativo */
 .form select {
   color: var(--text);
+  /* esto ayuda a que el desplegable use estilo claro del sistema */
+  color-scheme: light;
 }
 
+/* En muchos navegadores esto ya es suficiente.
+   Aun así dejamos option por si el motor lo respeta */
 .form select option {
   color: #000;
   background: #fff;
 }
 
-/* Botón con estado "listo" */
+/* --- BOTÓN ESTADO "LISTO" --- */
 #submitBtn {
-  opacity: 0.6;
-  filter: saturate(0.8);
+  opacity: 0.55;
+  filter: saturate(0.7);
   transition: opacity .15s ease, filter .15s ease, transform .15s ease, border-color .15s ease;
 }
 
@@ -356,7 +361,7 @@ textarea{resize: vertical; min-height: 90px}
   transform: translateY(-1px);
 }
 
-/* Panel de éxito ocupa el recuadro */
+/* Panel de éxito */
 .success-panel {
   border: 1px solid var(--line);
   border-radius: var(--radius);

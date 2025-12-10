@@ -223,8 +223,8 @@
             * No compartimos información técnica interna en esta etapa pública.
           </div>
         </div>
-
-        <form class="form" id="earlyForm" autocomplete="on" novalidate>
+        <form class="form" id="earlyForm" autocomplete="on">
+          <!-- Todo lo editable del formulario va aquí -->
           <div class="form-fields" id="formFields">
             <label>
               Nombre *
@@ -260,7 +260,7 @@
               </select>
             </label>
 
-            <!-- Redes SOLO si es ARTISTA -->
+            <!-- 4) Redes SOLO si es ARTISTA -->
             <div id="socialsWrap" class="hidden">
               <label>
                 Redes (IG/TikTok/etc.) (opcional)
@@ -283,7 +283,7 @@
               />
             </label>
 
-            <!-- Teléfono opcional -->
+            <!-- 3) Teléfono opcional -->
             <label>
               Teléfono (opcional)
               <input
@@ -312,12 +312,11 @@
             </p>
           </div>
 
-          <!-- Panel de éxito -->
+          <!-- 6) Panel de éxito -->
           <div class="success-panel hidden" id="successPanel">
             <h3>¡Hecho!</h3>
             <p>
-              Formulario mandado con éxito.  
-              Muchas gracias por confiar en <strong>vINKo</strong>.
+              Formulario mandado con éxito, muchas gracias por confiar en <strong>vINKo</strong>.
             </p>
           </div>
         </form>
