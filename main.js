@@ -7,15 +7,30 @@ document.getElementById("year").textContent = new Date().getFullYear();
 const form = document.getElementById("earlyForm");
 const note = document.getElementById("formNote");
 
-form.addEventListener("submit", (e) => {
+const API_URL = "http://localhost:8787/lead";
+
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const data = Object.fromEntries(new FormData(form).entries());
-  console.log("Early list submission (local):", data);
 
-  note.textContent =
-    "¡Gracias! Registro guardado localmente en la consola del navegador. " +
-    "Si quieres, puedo darte un backend mínimo en Node o Python para guardar los leads en un CSV en tu PC.";
+  try {
+    const res = await fetch(API_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
 
-  form.reset();
+    const json = await res.json();
+
+    if (!json.ok) throw new Error(json.error || "Error desconocido");
+
+    note.textContent = "¡Gracias! Te has unido a la lista early de vINKo.";
+    form.reset();
+  } catch (err) {
+    note.textContent =
+      "No se pudo enviar el formulario ahora mismo. " +
+      "Inténtalo de nuevo en unos minutos.";
+    console.error(err);
+  }
 });
