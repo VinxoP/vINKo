@@ -1,9 +1,6 @@
 // Year
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// Local-only form behavior (no SaaS)
-// This just shows a friendly confirmation.
-// Later you can wire this to your own backend if you self-host.
 const form = document.getElementById("earlyForm");
 const note = document.getElementById("formNote");
 
@@ -22,15 +19,14 @@ form.addEventListener("submit", async (e) => {
     });
 
     const json = await res.json();
+    console.log("Worker response:", json);
 
-    if (!json.ok) throw new Error(json.error || "Error desconocido");
+    if (!json.ok) throw new Error(json.error || "Error");
 
     note.textContent = "¡Gracias! Te has unido a la lista early de vINKo.";
     form.reset();
   } catch (err) {
-    note.textContent =
-      "No se pudo enviar el formulario ahora mismo. " +
-      "Inténtalo de nuevo en unos minutos.";
-    console.error(err);
+    console.error("Submit error:", err);
+    note.textContent = "No se pudo enviar. Revisa consola del navegador.";
   }
 });
