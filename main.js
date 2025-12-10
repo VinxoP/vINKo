@@ -7,7 +7,7 @@ document.getElementById("year").textContent = new Date().getFullYear();
 const form = document.getElementById("earlyForm");
 const note = document.getElementById("formNote");
 
-const API_URL = "https://vinko-leads.workers.dev/lead";
+const API_URL = "https://vinko-leads.vicentepinab.workers.dev/lead";
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
