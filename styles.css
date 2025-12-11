@@ -1,8 +1,12 @@
 :root{
-  --bg: #942433;
-  --bg-2:#55262a;
-  --panel:#201e36;
-  --panel-2:#111623;
+  /* Fondo general gris que se oscurece */
+  --bg: #3b3b40;    /* gris medio */
+  --bg-2:#111215;   /* gris muy oscuro */
+
+  /* Paneles / cards en rojo oscuro */
+  --panel:#341019;   /* rojo vino muy oscuro */
+  --panel-2:#1f1b24; /* gris violáceo oscuro */
+
   --text:#f6f7fb;
   --muted:#b8beca;
   --accent:#9cf;
@@ -20,10 +24,11 @@ body{
   margin:0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
   color:var(--text);
+    /* Fondo: gris claro arriba → gris casi negro abajo, con un toque suave radial */
   background:
-    radial-gradient(900px 600px at 10% 10%, rgba(140,200,255,0.08), transparent 60%),
-    radial-gradient(900px 600px at 90% 20%, rgba(200,255,210,0.06), transparent 60%),
-    linear-gradient(180deg, var(--bg), var(--bg-2) 60%, var(--bg));
+    radial-gradient(900px 600px at 10% 0%, rgba(255,255,255,0.04), transparent 60%),
+    radial-gradient(900px 600px at 90% 0%, rgba(221,96,144,0.12), transparent 60%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
 }
 
 a{color:inherit; text-decoration:none}
@@ -68,23 +73,25 @@ img{max-width:100%; display:block}
   grid-template-columns: 1.05fr 0.95fr;
   gap: 34px;
   position:relative;
+  background: linear-gradient(135deg, var(--panel), var(--panel-2));
+  border:1px solid var(--line);
+  box-shadow: var(--shadow);
 }
 .hero-bg{
   position:absolute; inset:0;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.02), transparent 40%),
-    radial-gradient(1100px 600px at 30% 0%, rgba(156,204,255,0.08), transparent 70%);
+  background: linear-gradient(135deg, var(--panel), var(--panel-2));
+  border:1px solid var(--line);
+  box-shadow: var(--shadow);
   pointer-events:none;
 }
 
 .hero-content{
   position:relative;
   padding: 34px 28px;
+  background: linear-gradient(135deg, var(--panel), var(--panel-2));
   border:1px solid var(--line);
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent),
-              var(--panel);
-  border-radius: var(--radius);
   box-shadow: var(--shadow);
+  border-radius: var(--radius);
 }
 .pill{
   display:inline-flex;
@@ -145,10 +152,10 @@ h1{
 
 .hero-media{position:relative}
 .media-card{
-  border:1px solid var(--line);
   border-radius: var(--radius);
   overflow:hidden;
-  background: var(--panel-2);
+  background: linear-gradient(135deg, var(--panel), var(--panel-2));
+  border:1px solid var(--line);
   box-shadow: var(--shadow);
 }
 .media-caption{
@@ -163,10 +170,10 @@ h1{
   margin: 0 auto;
   padding: 70px 24px;
 }
-.section.alt{
+.section.alt {
   background:
     linear-gradient(180deg, rgba(255,255,255,0.02), transparent 60%),
-    rgba(255,255,255,0.01);
+    linear-gradient(180deg, #2b2832, #16151b);
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
 }
@@ -198,20 +205,25 @@ h1{
 
 .card{
   border:1px solid var(--line);
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent),
-              var(--panel);
+  background: linear-gradient(135deg, var(--panel), var(--panel-2));
   border-radius: var(--radius-sm);
   padding: 22px 20px;
 }
 .card h3{
   margin: 0 0 10px;
   font-size: 18px;
+  background: linear-gradient(135deg, var(--panel), var(--panel-2));
+  border:1px solid var(--line);
+  box-shadow: var(--shadow);
 }
 .card p{
   margin:0;
   color: var(--muted);
   line-height: 1.5;
   font-size: 14.8px;
+  background: linear-gradient(135deg, var(--panel), var(--panel-2));
+  border:1px solid var(--line);
+  box-shadow: var(--shadow);
 }
 
 .section-split{
