@@ -359,6 +359,7 @@ textarea{resize: vertical; min-height: 90px}
   opacity: 1;
   filter: saturate(1.1);
   border-color: rgba(170,210,255,0.55);
+  background: linear-gradient(135deg, rgba(200, 209, 216, 0.18), rgba(240, 80, 102, 0.14));
   transform: translateY(-1px);
 }
 
