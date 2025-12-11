@@ -106,7 +106,7 @@ img{max-width:100%; display:block}
 
 h1{
   font-size: clamp(28px, 3.2vw, 40px);
-  line-height: 1.08;
+  line-height: 1.1;
   margin: 14px 0 14px;
 }
 .hero-sub{
@@ -175,7 +175,8 @@ h1{
   margin-bottom: 30px;
 }
 .section-head h2{
-  font-size: clamp(22px, 2.4vw, 30px);
+  font-size: clamp(22px, 2.6vw, 30px);
+  line-height: 1.2;
   margin: 0 0 10px;
 }
 .section-head p{

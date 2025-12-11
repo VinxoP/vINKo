@@ -7,6 +7,7 @@
   <meta name="description" content="vINKo redefine la máquina de tatuar: un pen de nueva generación con suministro integrado y un ecosistema de cartuchos diseñado para una experiencia más eficiente, intuitiva y sostenible." />
   <link rel="stylesheet" href="styles.css" />
   <link rel="preload" href="assets/img/hero-placeholder.jpg" as="image">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
 </head>
 
 <body>
@@ -27,7 +28,7 @@
 
   <main id="top">
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero" data-aos="fade-up">
       <div class="hero-bg"></div>
       <div class="hero-content">
         <div class="pill">Nueva categoría de máquina</div>
@@ -56,7 +57,7 @@
     </section>
 
     <!-- VISION / PROBLEM -->
-    <section id="vision" class="section">
+    <section id="vision" class="section" data-aos="fade-up">
       <div class="section-head">
         <h2>La visión: integración real</h2>
         <p>
@@ -68,15 +69,15 @@
       </div>
 
       <div class="grid-3">
-        <div class="card">
+        <div class="card" data-aos="fade-up" data-aos-delay="0">
           <h3>Menos fricción</h3>
           <p>Una arquitectura pensada para reducir pasos y elementos externos del flujo de trabajo.</p>
         </div>
-        <div class="card">
+        <div class="card" data-aos="fade-up" data-aos-delay="80">
           <h3>Más intuición</h3>
           <p>El pen moderno debería sentirse como un sistema integrado, no como una suma de piezas.</p>
         </div>
-        <div class="card">
+        <div class="card" data-aos="fade-up" data-aos-delay="160">
           <h3>Sostenibilidad práctica</h3>
           <p>Reutilizable donde aporta valor y desechable donde protege la operativa profesional.</p>
         </div>
@@ -84,7 +85,7 @@
     </section>
 
     <!-- PLATFORM -->
-    <section id="platform" class="section alt">
+    <section id="platform" class="section alt" data-aos="fade-right">
       <div class="section-split">
         <div>
           <div class="pill subtle">Plataforma vINKo</div>
@@ -112,7 +113,7 @@
     </section>
 
     <!-- ECOSYSTEM -->
-    <section id="ecosystem" class="section">
+    <section id="ecosystem" class="section" data-aos="fade-left">
       <div class="section-head">
         <h2>Ecosistema de cartuchos diseñado para una máquina integrada</h2>
         <p>
@@ -123,11 +124,11 @@
       </div>
 
       <div class="grid-2">
-        <div class="card">
+        <div class="card" data-aos="fade-up" data-aos-delay="0">
           <h3>Reutilizable donde importa</h3>
           <p>Componentes clave diseñados para durabilidad, control y consistencia del sistema.</p>
         </div>
-        <div class="card">
+        <div class="card" data-aos="fade-up" data-aos-delay="80">
           <h3>Consumibles inteligentes</h3>
           <p>Elementos desechables pensados para higiene, operativa y simplicidad real en estudio.</p>
         </div>
@@ -135,7 +136,7 @@
     </section>
 
     <!-- FOUNDERS -->
-    <section id="founders" class="section alt">
+    <section id="founders" class="section alt" data-aos="zoom-in">
       <div class="section-head">
         <div class="pill subtle">Early Program</div>
         <h2>Programa de estudios fundadores</h2>
@@ -146,15 +147,15 @@
       </div>
 
       <div class="grid-3">
-        <div class="card">
+        <div class="card" data-aos="fade-up" data-aos-delay="0">
           <h3>Acceso prioritario</h3>
           <p>Serás parte de la primera validación real del pen integrado en entorno de estudio.</p>
         </div>
-        <div class="card">
+        <div class="card" data-aos="fade-up" data-aos-delay="80">
           <h3>Condiciones early</h3>
           <p>Packs de lanzamiento orientados a profesionales y estudios con visión de futuro.</p>
         </div>
-        <div class="card">
+        <div class="card" data-aos="fade-up" data-aos-delay="160">
           <h3>Influencia real</h3>
           <p>Tu feedback impacta la versión final industrial como plataforma.</p>
         </div>
@@ -340,6 +341,20 @@
       </div>
     </div>
   </footer>
-  <script src="main.js?v=1.0.3" defer></script>
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      AOS.init({
+        duration: 700,      // duración animación
+        easing: "ease-out", // curva
+        offset: 80,         // cuánto antes de entrar en viewport
+        once: true          // animar solo la primera vez
+      });
+    });
+  </script>
+
+  <script src="main.js?v=1.0.4" defer></script>
 </body>
 </html>
