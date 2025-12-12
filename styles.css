@@ -467,19 +467,54 @@ textarea{resize: vertical; min-height: 90px}
   background: #fff;
 }
 
-/* --- BOTÓN ESTADO "LISTO" --- */
-#submitBtn {
-  opacity: 0.55;
-  filter: saturate(0.7);
-  background: linear-gradient(135deg, rgba(200, 209, 216, 0.18), rgba(240, 80, 102, 0.14));
-  transition: opacity .15s ease, filter .15s ease, transform .15s ease, border-color .15s ease;
+/* Estado base: botón apagado (sin .ready) */
+#submitBtn{
+  background: #ffffff;
+  color: #111623;
+  opacity: 0.45;
+  filter: saturate(0.6) brightness(0.95);
+  cursor: default;
+  box-shadow: none;
+  transform: none;
+  border-color: rgba(255,255,255,0.2);
+  transition:
+    opacity .15s ease,
+    filter .15s ease,
+    transform .10s ease,
+    box-shadow .15s ease,
+    border-color .15s ease;
 }
 
-#submitBtn.ready {
+/* Cuando el formulario está listo (.ready la pone el JS) */
+#submitBtn.ready{
   opacity: 1;
-  filter: saturate(1.1);
-  border-color: rgba(170,210,255,0.55);
+  filter: none;
+  cursor: pointer;
+  border-color: rgba(255,255,255,0.5);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.35);
+}
+
+/* Hover: un poco más oscuro, “casi presionado” */
+#submitBtn.ready:hover{
+  filter: brightness(0.94);
   transform: translateY(-1px);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.45);
+}
+
+/* Active (click): más oscuro y algo más pequeño */
+#submitBtn.ready:active{
+  filter: brightness(0.82);
+  transform: translateY(1px) scale(0.985);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+}
+
+/* Cuando NO está listo, ignorar el hover general de .btn */
+#submitBtn:not(.ready):hover{
+  transform: none;
+  border-color: rgba(255,255,255,0.2);
+}
+.form-fields .btn.full{
+  margin-top: 16px;   /* prueba 12–16px a tu gusto */
 }
 
 /* Panel de éxito */
