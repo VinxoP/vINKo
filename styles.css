@@ -155,7 +155,6 @@ h1{
   border-radius: var(--radius);
   overflow:hidden;
   background: linear-gradient(135deg, var(--panel), var(--panel-2));
-  border:1px solid var(--line);
   box-shadow: var(--shadow);
 }
 .media-caption{
@@ -204,7 +203,6 @@ h1{
 }
 
 .card{
-  border:1px solid var(--line);
   background: linear-gradient(135deg, var(--panel), var(--panel-2));
   border-radius: var(--radius-sm);
   padding: 22px 20px;
@@ -213,7 +211,6 @@ h1{
   margin: 0 0 10px;
   font-size: 18px;
   background: linear-gradient(135deg, var(--panel), var(--panel-2));
-  border:1px solid var(--line);
   box-shadow: var(--shadow);
 }
 .card p{
@@ -222,7 +219,6 @@ h1{
   line-height: 1.5;
   font-size: 14.8px;
   background: linear-gradient(135deg, var(--panel), var(--panel-2));
-  border:1px solid var(--line);
   box-shadow: var(--shadow);
 }
 
