@@ -1,14 +1,15 @@
 :root{
   /* Fondo general gris que se oscurece */
-  --bg: #3b3b40;    /* gris medio */
-  --bg-2:#111215;   /* gris muy oscuro */
+  --bg: #004225;    /* gris medio */
+  --bg-2:#1f1b24;   /* gris muy oscuro */
 
   /* Paneles / cards en rojo oscuro */
-  --panel: #341019;   /* rojo vino muy oscuro */
-  --panel-2:#1f1b24; /* gris violáceo oscuro */
+  --panel-2: #004225;   /* rojo vino muy oscuro */
+  --panel:#1f1b24; /* gris violáceo oscuro */
 
   --text:#f6f7fb;
   --muted:#b8beca;
+
   --accent:#9cf;
   --accent-2:#dd6090;
   --line: rgba(255,255,255,0.08);
@@ -74,13 +75,11 @@ img{max-width:100%; display:block}
   gap: 34px;
   position:relative;
   background: linear-gradient(135deg, var(--panel), var(--panel-2));
-  border:1px solid var(--line);
   box-shadow: var(--shadow);
 }
 .hero-bg{
   position:absolute; inset:0;
   background: linear-gradient(135deg, var(--panel), var(--panel-2));
-  border:1px solid var(--line);
   box-shadow: var(--shadow);
   pointer-events:none;
 }
@@ -89,7 +88,6 @@ img{max-width:100%; display:block}
   position:relative;
   padding: 34px 28px;
   background: linear-gradient(135deg, var(--panel), var(--panel-2));
-  border:1px solid var(--line);
   box-shadow: var(--shadow);
   border-radius: var(--radius);
 }
@@ -170,9 +168,7 @@ h1{
   padding: 70px 24px;
 }
 .section.alt {
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.02), transparent 60%),
-    linear-gradient(180deg, #2b2832, #16151b);
+  background: linear-gradient(135deg, var(--panel), var(--panel-2));
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
 }
@@ -196,6 +192,14 @@ h1{
   grid-template-columns: repeat(3, minmax(0,1fr));
   gap: 16px;
 }
+
+.grid-3 .cta-band{
+  grid-column: 1 / -1;      /* ocupa todas las columnas del grid */
+  justify-self: center;     /* se centra dentro de esa franja */
+  max-width: 520px;         /* mismo ancho que querías */
+  width: 100%;              /* pero sin ocupar más de 520px */
+}
+
 .grid-2{
   display:grid;
   grid-template-columns: repeat(2, minmax(0,1fr));
@@ -210,16 +214,12 @@ h1{
 .card h3{
   margin: 0 0 10px;
   font-size: 18px;
-  background: linear-gradient(135deg, var(--panel), var(--panel-2));
-  box-shadow: var(--shadow);
 }
 .card p{
   margin:0;
   color: var(--muted);
   line-height: 1.5;
   font-size: 14.8px;
-  background: linear-gradient(135deg, var(--panel), var(--panel-2));
-  box-shadow: var(--shadow);
 }
 
 .section-split{
@@ -254,10 +254,13 @@ h1{
 
 .cta-band{
   margin-top: 26px;
+
   border:1px solid var(--line);
   border-radius: var(--radius);
   padding: 22px 22px;
-  display:flex; justify-content:space-between; align-items:center;
+  display:flex; 
+  justify-content:space-between; 
+  align-items:center;
   background: linear-gradient(135deg, rgba(156,204,255,0.08), rgba(201,255,207,0.06));
   gap: 14px;
 }
@@ -269,7 +272,7 @@ h1{
   border:1px solid var(--line);
   border-radius: var(--radius);
   padding: 22px 22px;
-  background: var(--panel);
+  background: linear-gradient(135deg, var(--panel), var(--panel-2));
 }
 .step{
   display:flex; gap: 12px; align-items:flex-start;
@@ -289,7 +292,8 @@ h1{
 .form{
   border:1px solid var(--line);
   border-radius: var(--radius);
-  background: var(--panel);
+  background: linear-gradient(135deg, var(--panel), var(--panel-2));
+  box-shadow: var(--shadow);
   padding: 22px;
   display:grid; gap: 12px;
 }
@@ -403,5 +407,5 @@ textarea{resize: vertical; min-height: 90px}
   .nav{display:none}
   .grid-3{grid-template-columns: 1fr}
   .grid-2{grid-template-columns: 1fr}
-  .cta-band{flex-direction: column; align-items:flex-start}
+  .cta-band{flex-direction: column; align-items:flex-start; max-width: 100%}
 }
