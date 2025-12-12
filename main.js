@@ -80,3 +80,25 @@ document.addEventListener("DOMContentLoaded", () => {
   toggleSocials();
   updateButtonState();
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const navToggle = document.querySelector(".nav-toggle");
+  const headerRight = document.querySelector(".header-right");
+
+  if (navToggle && headerRight) {
+    navToggle.addEventListener("click", () => {
+      const isOpen = headerRight.classList.toggle("is-open");
+      navToggle.classList.toggle("is-open", isOpen);
+      navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    headerRight.addEventListener("click", (e) => {
+      const target = e.target;
+      if (target.tagName === "A") {
+        headerRight.classList.remove("is-open");
+        navToggle.classList.remove("is-open");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+});

@@ -16,15 +16,37 @@
       <span class="brand-dot"></span>
       <span>vINKo</span>
     </a>
-    <nav class="nav">
-      <a href="#vision">Visión</a>
-      <a href="#platform">La máquina</a>
-      <a href="#ecosystem">Ecosistema</a>
-      <a href="#founders">Estudios fundadores</a>
-      <a href="#roadmap">Roadmap</a>
-      <a href="#contact" class="nav-cta">Lista early</a>
-    </nav>
+
+    <!-- Botón menú móvil -->
+    <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+
+    <div class="header-right" id="site-nav">
+      <nav class="nav">
+        <a href="#vision">Visión</a>
+        <a href="#platform">La máquina</a>
+        <a href="#ecosystem">Ecosistema</a>
+        <a href="#founders">Estudios fundadores</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#contact" class="nav-cta">Lista early</a>
+      </nav>
+
+      <!-- Selector de idioma (ES actual) -->
+      <div class="lang-switch" aria-label="Idioma del sitio">
+        <button class="lang current" type="button" aria-label="Idioma actual: español">
+          <span class="flag">🇪🇸</span><span class="code">ES</span>
+        </button>
+        <a class="lang" href="en.html" aria-label="Cambiar a inglés">
+          <span class="flag">🇬🇧</span><span class="code">EN</span>
+        </a>
+      </div>
+    </div>
   </header>
+
+
 
   <main id="top">
     <!-- HERO -->
@@ -389,22 +411,36 @@
   </main>
 
   <footer class="footer">
-    <div class="footer-inner">
-      <div class="brand small">
-        <span class="brand-dot"></span><span>vINKo</span>
-      </div>
-      <div class="footer-links">
-        <a href="#vision">Visión</a>
-        <a href="#platform">La máquina</a>
-        <a href="#ecosystem">Ecosistema</a>
-        <a href="#founders">Estudios</a>
-        <a href="#roadmap">Roadmap</a>
+  <div class="footer-inner">
+    <div class="brand small">
+      <span class="brand-dot"></span><span>vINKo</span>
+    </div>
+
+    <div class="footer-links">
+      <a href="#vision">Visión</a>
+      <a href="#platform">La máquina</a>
+      <a href="#ecosystem">Ecosistema</a>
+      <a href="#founders">Estudios</a>
+      <a href="#roadmap">Roadmap</a>
+    </div>
+
+    <div class="footer-right">
+      <div class="lang-switch small" aria-label="Idioma del sitio">
+        <button class="lang current" type="button" aria-label="Idioma actual: español">
+          <span class="flag">🇪🇸</span><span class="code">ES</span>
+        </button>
+        <a class="lang" href="en.html" aria-label="Cambiar a inglés">
+          <span class="flag">🇬🇧</span><span class="code">EN</span>
+        </a>
       </div>
       <div class="footer-meta">
         © <span id="year"></span> vINKo. Todos los derechos reservados.
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
+
+
   <!-- AOS JS -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
