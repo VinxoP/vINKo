@@ -4,8 +4,8 @@
   --bg-2:#111215;   /* gris muy oscuro */
 
   /* Paneles / cards en rojo oscuro */
-  --panel: #3b3b40/*#341019;    rojo vino muy oscuro */
-  --panel-2: #111215/*#1f1b24; /* gris violáceo oscuro */
+  --panel: #341019;   /* rojo vino muy oscuro */
+  --panel-2:#1f1b24; /* gris violáceo oscuro */
 
   --text:#f6f7fb;
   --muted:#b8beca;
