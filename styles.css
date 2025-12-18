@@ -16,7 +16,8 @@
   --shadow: 0 10px 30px rgba(0,0,0,0.35);
   --radius: 20px;
   --radius-sm: 12px;
-  --max: 1180px;
+  --gutter: 25px; /* margen lateral deseado */
+  --max: calc(100vw - (2 * var(--gutter))); /* ancho dinámico = pantalla - 20px */
 }
 
 *{box-sizing:border-box}
@@ -46,7 +47,7 @@ img{max-width:100%; display:block}
 
   max-width: var(--max);
   margin: 0 auto;
-  padding: 14px 32px;
+  padding: 14px var(--gutter);
 
   background: linear-gradient(90deg, rgba(0,0,0,0.55), rgba(0,0,0,0.35));
   backdrop-filter: blur(10px);
@@ -176,7 +177,7 @@ img{max-width:100%; display:block}
 .hero{
   max-width: var(--max);
   margin: 0 auto;
-  padding: 70px 24px 40px;
+  padding: 70px var(--gutter) 40px;
   display:grid;
   grid-template-columns: 1.05fr 0.95fr;
   gap: 34px;
@@ -272,7 +273,7 @@ h1{
 .section{
   max-width: var(--max);
   margin: 0 auto;
-  padding: 70px 24px;
+  padding: 70px var(--gutter);
 }
 .section.alt {
   background: linear-gradient(135deg, var(--panel), var(--panel-2));
@@ -280,8 +281,8 @@ h1{
   border-bottom:1px solid var(--line);
 }
 .section-head{
-  max-width: 820px;
-  margin-bottom: 30px;
+  margin: 0 auto 30px;   /* centra el bloque */
+  text-align: center; 
 }
 .section-head h2{
   font-size: clamp(22px, 2.6vw, 30px);
@@ -427,7 +428,7 @@ textarea{resize: vertical; min-height: 90px}
 
 .footer{
   border-top:1px solid var(--line);
-  padding: 34px 24px 50px;
+  padding: 34px var(--gutter) 50px;
 }
 .footer-inner{
   max-width: var(--max);
@@ -561,7 +562,7 @@ textarea{resize: vertical; min-height: 90px}
 /* <= 840px: menú móvil */
 @media (max-width: 840px){
   .header{
-    padding: 10px 18px;
+    padding: 10px var(--gutter);
   }
 
   /* mostrar hamburguesa */
@@ -581,7 +582,8 @@ textarea{resize: vertical; min-height: 90px}
     top: 60px;
     right: 12px;
     left: 12px;
-    padding: 14px 16px;
+    right: var(--gutter);
+    left:  var(--gutter);
     border-radius: 16px;
     border:1px solid var(--line);
     background: rgba(10,10,16,0.96);
