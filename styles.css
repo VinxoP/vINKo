@@ -90,9 +90,8 @@ img{max-width:100%; display:block}
   height: 26px;
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,0.35);
-  text-decoration:none;
-  color: var(--text);
   background: rgba(0,0,0,0.35);
+  text-decoration:none;
   transition:
     background .15s ease,
     border-color .15s ease,
@@ -100,12 +99,14 @@ img{max-width:100%; display:block}
     box-shadow .15s ease;
 }
 
-/* tamaño de emoji dentro del botón */
-.social-links a .icon{
-  font-size: 14px;
-  line-height: 1;
+/* tamaño de los SVG dentro del botón */
+.social-links a .social-icon{
+  width: 20px;
+  height: 20px;
+  display:block;
 }
 
+/* efectos hover/click */
 .social-links a:hover{
   background: rgba(255,255,255,0.15);
   border-color: rgba(255,255,255,0.8);
