@@ -1,278 +1,279 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>vINKo System — Sistema integrado para máquinas de tatuar</title>
-  <meta name="description" content="vINKo redefine la máquina de tatuar: un pen de nueva generación con suministro integrado y un ecosistema de cartuchos diseñado para una experiencia más eficiente, intuitiva y sostenible." />
+
+  <title>vINKo System — Menos desperdicio. Más higiene. Más control.</title>
+  <meta name="description" content="vINKo System es un concepto en desarrollo rumbo a Kickstarter para mejorar el flujo de trabajo de tinta en tatuaje/PMU: menos desperdicio, más higiene y más control. Únete a la lista de espera o al Founder Council." />
+
+  <link rel="canonical" href="https://vinkosystem.com/" />
   <link rel="alternate" href="https://vinkosystem.com/" hreflang="es" />
   <link rel="alternate" href="https://vinkosystem.com/en.html" hreflang="en" />
   <link rel="alternate" href="https://vinkosystem.com/" hreflang="x-default" />
-  <link rel="stylesheet" href="styles.css?v=1.0.8" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="vINKo System" />
+  <meta property="og:title" content="vINKo System — Menos desperdicio. Más higiene. Más control." />
+  <meta property="og:description" content="Concepto en desarrollo rumbo a Kickstarter. Únete a la lista de espera o al Founder Council (estudios/artistas) para co-diseñar el sistema." />
+  <meta property="og:url" content="https://vinkosystem.com/" />
+  <meta property="og:image" content="https://vinkosystem.com/assets/img/vINKoSystem.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="vINKo System — Menos desperdicio. Más higiene. Más control." />
+  <meta name="twitter:description" content="Concepto en desarrollo rumbo a Kickstarter. Únete a la lista de espera o al Founder Council." />
+  <meta name="twitter:image" content="https://vinkosystem.com/assets/img/vINKoSystem.png" />
+
+  <link rel="stylesheet" href="styles.css?v=1.0.9" />
+
+  <!-- Preloads -->
   <link rel="preload" href="/assets/img/LogoBlanco.png" as="image">
   <link rel="preload" href="/assets/img/vINKoSystem.png" as="image">
   <link rel="preload" href="/assets/img/wip.png" as="image">
+
+  <!-- AOS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <!-- Icons -->
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="48x48" href="/assets/img/favicon-48x48.png">
-  <link rel="icon" href="assets/img/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/img/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0b0f14">
+
+  <!-- Schema -->
   <script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"Organization",
-  "name":"vINKo System",
-  "url":"https://www.vinkosystem.com/",
-  "logo":"https://www.vinkosystem.com/assets/img/favicon-512x512.png"
-}
-</script>
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"vINKo System",
+    "url":"https://www.vinkosystem.com/",
+    "logo":"https://www.vinkosystem.com/assets/img/favicon-512x512.png",
+    "sameAs":[
+      "https://www.linkedin.com/company/vinko-system",
+      "https://www.instagram.com/vinko.system",
+      "https://www.tiktok.com/@vinko.tech"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"vINKo System",
+    "url":"https://www.vinkosystem.com/"
+  }
+  </script>
 </head>
 
 <body>
-<header class="header">
-  <a class="brand" href="#top">
-    <span class="brand-dot"></span>
-    <span>vINKo System</span>
-  </a>
+  <!-- Accesibilidad 
+  <a class="skip-link" href="#main">Saltar al contenido</a>-->
 
-  <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
-    <span class="nav-toggle-bar"></span>
-    <span class="nav-toggle-bar"></span>
-    <span class="nav-toggle-bar"></span>
-  </button>
+  <header class="header">
+    <a class="brand" href="#top" aria-label="Ir al inicio">
+      <span class="brand-dot"></span>
+      <span>vINKo System</span>
+    </a>
 
-  <div class="header-right" id="site-nav">
-    <nav class="nav">
-      <a href="#vision">Vision</a>
-      <a href="#platform">The machine</a>
-      <a href="#ecosystem">Ecosystem</a>
-      <a href="#founders">Founding studios</a>
-      <a href="#roadmap">Roadmap</a>
-      <a href="#contact" class="nav-cta">Early list</a>
-    </nav>
+    <!-- Botón menú móvil -->
+    <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
 
-    <div class="lang-switch" aria-label="Site language">
-      <a class="lang" href="index.html" aria-label="Switch to Spanish">
-        <span class="flag">🇪🇸</span><span class="code">ES</span>
-      </a>
-      <button class="lang current" type="button" aria-label="Current language: English">
-        <span class="flag">🇬🇧</span><span class="code">EN</span>
-      </button>
-    </div>
-  </div>
-</header>
+    <div class="header-right" id="site-nav">
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="#problem">Problema</a>
+        <a href="#concept">La idea</a>
+        <a href="#benefits">Beneficios</a>
+        <a href="#founders">Founder Council</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact" class="nav-cta">Lista de espera</a>
+      </nav>
 
-
-        
-  <main id="top">
-    <!-- HERO -->
-    <section class="hero" data-aos="fade-up">
-      <div class="hero-bg"></div>
-      <div class="hero-content">
-        <div class="pill">New tattoo machine category</div>
-        <h1>The next-generation integrated tattoo machine.</h1>
-        <p class="hero-sub">
-          vINKo System is an <strong>integrated ink-supply ecosystem</strong> that starts
-          as a <strong>new-generation pen</strong>, but can also work as an
-          <strong>external module</strong> attached to compatible pen-type
-          machines that include the system connector.
-        </p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#founders">Join vINKo System</a>
-          <a class="btn ghost" href="#platform">Explore the system</a>
-        </div>
-        <div class="hero-micro">
-          Internationally protected IP · Functional prototypes · Integrated pen · External module for compatible pens
-        </div>
+      <!-- Selector de idioma (ES actual) -->
+      <div class="lang-switch" aria-label="Idioma del sitio">
+        <button class="lang current" type="button" aria-label="Idioma actual: español">
+          <span class="flag">🇪🇸</span><span class="code">ES</span>
+        </button>
+        <a class="lang" href="en.html" aria-label="Cambiar a inglés">
+          <span class="flag">🇬🇧</span><span class="code">EN</span>
+        </a>
       </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section id="top" class="hero" data-aos="fade-up">
+      <div class="hero-bg"></div>
+
+      <div class="hero-content">
+        <div class="pill">Concepto en desarrollo · Rumbo a Kickstarter</div>
+
+        <h1>Menos desperdicio. Más higiene. Más control.</h1>
+
+        <p class="hero-sub">
+          vINKo System es un <strong>concepto en desarrollo</strong> para mejorar el flujo de trabajo de tinta
+          en tatuaje/PMU: diseñado para reducir desperdicio y facilitar una operativa más limpia y consistente.
+        </p>
+
+        <div class="note" style="margin-top:14px;">
+          <strong>Transparencia:</strong> en esta fase es <strong>concepto + renders</strong>.
+          <strong>No es apto para usar en estudio todavía</strong> (higiene, materiales y certificación).
+          El objetivo es construir una versión profesional y lanzarla en <strong>Kickstarter</strong>.
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#contact">Únete a la lista de espera</a>
+          <a class="btn ghost" href="#founders">Soy estudio / artista</a>
+        </div>
+
+        <!-- HERO <div class="hero-micro">
+          Sin spam · 1–2 emails/mes · Aviso de lanzamiento + avances · Founder Council para estudios/artistas
+        </div>-->
+      </div>
+
       <div class="hero-media">
         <div class="media-card">
-          <img src="assets/img/wip.png" alt="vINKo System machine concept" />
-         <!-- <div class="media-caption">
-            Visual concept of the vINKo System integrated machine
-          </div>-->
+          <img src="assets/img/wip.png" alt="Render conceptual en progreso de vINKo System" />
+          <div class="media-caption">
+            Concept render · Work in progress
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- VISION / PROBLEM -->
-    <section id="vision" class="section" data-aos="fade-up">
+    <!-- PROBLEM -->
+    <section id="problem" class="section" data-aos="fade-up">
       <div class="section-head">
-        <h2>The vision: real integration</h2>
+        <h2>El problema no es el artista. Es el sistema.</h2>
         <p>
-          For years the industry has accepted a fragmented machine:
-          motor on one side and ink management on the other.
-          vINKo System proposes a category shift:
-          <strong>the ink experience becomes part of the machine design itself.</strong>
+          En estudio, la tinta se prepara con margen “por si acaso”, se manipula en abierto y se repiten pasos.
+          El resultado: <strong>desperdicio y menos control del flujo de trabajo</strong>.
         </p>
       </div>
 
       <div class="grid-3">
         <div class="card" data-aos="fade-up" data-aos-delay="0">
-          <h3>Less friction</h3>
-          <p>An architecture designed to reduce steps and external elements in the workflow.</p>
+          <h3>Desperdicio</h3>
+          <p>Se prepara más tinta de la que se usa y lo que sobra se tira. Es habitual y nadie lo quiere, pero ocurre.</p>
         </div>
         <div class="card" data-aos="fade-up" data-aos-delay="80">
-          <h3>More intuition</h3>
-          <p>The modern pen should feel like an integrated system, not like a sum of external add-ons.</p>
+          <h3>Higiene y Rutina</h3>
+          <p>Cuanto más abierto y manual, más puntos de limpieza y más fricción en el flujo de trabajo.</p>
         </div>
         <div class="card" data-aos="fade-up" data-aos-delay="160">
-          <h3>Practical sustainability</h3>
-          <p>Reusable where it adds value and disposable where it protects professional operations.</p>
+          <h3>Control</h3>
+          <p>La consistencia del suministro y la preparación influyen en la experiencia: tanto para artista como para estudio.</p>
         </div>
       </div>
     </section>
 
-    <!-- PLATFORM -->
-    <section id="platform" class="section alt" data-aos="fade-right">
+    <!-- CONCEPT -->
+    <section id="concept" class="section alt" data-aos="fade-right">
       <div class="section">
         <div>
-          <div class="pill subtle">vINKo System system</div>
-          <h2>A new integrated machine – and a module for your current pen.</h2>
+          <div class="pill subtle">La idea</div>
+          <h2>Una nueva forma de gestionar la tinta, sin complicarte.</h2>
           <p>
-            vINKo System starts as a <strong>next-generation tattoo machine</strong>
-            with the ink supply integrated into its architecture. But the same
-            system logic can also be deployed as an
-            <strong>external module</strong> that attaches to pen-type machines,
-            as long as they include the compatible connector.
+            vINKo System explora un enfoque de <strong>flujo más controlado y operativo</strong>,
+            diseñado para reducir manipulación innecesaria y minimizar el desperdicio.
           </p>
 
           <div class="grid-2" style="margin-top:18px; gap:12px;">
             <div class="card">
-              <h3>Integrated vINKo System pen</h3>
+              <h3>Operativa más limpia</h3>
               <p>
-                The native version of the platform. A machine designed from the
-                ground up around the integrated supply system, delivering a
-                consistent experience and ready for professional-level scale.
+                Diseñado para disminuir pasos y exposición innecesaria, ayudando a mantener una rutina de estudio más simple.
               </p>
             </div>
             <div class="card">
-              <h3>External vINKo System module</h3>
+              <h3>Control Y Consistencia</h3>
               <p>
-                A compact module that attaches to compatible pen-type machines.
-                It connects to the wireless power source through a
-                <strong>magnetic connector</strong> and lets you turn the system
-                on or off as you wish, without abandoning your current machine.
+                Orientado a una experiencia más consistente de preparación y suministro, con menos “por si acaso”.
               </p>
             </div>
           </div>
 
           <ul class="ticks">
-            <li>Two ways to enter the platform: integrated pen or external module.</li>
-            <li>Compatible with pen-type machines that include the system connector.</li>
-            <li>Allows machines and modules to be sold separately, depending on each studio’s timing.</li>
-            <li>The same ecosystem logic and consumables in both scenarios.</li>
+            <li>Enfoque en flujo de trabajo real de estudio: rapidez, orden y repetibilidad.</li>
+            <li>Concepto orientado a fabricación profesional.</li>
+            <li>Kickstarter como vía para llevarlo a calidad y validación apta para estudio.</li>
           </ul>
-
+<!--
           <div class="note">
-            This site explains the concept and use cases, but not the internal
-            engineering or connection details, which are protected by IP.
-          </div>
+            * En fase pública no se comparte ingeniería interna ni detalles sensibles. Se prioriza seguridad e higiene.
+          </div>-->
         </div>
       </div>
     </section>
 
-    <!-- ECOSYSTEM -->
-    <section id="ecosystem" class="section" data-aos="fade-left">
+    <!-- BENEFITS -->
+    <section id="benefits" class="section" data-aos="fade-left">
       <div class="section-head">
-        <h2>Cartridge ecosystem designed for an integrated machine</h2>
+        <h2>Lo que debería mejorar en tu día a día</h2>
         <p>
-          This is not about adding a cartridge to an existing machine.
-          It is an ecosystem conceived from the start to work
-          as a single system together with the vINKo System pen.
-        </p>
-      </div>
-
-      <div class="grid-2">
-        <div class="card" data-aos="fade-up" data-aos-delay="0">
-          <h3>Reusable where it matters</h3>
-          <p>Key components designed for durability, control and system consistency.</p>
-        </div>
-        <div class="card" data-aos="fade-up" data-aos-delay="80">
-          <h3>Smart consumables</h3>
-          <p>Disposable elements designed for hygiene, operations and real studio simplicity.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ADOPTION -->
-    <section class="section" id="adoption">
-      <div class="section-head">
-        <h2>How your studio can adopt vINKo System</h2>
-        <p>
-          vINKo System is designed for studios that want to move towards an
-          integrated machine without losing their investment in current
-          machines. That's why the platform has two clear adoption paths.
-        </p>
-      </div>
-
-      <div class="grid-3">
-        <div class="card">
-          <h3>1. vINKo System pen from day one</h3>
-          <p>
-            The most direct way to enter the platform. You acquire the integrated
-            vINKo System pen and work with the native consumable ecosystem from day one.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>2. External module for your pen</h3>
-          <p>
-            If your pen-type machine is compatible with the system connector,
-            you can add vINKo System as an external module that attaches to the body
-            of the machine and is powered through a magnetic connector.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>3. Gradual evolution</h3>
-          <p>
-            A studio can start by using the module on existing machines and,
-            when timing makes sense, move to a fleet of integrated vINKo System
-            machines, keeping the same ecosystem and consumables.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOUNDERS -->
-    <section id="founders" class="section alt" data-aos="zoom-in">
-      <div class="section-head">
-        <div class="pill subtle">Early Program</div>
-        <h2>Founding studios program</h2>
-        <p>
-          We're looking for a small group of studios and artists for the first wave:
-          early access, special conditions and direct feedback in the pre-production phase.
+          Esto es lo que busco conseguir con una versión final fabricada y validada para estudio.
+          Tu feedback ahora ayuda a definir prioridades reales.
         </p>
       </div>
 
       <div class="grid-3">
         <div class="card" data-aos="fade-up" data-aos-delay="0">
-          <h3>Priority access</h3>
-          <p>You'll be part of the first real validation of the integrated pen in studio environments.</p>
+          <h3>Menos tinta tirada</h3>
+          <p>Objetivo: reducir significativamente el desperdicio por sesión sin cambiar tu forma de tatuar.</p>
         </div>
         <div class="card" data-aos="fade-up" data-aos-delay="80">
-          <h3>Early conditions</h3>
-          <p>Launch packs tailored to professionals and forward-thinking studios.</p>
+          <h3>Rutina más simple</h3>
+          <p>Menos fricción: menos pasos, menos elementos, más foco en el trabajo.</p>
         </div>
         <div class="card" data-aos="fade-up" data-aos-delay="160">
-          <h3>Deployment options</h3>
-          <p>
-            During the early program you'll be able to test both the integrated
-            vINKo System pen and the external module for compatible machines, and
-            choose what best fits your workflow and investment plan.
-          </p>
+          <h3>Más control</h3>
+          <p>Diseñado para aportar consistencia operativa: preparación y suministro con intención, no improvisación.</p>
         </div>
+      </div>
+    </section>
+
+    <!-- FOUNDERS (replanteado para no prometer uso en estudio) -->
+    <section id="founders" class="section alt" data-aos="zoom-in">
+      <div class="section-head">
+        <div class="pill subtle">Founder Council</div>
+        <h2>Estudios y artistas: ayudadme a diseñarlo bien</h2>
+        <p>
+          Busco un grupo reducido para <strong>co-diseño</strong> (feedback, prioridades, flujo real).
+          <strong>No es un programa de “probar en clientes”</strong>: es una fase de concepto y validación de necesidades.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card" data-aos="fade-up" data-aos-delay="0">
+          <h3>Acceso prioritario</h3>
+          <p>Serás de los primeros en recibir avances, decisiones de diseño y el aviso de Kickstarter (24-48h antes).</p>
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="80">
+          <h3>Edición Founder</h3>
+          <p>Cuando exista un producto final para producción, podrás optar a packs Founder (limitados y numerados) con condiciones especiales.</p>
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="160">
+          <h3>Tu voz cuenta</h3>
+          <p>Votarás prioridades (workflow, limpieza, consumibles, ergonomía).</p>
+        </div>
+      </div>
+
       <div class="cta-band">
         <div>
-          <h3>Join vINKo System</h3>
-          <p>Get priority for beta, pre-order and studio packs.</p>
+          <h3>Únete al Founder Council</h3>
+          <p>Si eres estudio/artista, tu experiencia puede definir el producto final.</p>
         </div>
-        <a class="btn primary" href="#contact">Apply</a>
-      </div>
+        <a class="btn primary" href="#contact">Quiero entrar</a>
       </div>
     </section>
 
@@ -280,38 +281,96 @@
     <section id="roadmap" class="section">
       <div class="section-head">
         <h2>Roadmap</h2>
-        <p>From prototype to an integrated machine platform ready for the market.</p>
+        <p>De concepto a un producto profesional apto para estudio (fabricación + validación).</p>
       </div>
 
       <div class="timeline">
         <div class="step">
           <span class="step-dot"></span>
           <div>
-            <h4>Current phase</h4>
-            <p>Community building, investment, founding studios and industrial design freeze.</p>
+            <h4>Fase actual</h4>
+            <p>Concepto, renders/animaciones, entrevistas con estudios y cierre de requisitos reales.</p>
           </div>
         </div>
         <div class="step">
           <span class="step-dot"></span>
           <div>
-            <h4>Pre-series</h4>
-            <p>First controlled manufacturing run and quality validations.</p>
+            <h4>Kickstarter</h4>
+            <p>Apoyar el concepto para obtener finaciación de una producción limitada</p>
           </div>
         </div>
         <div class="step">
           <span class="step-dot"></span>
           <div>
-            <h4>Initial production</h4>
-            <p>Batch deliveries to early adopters and studios.</p>
+            <h4>Diseño para fabricación (DFM)</h4>
+            <p>Materiales, tolerancias, ensamblaje y definición del sistema para fabricación profesional.</p>
           </div>
         </div>
         <div class="step">
           <span class="step-dot"></span>
           <div>
-            <h4>Scale-up</h4>
-            <p>Commercial expansion and potential strategic agreements.</p>
+            <h4>Prototipos industriales</h4>
+            <p>Iteraciones con procesos adecuados.</p>
           </div>
         </div>
+        <div class="step">
+          <span class="step-dot"></span>
+          <div>
+            <h4>Validación higiene / seguridad</h4>
+            <p>Definición de procedimientos, pruebas y requisitos para operar en entorno de estudio.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-dot"></span>
+          <div>
+            <h4>producción inicial</h4>
+            <p>Lanzamiento, fabricación del primer lote y prioridad para Founder Council / early adopters.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-micro" style="margin-top:16px;">
+        Las fechas se publicarán cuando el roadmap técnico y de fabricación esté cerrado. Apúntate para recibir la actualización.
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section alt" data-aos="fade-up">
+      <div class="section-head">
+        <h2>Preguntas frecuentes</h2>
+        <p>Respuestas claras para esta fase (concepto + prelaunch).</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>¿Puedo comprarlo ya?</h3>
+          <p>No todavía. Ahora es fase de concepto y validación. El objetivo es lanzar en Kickstarter cuando el diseño esté listo para fabricación profesional.</p>
+        </div>
+        <div class="card">
+          <h3>¿Se puede usar en un estudio hoy?</h3>
+          <p>No. Un concepto/prototipo no apto no debe entrar en un entorno higiénico real. La prioridad es hacerlo bien: materiales, procesos y validación.</p>
+        </div>
+        <div class="card">
+          <h3>¿Qué es el Founder Council?</h3>
+          <p>Un grupo reducido para co-diseñar: feedback, prioridades y workflow. No es “probar con clientes”.</p>
+        </div>
+        <div class="card">
+          <h3>¿Cuándo sale el Kickstarter?</h3>
+          <p>Cuando el roadmap de fabricación y validación esté definido. Si te apuntas, te aviso antes que a nadie.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section" data-aos="fade-up">
+      <div class="section-head">
+        <h2>Sobre mí</h2>
+        <p>
+          Soy <strong>Vicente Pina</strong>. Soy un artista del tatuaje con años de experiencia y aparte soy ingeniero electrónico. 
+          En 2023 tuve mi primera idea de concepto de maquina de tatuar integrada e inicié el proceso para patentarla.
+          Ahora con esa patente estoy construyendo vINKo System para resolver un problema que se repite en estudios:
+          desperdicio, limpieza y control. Si eres artista o estudio, tu experiencia puede marcar la diferencia.
+        </p>
       </div>
     </section>
 
@@ -319,29 +378,26 @@
     <section id="contact" class="section alt">
       <div class="section-split">
         <div>
-          <div class="pill subtle">Contact</div>
-          <h2>Be the first to get what's next</h2>
+          <div class="pill subtle">Lista de espera</div>
+          <h2>Recibe el aviso del Kickstarter (y avances antes que nadie)</h2>
           <p>
-            If you're a company interested in how to implement the system
-            in your machines, an artist or studio wanting the most innovative
-            equipment on the market, or a distributor looking to add the system
-            to your catalogue and get priority access to vINKo System, leave your details.
-            This list is not public and is used only for communication about the project.
+            Únete a la lista para recibir: avances, renders/animaciones, resultados de encuestas y el aviso de lanzamiento.
+            Si eres estudio/artista, marca tu rol para optar al <strong>Founder Council</strong>.
           </p>
+
           <div class="micro">
-            * We don't share internal technical information at this public stage.
+            <strong>Importante:</strong> este proyecto está en fase conceptual. No se comparte ingeniería interna en abierto y no es un producto apto para estudio todavía.
           </div>
         </div>
 
         <form class="form" id="earlyForm" autocomplete="on">
-          <!-- All editable fields go here -->
           <div class="form-fields" id="formFields">
             <label>
-              Name *
+              Nombre *
               <input
                 type="text"
                 name="name"
-                placeholder="Your name"
+                placeholder="Tu nombre"
                 autocomplete="name"
                 required
                 minlength="2"
@@ -353,49 +409,48 @@
               <input
                 type="email"
                 name="email"
-                placeholder="you@email.com"
+                placeholder="tu@email.com"
                 autocomplete="email"
                 required
               />
             </label>
 
             <label>
-              I am... *
+              Soy... *
               <select name="role" id="roleSelect" required>
-                <option value="">Select</option>
-                <option value="Artista">Artist</option>
-                <option value="Estudio">Studio</option>
-                <option value="Distribuidor">Distributor</option>
-                <option value="Otro">Other</option>
+                <option value="">Selecciona</option>
+                <option value="Artista">Artista</option>
+                <option value="Estudio">Estudio</option>
+                <option value="Distribuidor">Distribuidor</option>
+                <option value="Otro">Otro</option>
               </select>
             </label>
 
-            <!-- Socials only if ARTIST -->
+            <!-- Redes SOLO si es ARTISTA (mantengo tu lógica) -->
             <div id="socialsWrap" class="hidden">
               <label>
-                Socials (IG/TikTok/etc.) (optional)
+                Redes (IG/TikTok/etc.) (opcional)
                 <input
                   type="text"
                   name="socials"
-                  placeholder="@youruser or link"
+                  placeholder="@tuusuario o link"
                   autocomplete="off"
                 />
               </label>
             </div>
 
             <label>
-              Country (optional)
+              País (opcional)
               <input
                 type="text"
                 name="country"
-                placeholder="Spain"
+                placeholder="España"
                 autocomplete="country-name"
               />
             </label>
 
-            <!-- Optional phone -->
             <label>
-              Phone (optional)
+              Teléfono (opcional)
               <input
                 type="tel"
                 name="phone"
@@ -405,28 +460,28 @@
             </label>
 
             <label>
-              Message (optional)
+              Mensaje (opcional)
               <textarea
                 name="message"
                 rows="4"
-                placeholder="What would you like to test or achieve with vINKo System?"
+                placeholder="¿Eres estudio o artista? ¿Qué te gustaría que resolviera este sistema en tu workflow?"
               ></textarea>
             </label>
 
             <button class="btn primary full" id="submitBtn" type="submit">
-              Join the list
+              Unirme
             </button>
 
             <p class="form-note" id="formNote">
-              Early access to the next-generation integrated machine vINKo System.
+              Sin spam. 1-2 emails/mes. Aviso de Kickstarter + avances.
             </p>
           </div>
 
-          <!-- Success panel -->
+          <!-- Panel de éxito -->
           <div class="success-panel hidden" id="successPanel">
-            <h3>Done!</h3>
+            <h3>¡Hecho!</h3>
             <p>
-              Your form was sent successfully. Thank you for trusting <strong>vINKo System</strong>.
+              Formulario enviado con éxito. Gracias por apoyar <strong>vINKo System</strong>.
             </p>
           </div>
         </form>
@@ -435,61 +490,68 @@
   </main>
 
   <footer class="footer">
-  <div class="footer-inner">
-    <div class="brand small">
-      <span class="brand-dot"></span><span>vINKo System</span>
-    </div>
-
-    <div class="footer-links">
-      <a href="#vision">Vision</a>
-      <a href="#platform">The machine</a>
-      <a href="#ecosystem">Ecosystem</a>
-      <a href="#founders">Studios</a>
-      <a href="#roadmap">Roadmap</a>
-    </div>
-
-    <div class="footer-right">
-      <!-- Social links -->
-      <div class="social-links" aria-label="vINKo System social media">
-        <a href="https://www.linkedin.com/company/vinko-system" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <img src="assets/img/linkedin.svg" alt="LinkedIn" class="social-icon" />
-        </a>
-        <a href="https://www.instagram.com/vinko.system" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <img src="assets/img/instagram.svg" alt="Instagram" class="social-icon" />
-        </a>
-        <a href="https://www.tiktok.com/@vinko.tech" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-          <img src="assets/img/tiktok.svg" alt="TikTok" class="social-icon" />
-        </a>
+    <div class="footer-inner">
+      <div class="brand small">
+        <span class="brand-dot"></span><span>vINKo System</span>
       </div>
-      <div class="lang-switch small" aria-label="Site language">
-        <a class="lang" href="index.html" aria-label="Switch to Spanish">
-          <span class="flag">🇪🇸</span><span class="code">ES</span>
-        </a>
-        <button class="lang current" type="button" aria-label="Current language: English">
-          <span class="flag">🇬🇧</span><span class="code">EN</span>
-        </button>
+
+      <div class="footer-links">
+        <a href="#problem">Problema</a>
+        <a href="#concept">La idea</a>
+        <a href="#benefits">Beneficios</a>
+        <a href="#founders">Founder Council</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Lista</a>
       </div>
-      <div class="footer-meta">
-        © <span id="year"></span> vINKo System. All rights reserved.
+
+      <div class="footer-right">
+        <!-- Redes sociales -->
+        <div class="social-links" aria-label="Redes sociales de vINKo System">
+          <a href="https://www.linkedin.com/company/vinko-system" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <img src="assets/img/linkedin.svg" alt="LinkedIn" class="social-icon" />
+          </a>
+          <a href="https://www.instagram.com/vinko.system" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <img src="assets/img/instagram.svg" alt="Instagram" class="social-icon" />
+          </a>
+          <a href="https://www.tiktok.com/@vinko.tech" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+            <img src="assets/img/tiktok.svg" alt="TikTok" class="social-icon" />
+          </a>
+        </div>
+
+        <div class="lang-switch small" aria-label="Idioma del sitio">
+          <button class="lang current" type="button" aria-label="Idioma actual: español">
+            <span class="flag">🇪🇸</span><span class="code">ES</span>
+          </button>
+          <a class="lang" href="en.html" aria-label="Cambiar a inglés">
+            <span class="flag">🇬🇧</span><span class="code">EN</span>
+          </a>
+        </div>
+
+        <div class="footer-meta">
+          © <span id="year"></span> vINKo System. Todos los derechos reservados.
+        </div>
+
+        <div class="footer-meta" style="margin-top:6px;">
+          <a href="/privacy.html">Privacidad</a> · <a href="/cookies.html">Cookies</a> · <a href="#contact">Contacto</a>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
-
-
+  <!-- AOS JS -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       AOS.init({
-        duration: 700,      // animation duration
-        easing: "ease-out", // easing
-        offset: 80,         // how early it triggers
-        once: true          // animate only once
+        duration: 700,
+        easing: "ease-out",
+        offset: 80,
+        once: true
       });
     });
   </script>
 
-  <script src="main.js?v=1.0.4" defer></script>
+  <script src="main.js?v=1.0.5" defer></script>
 </body>
 </html>

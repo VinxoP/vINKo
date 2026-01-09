@@ -57,6 +57,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const data = Object.fromEntries(new FormData(form).entries());
+    data.lang = (document.documentElement.lang || "es").toUpperCase();
+
 
     try {
       const res = await fetch(API_URL, {
