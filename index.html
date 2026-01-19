@@ -1,5 +1,20 @@
 <!doctype html>
 <html lang="es">
+<body class="has-vk0-video">
+<!-- VIDEO FIJO DE FONDO (SIEMPRE VISIBLE) -->
+<div class="vk0-video-layer" aria-hidden="true">
+  <video
+    id="vk0-bg-video"
+    class="vk0-bg-video"
+    src="/assets/video/video_explosion.mp4"
+    preload="auto"
+    muted
+    playsinline
+    webkit-playsinline
+    poster="/assets/img/vk0_horizontal.png"
+  ></video>
+  <div class="vk0-video-shade"></div>
+</div>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -70,8 +85,8 @@
   </script>
 </head>
 
-<body>
-  <!-- Accesibilidad 
+<!--<body>
+  Accesibilidad 
   <a class="skip-link" href="#main">Saltar al contenido</a>-->
 
   <header class="header">

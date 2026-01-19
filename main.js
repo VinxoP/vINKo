@@ -104,3 +104,57 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+// === VK0 scroll-scrub (cerrada -> abierta -> cerrada) a lo largo de TODA la página ===
+(() => {
+  const video = document.getElementById("vk0-bg-video");
+  if (!video) return;
+
+  let duration = 0;
+  let rafId = null;
+
+  const clamp01 = (x) => Math.min(1, Math.max(0, x));
+  const triangleWave = (p) => (p <= 0.5 ? p * 2 : (1 - p) * 2);
+
+  function getPageProgress(){
+    const doc = document.documentElement;
+    const maxScroll = (doc.scrollHeight - window.innerHeight) || 1;
+    return clamp01(window.scrollY / maxScroll);
+  }
+
+  function tick(){
+    rafId = null;
+    if (!duration) return;
+
+    const p = getPageProgress();     // 0..1 por toda la página
+    const tri = triangleWave(p);     // 0..1..0
+    const targetTime = tri * duration;
+
+    // set directo para precisión
+    video.currentTime = targetTime;
+  }
+
+  function requestTick(){
+    if (rafId) return;
+    rafId = requestAnimationFrame(tick);
+  }
+
+  video.addEventListener("loadedmetadata", async () => {
+    duration = video.duration || 0;
+
+    // Truco Safari/iOS: “activar” frames para permitir scrubbing suave
+    try {
+      await video.play();
+      video.pause();
+    } catch(e) {
+      // si falla autoplay, no pasa nada: el scrubbing suele funcionar igual
+    }
+
+    video.currentTime = 0;
+    requestTick();
+  });
+
+  window.addEventListener("scroll", requestTick, { passive: true });
+  window.addEventListener("resize", requestTick);
+  window.addEventListener("touchmove", requestTick, { passive: true });
+})();
