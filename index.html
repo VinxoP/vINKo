@@ -128,34 +128,51 @@
 
         <div class="vk0-shade" aria-hidden="true"></div>
 
-        <div class="vk0-steps" aria-hidden="false">
-          <div class="vk0-step" data-start="0.02" data-end="0.22">
-            <div class="pill">Concepto patentado internacionalmente en desarrollo</div>
-            <h1>VK0</h1>
-            <p class="vk0-lead">Menos desperdicio. Más higiene. Más control.</p>
-          </div>
+        
+<div class="vk0-steps" aria-hidden="false">
+  <div class="vk0-step" data-start="0.02" data-end="0.26">
+    <div class="vk0-top">
+      <div class="pill">Concepto patentado internacionalmente en desarrollo</div>
+      <h1>VK0</h1>
+    </div>
+    <div class="vk0-bottom">
+      <p class="vk0-lead">Menos desperdicio. Más higiene. Más control.</p>
+    </div>
+  </div>
 
-          <div class="vk0-step" data-start="0.26" data-end="0.46">
-            <h2>Flujo de tinta más controlado</h2>
-            <p>Consistencia operativa sin preparar “por si acaso”.</p>
-          </div>
+  <div class="vk0-step" data-start="0.30" data-end="0.52">
+    <div class="vk0-top">
+      <h2>Flujo de tinta más controlado</h2>
+    </div>
+    <div class="vk0-bottom">
+      <p>Consistencia operativa sin preparar “por si acaso”.</p>
+    </div>
+  </div>
 
-          <div class="vk0-step" data-start="0.50" data-end="0.72">
-            <h2>Rutina más limpia</h2>
-            <p>Menos exposición y menos fricción en el workflow.</p>
-          </div>
+  <div class="vk0-step" data-start="0.56" data-end="0.78">
+    <div class="vk0-top">
+      <h2>Rutina más limpia</h2>
+    </div>
+    <div class="vk0-bottom">
+      <p>Menos exposición y menos fricción en el workflow.</p>
+    </div>
+  </div>
 
-          <div class="vk0-step" data-start="0.76" data-end="0.98">
-            <h2>¿Quieres ser de los primeros?</h2>
-            <p>Recibe avances y el aviso del Kickstarter antes que nadie.</p>
-            <div class="vk0-cta">
-              <a class="btn primary" href="#contact">Únete a la lista de espera</a>
-              <a class="btn ghost" href="en.html" aria-label="Go to English">EN</a>
-            </div>
-          </div>
-        </div>
+  <div class="vk0-step" data-start="0.82" data-end="0.98">
+    <div class="vk0-top">
+      <h2>¿Quieres ser de los primeros?</h2>
+    </div>
+    <div class="vk0-bottom">
+      <p>Recibe avances y el aviso del Kickstarter antes que nadie.</p>
+      <div class="vk0-cta">
+        <a class="btn primary" href="#contact">Únete a la lista de espera</a>
+        <a class="btn ghost" href="en.html" aria-label="Go to English">EN</a>
+      </div>
+    </div>
+  </div>
+</div>
 
-        <div class="vk0-scroll-hint" aria-hidden="true">
+<div class="vk0-scroll-hint" aria-hidden="true">
           <span class="vk0-mouse"></span>
           <span>Scroll</span>
         </div>
@@ -606,6 +623,7 @@
         el,
         start: parseFloat(el.dataset.start || '0'),
         end: parseFloat(el.dataset.end || '1'),
+        o: 0,
       }));
 
       const clamp01 = (x) => Math.min(1, Math.max(0, x));
@@ -630,6 +648,7 @@
 
       // Ajustes “feel”
       const easeVideo = 0.16;     // más bajo = más suave, más alto = más pegado
+      const easeText  = 0.30;     // velocidad de entrada/salida del texto (Apple-like)
       const epsilon = 1 / 45;     // no setear currentTime si el cambio es mínimo
 
       function progressInSection() {
@@ -653,10 +672,18 @@
 
         // Steps
         for (const s of steps) {
-          const o = windowFade(p, s.start, s.end, 0.10);
-          const y = (1 - o) * 18;
-          const blur = (1 - o) * 6;
-          const scale = 0.98 + (o * 0.02);
+          // Objetivo (según scroll) con ventana pequeña: aparece rápido, se mantiene, y se va rápido
+          const t = windowFade(p, s.start, s.end, 0.035);
+
+          // Suavizado para que, aunque el scroll “salte”, el texto transicione fluido
+          s.o += (t - s.o) * easeText;
+          if (Math.abs(t - s.o) < 0.002) s.o = t;
+
+          const o = s.o;
+          const y = (1 - o) * 10;
+          const blur = (1 - o) * 3.5;
+          const scale = 0.995 + (o * 0.005);
+
           s.el.style.opacity = o.toFixed(3);
           s.el.style.transform = `translateY(${y.toFixed(1)}px) scale(${scale.toFixed(3)})`;
           s.el.style.filter = `blur(${blur.toFixed(2)}px)`;
