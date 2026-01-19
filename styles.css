@@ -1101,3 +1101,74 @@ textarea{resize: vertical; min-height: 90px}
     background: #000;
   }
 }
+/* ===== VK0 Panels v2 (premium + ancho según texto) ===== */
+:root{
+  --vk0-text-max: 560px;                 /* ya lo usabas: ancho máximo */
+  --vk0-mx: clamp(18px, 6vw, 72px);      /* tu gutter lateral */
+}
+
+/* Asegura que los hijos no se estiren */
+.vk0-step{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* clave: panel no ocupa todo el ancho */
+  gap: 10px;
+}
+
+/* Panel base: ancho “contenido”, pero con límite y sin pegarse a bordes */
+.vk0-top,
+.vk0-bottom{
+  display: inline-block;
+  width: fit-content;
+  max-width: min(var(--vk0-text-max), calc(100vw - (var(--vk0-mx) * 2)));
+  box-sizing: border-box;
+
+  border-radius: 22px;
+  padding: 14px 16px;
+
+  /* Borde “premium” con gradient stroke */
+  border: 1px solid transparent;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.03)) padding-box,
+    linear-gradient(90deg, rgba(120,255,210,0.35), rgba(255,255,255,0.14)) border-box;
+
+  /* Glass */
+  backdrop-filter: blur(16px) saturate(1.15);
+  -webkit-backdrop-filter: blur(16px) saturate(1.15);
+
+  /* Profundidad */
+  box-shadow:
+    0 14px 42px rgba(0,0,0,0.45),
+    inset 0 1px 0 rgba(255,255,255,0.10);
+
+  color: rgba(255,255,255,0.92);
+}
+
+/* TOP: más compacto */
+.vk0-top{
+  border-radius: 18px;
+  padding: 12px 14px;
+}
+
+/* BOTTOM: más grande y con más presencia */
+.vk0-bottom{
+  border-radius: 26px;
+  padding: 18px 18px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04)) padding-box,
+    linear-gradient(90deg, rgba(120,255,210,0.40), rgba(255,255,255,0.16)) border-box;
+}
+
+/* Tipografía: bottom un pelín mayor */
+.vk0-bottom p{
+  margin: 0;
+  font-size: clamp(15px, 2.2vw, 19px);
+  line-height: 1.35;
+}
+
+/* Título (si lo metes dentro de vk0-top) */
+.vk0-top h2{
+  margin: 0;
+  font-size: clamp(18px, 3.6vw, 30px);
+  line-height: 1.05;
+}
