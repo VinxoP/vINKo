@@ -812,172 +812,77 @@ textarea{resize: vertical; min-height: 90px}
   }
 }
 
-/* ===== VK0 APPLE-LIKE SCROLL HERO ===== */
-.vk0-scroll-hero{
-  height: 340vh;            /* controla la duración de la escena al hacer scroll */
-  position: relative;
-  /* Evita que se vea el fondo (verde) durante el tramo de scroll del HERO */
-  background: #000;
-  isolation: isolate;
-}
-
-.vk0-sticky{
-  /* Pin robusto (JS aplica .is-fixed / .is-bottom) */
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  /* 100vh en desktop + variantes para móviles (Safari/Chrome) */
-  height: 100vh;
-  height: 100svh;
-  height: 100dvh;
+/* --- Video fijo detrás --- */
+.vk0-video-layer{
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
   overflow: hidden;
   background: #000;
-  z-index: 100;
 }
-
-.vk0-sticky.is-fixed{
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-.vk0-sticky.is-bottom{
-  position: absolute;
-  top: var(--vk0-bottom-top, 0px);
-  left: 0;
-}
-
-.vk0-scroll-video{
+.vk0-bg-video{
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  transform: translateZ(0);
 }
-
-.vk0-shade{
+.vk0-video-shade{
   position: absolute;
   inset: 0;
-  /* legibilidad estilo Apple: oscuro abajo + viñeta suave */
-  background:
-    radial-gradient(900px 600px at 50% 30%, rgba(0,0,0,0.15), rgba(0,0,0,0.55) 70%),
-    linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.65) 70%, rgba(0,0,0,0.85) 100%);
-  pointer-events: none;
+  background: rgba(0,0,0,.35);
 }
 
-.vk0-steps{
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: clamp(16px, 4vw, 52px);
-  text-align: center;
-  z-index: 2;
-}
-
-.vk0-step{
-  position: absolute;
-  max-width: 860px;
-  opacity: 0;
-  transform: translateY(18px) scale(0.98);
-  filter: blur(6px);
-  will-change: opacity, transform, filter;
-  pointer-events: none;
-}
-
-.vk0-step h1{
-  margin: 10px 0 10px;
-  font-size: clamp(40px, 6vw, 84px);
-  line-height: 1.02;
-  letter-spacing: 0.4px;
-}
-
-.vk0-step h2{
-  margin: 0 0 10px;
-  font-size: clamp(22px, 3.2vw, 44px);
-  line-height: 1.08;
-}
-
-.vk0-step p{
-  margin: 0 auto;
-  max-width: 56ch;
-  color: rgba(255,255,255,0.88);
-  font-size: clamp(15px, 1.4vw, 18px);
-}
-
-.vk0-lead{
-  font-size: clamp(16px, 1.8vw, 20px) !important;
-  color: rgba(255,255,255,0.92) !important;
-}
-
-.vk0-cta{
-  margin-top: 18px;
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* para poder clicar los botones cuando el step está activo */
-.vk0-step .btn{ pointer-events: auto; }
-
-.vk0-scroll-hint{
-  position: absolute;
-  left: 50%;
-  bottom: 18px;
-  transform: translateX(-50%);
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  z-index: 2;
-  color: rgba(255,255,255,0.75);
-  font-size: 12px;
-  letter-spacing: 0.6px;
-  text-transform: uppercase;
-  pointer-events: none;
-}
-
-.vk0-mouse{
-  width: 18px;
-  height: 28px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.5);
+/* --- Contenido por encima del vídeo --- */
+.header, main, .footer{
   position: relative;
+  z-index: 2;
 }
 
-.vk0-mouse::after{
-  content: "";
-  width: 3px;
-  height: 6px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.7);
-  position: absolute;
-  left: 50%;
-  top: 6px;
-  transform: translateX(-50%);
-  animation: vk0ScrollDot 1.4s infinite;
+/* --- Menú/header por encima de TODO --- */
+.header{
+  z-index: 9999 !important;
 }
 
-@keyframes vk0ScrollDot{
-  0%{ opacity: 0; transform: translateX(-50%) translateY(0); }
-  20%{ opacity: 1; }
-  70%{ opacity: 1; transform: translateX(-50%) translateY(8px); }
-  100%{ opacity: 0; transform: translateX(-50%) translateY(8px); }
+/* --- Transparencia del HERO (incluye clases AOS) --- */
+.has-vk0-video .hero,
+.has-vk0-video .hero.aos-init,
+.has-vk0-video .hero.aos-animate,
+.has-vk0-video .hero.aos-init.aos-animate{
+  background: transparent !important;
+  background-color: transparent !important;
 }
 
-/* Header siempre por encima */
-.header{ z-index: 9999; }
-
-/* Móvil: reduce un poco el “scroll length” de la escena */
-@media (max-width: 720px){
-  .vk0-scroll-hero{ height: 300vh; }
+.has-vk0-video .hero-bg{
+  background: transparent !important;
+  background-color: transparent !important;
+  opacity: 0 !important;
+  box-shadow: none !important;
 }
 
-/* Accesibilidad: reduce motion */
-@media (prefers-reduced-motion: reduce){
-  .vk0-scroll-hero{ height: 120vh; }
-  .vk0-sticky{ position: relative; height: auto; }
-  .vk0-scroll-hint{ display: none; }
+/* Secciones sin “lona” sólida detrás */
+.has-vk0-video .section,
+.has-vk0-video .footer{
+  background: transparent !important;
+  background-color: transparent !important;
 }
+
+/* “Glass” para paneles (incluye el bloque de texto del hero) */
+.card,
+.media-card,
+.cta-band,
+.timeline,
+.form,
+.section-head,
+.hero-content{
+  background: rgba(11, 15, 20, 0.60) !important;
+  border: 1px solid rgba(255,255,255,0.10) !important;
+  backdrop-filter: blur(10px);
+}
+
+/* Si alguna section alt mete fondo sólido */
+.section.alt{
+  background: transparent !important;
+  background-color: transparent !important;
+}
+html { scroll-behavior: smooth; }

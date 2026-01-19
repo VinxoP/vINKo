@@ -111,50 +111,77 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!video) return;
 
   let duration = 0;
-  let rafId = null;
+  let targetTime = 0;
+  let smoothedTime = 0;
+  let running = false;
+  let lastScrollY = -1;
+  let settleFrames = 0;
 
   const clamp01 = (x) => Math.min(1, Math.max(0, x));
   const triangleWave = (p) => (p <= 0.5 ? p * 2 : (1 - p) * 2);
 
-  function getPageProgress(){
+  function pageProgress(){
     const doc = document.documentElement;
     const maxScroll = (doc.scrollHeight - window.innerHeight) || 1;
     return clamp01(window.scrollY / maxScroll);
   }
 
-  function tick(){
-    rafId = null;
-    if (!duration) return;
-
-    const p = getPageProgress();     // 0..1 por toda la página
+  function updateTarget(){
+    const p = pageProgress();        // 0..1
     const tri = triangleWave(p);     // 0..1..0
-    const targetTime = tri * duration;
-
-    // set directo para precisión
-    video.currentTime = targetTime;
+    targetTime = tri * duration;     // 0..dur..0
   }
 
-  function requestTick(){
-    if (rafId) return;
-    rafId = requestAnimationFrame(tick);
+  function loop(){
+    if (!running) return;
+
+    // suavizado (cuanto mayor, más rápido responde; 0.10–0.18 suele ir bien)
+    smoothedTime += (targetTime - smoothedTime) * 0.14;
+
+    // evita micro-jitter cuando ya está casi clavado
+    if (Math.abs(targetTime - smoothedTime) < 0.015) {
+      smoothedTime = targetTime;
+      settleFrames++;
+    } else {
+      settleFrames = 0;
+    }
+
+    // aplicar tiempo
+    try { video.currentTime = smoothedTime; } catch(e) {}
+
+    // si no hay scroll nuevo y ya está estable, paramos el loop para no gastar CPU
+    const y = window.scrollY;
+    if (y === lastScrollY && settleFrames > 12) {
+      running = false;
+      return;
+    }
+    lastScrollY = y;
+
+    requestAnimationFrame(loop);
+  }
+
+  function kick(){
+    if (!duration) return;
+    updateTarget();
+    if (!running) {
+      running = true;
+      requestAnimationFrame(loop);
+    }
   }
 
   video.addEventListener("loadedmetadata", async () => {
     duration = video.duration || 0;
+    smoothedTime = 0;
+    targetTime = 0;
 
-    // Truco Safari/iOS: “activar” frames para permitir scrubbing suave
-    try {
-      await video.play();
-      video.pause();
-    } catch(e) {
-      // si falla autoplay, no pasa nada: el scrubbing suele funcionar igual
-    }
+    // “calienta” el vídeo (mejora en Safari)
+    try { await video.play(); video.pause(); } catch(e) {}
 
-    video.currentTime = 0;
-    requestTick();
+    kick();
   });
 
-  window.addEventListener("scroll", requestTick, { passive: true });
-  window.addEventListener("resize", requestTick);
-  window.addEventListener("touchmove", requestTick, { passive: true });
+  window.addEventListener("scroll", kick, { passive: true });
+  window.addEventListener("resize", kick);
+  window.addEventListener("touchmove", kick, { passive: true });
 })();
+
