@@ -1084,23 +1084,19 @@ textarea{resize: vertical; min-height: 90px}
 
 /* Rotar SOLO en móvil (y solo en portrait, por si el móvil se gira) */
 @media (max-width: 720px) and (orientation: portrait){
-  .vk0-scroll-canvas{
+  body:not(.page-vk0) .vk0-scroll-canvas{
     position: absolute;
     top: 50%;
     left: 50%;
-
-    /* al rotar 90°, intercambiamos ancho/alto:
-       ancho = alto del viewport, alto = ancho del viewport */
     width: calc(var(--vh, 1vh) * 100);
     height: 100vw;
-
     transform: translate(-50%, -50%) rotate(-90deg);
     transform-origin: center center;
-
     display: block;
     background: #000;
   }
 }
+
 /* ===== VK0 Panels v2 (premium + ancho según texto) ===== */
 :root{
   --vk0-text-max: 560px;                 /* ya lo usabas: ancho máximo */
@@ -1263,22 +1259,19 @@ textarea{resize: vertical; min-height: 90px}
 
 /* === FIX: en móvil portrait el canvas debe mandarlo TODO (centrado + rotación) === */
 @media (max-width: 720px) and (orientation: portrait){
-  .vk0-scroll-hero .vk0-scroll-canvas{
-    position: absolute !important;
-    inset: auto !important;          /* anula el inset:0 que lo “engancha” a la esquina */
-    top: 50% !important;
-    left: 50% !important;
-
-    width: calc(var(--vh, 1vh) * 100) !important;
-    height: 100vw !important;
-
-    transform: translate(-50%, -50%) rotate(-90deg) !important;
-    transform-origin: center center !important;
-
-    display: block !important;
+  body:not(.page-vk0) .vk0-scroll-canvas{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: calc(var(--vh, 1vh) * 100);
+    height: 100vw;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    transform-origin: center center;
+    display: block;
     background: #000;
   }
 }
+
 /* ===== INDEX: Cards "Explora el proyecto" (debajo del hero VK0) ===== */
 .vk0-scroll-hero + section.section.alt .grid-3 > .card{
   /* Glass uniforme (sin gradiente) */
