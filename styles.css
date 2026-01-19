@@ -1035,3 +1035,39 @@ textarea{resize: vertical; min-height: 90px}
   .vk0-scroll-hint{ gap: 0; }
   .vk0-scroll-hint::after{ content: "Desliza"; }
 }
+
+/* ===== VK0: márgenes (laterales + arriba + abajo) ===== */
+:root{
+  --vk0-mx: clamp(18px, 6vw, 80px);   /* margen lateral */
+  --vk0-my-top: clamp(16px, 4vh, 72px);   /* margen superior */
+  --vk0-my-bottom: clamp(18px, 5vh, 80px);/* margen inferior */
+  --vk0-text-max: 560px;             /* ancho máximo del bloque */
+}
+
+/* Overlay de textos (contenedor) */
+.vk0-steps{
+  padding-left: var(--vk0-mx) !important;
+  padding-right: var(--vk0-mx) !important;
+}
+
+/* Grupo superior */
+.vk0-steps.top{
+  padding-top: calc(var(--vk0-my-top) + env(safe-area-inset-top, 0px)) !important;
+}
+
+/* Grupo inferior */
+.vk0-steps.bottom{
+  padding-bottom: calc(var(--vk0-my-bottom) + env(safe-area-inset-bottom, 0px)) !important;
+}
+
+/* Cada bloque de texto */
+.vk0-step{
+  max-width: var(--vk0-text-max);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* El “SCROLL” también con margen inferior seguro */
+.vk0-scroll-hint{
+  bottom: calc(var(--vk0-my-bottom) + env(safe-area-inset-bottom, 0px)) !important;
+}
