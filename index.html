@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
   <title>vINKo System — Menos desperdicio. Más higiene. Más control.</title>
   <meta name="description" content="vINKo System es un concepto en desarrollo rumbo a Kickstarter para mejorar el flujo de trabajo de tinta en tatuaje/PMU: menos desperdicio, más higiene y más control. Únete a la lista de espera o al Founder Council." />
@@ -569,16 +569,14 @@
     window.addEventListener('DOMContentLoaded', () => {
       const section = document.querySelector('.vk0-scroll-hero');
       const video = document.getElementById('vk0-scroll-video');
-      if (!section || !video) return;
 
-      // ---- VIEWPORT FIX (móvil) ----
-      // En iOS/Android, 100vh puede incluir barras del navegador y desplazar overlays.
-      // Usamos --vh para tener una altura real y posicionar bien el hint.
+      // Fix 100vh en móvil (barras dinámicas)
       const setVH = () => {
         document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
       };
       setVH();
       window.addEventListener('resize', setVH);
+      if (!section || !video) return;
 
       // ---- PIN ROBUSTO (tipo Apple) ----
       // En algunos layouts/browsers, 'position: sticky' puede fallar por stacking/overflow.

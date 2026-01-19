@@ -973,37 +973,43 @@ textarea{resize: vertical; min-height: 90px}
 /* Móvil: reduce un poco el “scroll length” de la escena */
 @media (max-width: 720px){
   .vk0-scroll-hero{ height: 300vh; }
+}
 
-  /* En móvil, evita el recorte (zoom) y muestra la máquina completa */
+/* Accesibilidad: reduce motion */
+@media (prefers-reduced-motion: reduce){
+  .vk0-scroll-hero{ height: 120vh; }
+  .vk0-sticky{ position: relative; height: auto; }
+  .vk0-scroll-hint{ display: none; }
+}
+
+
+/* ===== VK0 MOBILE FIX (no crop + safe areas) ===== */
+@media (max-width: 720px){
+  /* Altura real en móvil (JS setea --vh) */
+  .vk0-sticky{ height: calc(var(--vh, 1vh) * 100); }
+
+  /* En móvil, evita el zoom/corte: muestra el vídeo completo */
   .vk0-scroll-video{
     object-fit: contain;
     object-position: center;
     background: #000;
   }
 
-  /* Altura real de viewport en iOS/Chrome móvil (JS setea --vh) */
-  .vk0-sticky{
-    height: calc(var(--vh, 1vh) * 100);
+  /* Que el hint no se meta bajo la barra/home indicator */
+  .vk0-scroll-hint{
+    bottom: calc(18px + env(safe-area-inset-bottom, 0px));
   }
 
-  /* Ajustes de layout para textos */
-  .vk0-step{ max-width: 92vw; }
-  .vk0-step p{ max-width: 44ch; }
-
-  /* Hint: respeta safe-area para que no quede cortado */
-  .vk0-scroll-hint{
-    bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+  /* Un poco más de aire abajo para textos */
+  .vk0-steps{
+    padding-bottom: calc(clamp(16px, 4vw, 52px) + env(safe-area-inset-bottom, 0px));
   }
 }
-/* En pantallas táctiles, mejor 'Desliza' que icono de ratón */
+
+/* En táctil, mejor “Desliza” que mouse+scroll */
 @media (hover: none) and (pointer: coarse){
   .vk0-mouse{ display: none; }
   .vk0-scroll-hint span:last-child{ display: none; }
-  .vk0-scroll-hint::after{ content: 'Desliza'; }
-}
-/* Accesibilidad: reduce motion */
-@media (prefers-reduced-motion: reduce){
-  .vk0-scroll-hero{ height: 120vh; }
-  .vk0-sticky{ position: relative; height: auto; }
-  .vk0-scroll-hint{ display: none; }
+  .vk0-scroll-hint{ gap: 0; }
+  .vk0-scroll-hint::after{ content: "Desliza"; }
 }
