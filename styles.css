@@ -1,17 +1,17 @@
 :root{
   /* Fondo general gris que se oscurece */
-  --bg: #004225;    /* gris medio */
-  --bg-2:#1f1b24;   /* gris muy oscuro */
+  --bg: #000000;    /* gris medio */
+  --bg-2:#000000;   /* gris muy oscuro */
 
   /* Paneles / cards en rojo oscuro */
   --panel-2: #004225;   /* rojo vino muy oscuro */
-  --panel:#1f1b24;      /* gris violáceo oscuro */
+  --panel:#000000;      /* gris violáceo oscuro */
 
   --text:#f6f7fb;
   --muted:#b8beca;
 
   --accent:#9cf;
-  --accent-2:#dd6090;
+  --accent-2:#000000;
   --line: rgba(255,255,255,0.08);
   --shadow: 0 10px 30px rgba(0,0,0,0.35);
   --radius: 20px;
@@ -1421,4 +1421,18 @@ body{
   }
   .nav-toggle .nav-toggle-bars{ display: none !important; }
   .nav-toggle .nav-toggle-label{ font-weight: 600; letter-spacing: .2px; }
+}
+/* ===== FIX: todo debajo del header fijo (VK0 + anchors) ===== */
+:root{ --header-offset: 76px; }          /* desktop */
+@media (max-width: 980px){
+  :root{ --header-offset: 68px; }        /* móvil */
+}
+
+/* Cuando saltas a #secciones, que no queden tapadas por el header */
+html{ scroll-padding-top: calc(var(--header-offset) + 12px); }
+section[id]{ scroll-margin-top: calc(var(--header-offset) + 12px); }
+
+/* VK0 overlay (cards/paneles): baja el bloque superior para que no lo tape el header */
+.vk0-top{
+  top: calc(var(--header-offset) + var(--vk0-my-top) + env(safe-area-inset-top, 0px)) !important;
 }
