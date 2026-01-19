@@ -1314,7 +1314,7 @@ textarea{resize: vertical; min-height: 90px}
 /* Zoom de la animación (solo desktop) */
 @media (min-width: 721px){
   .vk0-scroll-hero .vk0-scroll-canvas{
-    transform: scale(1.5) !important;
+    transform: scale(1.1) !important;
     transform-origin: center center !important;
   }
 }
