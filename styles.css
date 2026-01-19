@@ -1259,7 +1259,7 @@ textarea{resize: vertical; min-height: 90px}
 
 /* === FIX: en móvil portrait el canvas debe mandarlo TODO (centrado + rotación) === */
 @media (max-width: 720px) and (orientation: portrait){
-  body:not(.page-vk0) .vk0-scroll-canvas{
+  body:not(.page-vk0, .page-system) .vk0-scroll-canvas{
     position: absolute;
     top: 50%;
     left: 50%;
