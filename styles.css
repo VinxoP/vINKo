@@ -981,3 +981,16 @@ textarea{resize: vertical; min-height: 90px}
   .vk0-sticky{ position: relative; height: auto; }
   .vk0-scroll-hint{ display: none; }
 }
+
+/* ===== VK0: encuadre en móvil (mostrar el vídeo completo) ===== */
+@media (max-width: 720px){
+  .vk0-scroll-video{
+    object-fit: contain;          /* clave: no recorta */
+    object-position: center;      /* centrado */
+    background: #000;             /* bandas negras si sobran */
+  }
+
+  /* (opcional) un pelín más de aire para textos en móvil */
+  .vk0-step{ max-width: 92vw; }
+  .vk0-step p{ max-width: 44ch; }
+}
