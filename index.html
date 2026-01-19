@@ -153,7 +153,7 @@
             </div>
           </div>
 
-          <div class="vk0-step" data-start="0.76" data-end="0.98">
+          <div class="vk0-step" data-start="0.76" data-end="0.98" data-hold="1">
             <div class="vk0-top">
               <h2>¿Quieres ser de los primeros?</h2>
             </div>
@@ -174,11 +174,10 @@
       </div>
     </section>
 
-    <!-- DESPUÉS DE LA EXPLOSIÓN: solo navegación a páginas -->
+    <!-- DESPUÉS DE LA EXPLOSIÓN: solo navegación a páginas 
     <section class="section alt" data-aos="fade-up">
       <div class="section-head">
         <h2>Explora el proyecto</h2>
-        <p>Páginas independientes (rápidas y limpias). Aquí solo te llevo al punto.</p>
       </div>
 
       <div class="grid-3">
@@ -245,7 +244,7 @@
         <div style="display:flex; gap:10px; flex-wrap:wrap;">
           <a class="btn primary" href="lista.html">Lista de espera</a>
         </div>
-      </div>
+      </div>-->
 
       <!-- Placeholder oculto por compatibilidad si tu main.js espera #earlyForm -->
       <form id="earlyForm" class="hidden" aria-hidden="true"></form>
@@ -394,7 +393,10 @@
 
       const renderSteps = (p) => {
         for (const s of steps) {
-          const o = windowFade(p, s.start, s.end, 0.08);
+          const hold = s.el.dataset.hold === '1';
+          const o = hold
+          ? smoothstep(s.start, s.start + 0.08, p)         // aparece y se queda
+          : windowFade(p, s.start, s.end, 0.08);           // comportamiento normal
           const y = (1 - o) * 16;
           const blur = (1 - o) * 5;
           const scale = 0.985 + (o * 0.015);

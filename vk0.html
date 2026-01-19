@@ -44,7 +44,7 @@
   <meta name="theme-color" content="#0b0f14">
 </head>
 
-<body>
+<body class="page-vk0">
   <header class="header">
     <a class="brand" href="index.html" aria-label="Ir al inicio">
       <span class="brand-dot"></span>
@@ -101,13 +101,8 @@
         <div class="vk0-steps" aria-hidden="false">
         <!-- Step 1 -->
         <div class="vk0-step" data-start="0.02" data-end="0.28">
-          <div class="vk0-top">
-            <div class="pill">VK0 — 360º</div>
-            <h1>vINKo&nbsp;System</h1>
-          </div>
-          <div class="vk0-bottom">
-            <p class="vk0-lead">Vista 360º del concepto.</p>
-          </div>
+          <div class="vk0-top"><h1>VK0</h1></div>
+          <div class="vk0-bottom"><p>VIsta 360º del concepto.</p></div>
         </div>
 
         <!-- Step 2 -->
@@ -117,21 +112,16 @@
         </div>
 
         <!-- Step 3 -->
-        <div class="vk0-step" data-start="0.62" data-end="0.88">
-          <div class="vk0-top"><h2>Listo para conocer más</h2></div>
+        <div class="vk0-step" data-start="0.62" data-end="0.88" data-hold="1">
+          <div class="vk0-top"><h2>¿Listo para conocer más?</h2></div>
           <div class="vk0-bottom">
-            <p>Apúntate y te aviso cuando haya novedades reales.</p>
+            <p>Apúntate</p>
             <div class="vk0-cta">
               <a class="btn primary" href="lista.html">Lista de espera</a>
-              <a class="btn ghost" href="founder-council.html">Founder Council</a>
             </div>
           </div>
         </div>
       </div>
-        <div class="vk0-scroll-hint" aria-hidden="true">
-          <span class="vk0-mouse"></span>
-          <span>Scroll</span>
-        </div>
       </div>
     </section>
 
@@ -282,7 +272,10 @@
 
       const renderSteps = (p) => {
         for (const s of steps) {
-          const o = windowFade(p, s.start, s.end, 0.08);
+          const hold = s.el.dataset.hold === '1';
+          const o = hold
+          ? smoothstep(s.start, s.start + 0.08, p)         // aparece y se queda
+          : windowFade(p, s.start, s.end, 0.08);           // comportamiento normal
           const y = (1 - o) * 16;
           const blur = (1 - o) * 5;
           const scale = 0.985 + (o * 0.015);
