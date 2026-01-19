@@ -62,11 +62,6 @@
       <nav class="nav" aria-label="Navegación principal">
         <a href="vk0.html">VK0</a>
         <a href="vinkosystem.html">vINKo System</a>
-        <a href="problema.html">Problema</a>
-        <a href="idea.html">La idea</a>
-        <a href="beneficios.html">Beneficios</a>
-        <a href="founder-council.html">Founder Council</a>
-        <a href="roadmap.html">Roadmap</a>
         <a href="faq.html">FAQ</a>
         <a href="sobre-mi.html">Sobre mí</a>
         <a href="lista.html" class="btn primary">Lista de espera</a>
@@ -86,7 +81,7 @@
 
   <main id="main">
     <!-- HERO (explosión Apple-like) -->
-    <section id="top" class="vk0-scroll-hero" aria-label="VK0 scroll animation">
+    <section id="top" class="vk0-scroll-hero" aria-label="vINKo System scroll animation" data-scroll-mult="3" data-fps="50" data-fade-sec="0.45">
       <div class="vk0-sticky">
         <canvas
           id="vk0-seq"
@@ -100,35 +95,46 @@
         <div class="vk0-shade" aria-hidden="true"></div>
 
         <div class="vk0-steps" aria-hidden="false">
-        <!-- Step 1 -->
-        <div class="vk0-step" data-start="0.02" data-end="0.28">
-          <div class="vk0-top"><h1>VK0</h1></div>
-          <div class="vk0-bottom"><p>VIsta 360º del concepto.</p></div>
-        </div>
+          <!-- Step 1 -->
+          <div class="vk0-step" data-at="0" data-for="1.7">
+            <div class="vk0-top"><h1>Cómo Funciona</h1></div>
+            <div class="vk0-bottom"><p>vINKo System, en 4 pasos.</p></div>
+          </div>
 
-        <!-- Step 2 -->
-        <div class="vk0-step" data-start="0.32" data-end="0.58">
-          <div class="vk0-top"><h2>Diseño integrado</h2></div>
-          <div class="vk0-bottom"><p>Una máquina pensada para encajar con el sistema.</p></div>
-        </div>
+          <!-- Step 2 -->
+          <div class="vk0-step" data-at="2" data-for="2.6">
+            <div class="vk0-top"><h2>Introducimos Cartucho</h2></div>
+            <div class="vk0-bottom"><p>Preparación rápida y ordenada.</p></div>
+          </div>
 
-        <!-- Step 3 -->
-        <div class="vk0-step" data-start="0.62" data-end="0.88" data-hold="1">
-          <div class="vk0-top"><h2>¿Listo para conocer más?</h2></div>
-          <div class="vk0-bottom">
-            <p>Apúntate</p>
-            <div class="vk0-cta">
-              <a class="btn primary" href="lista.html">Lista de espera</a>
+          <!-- Step 3 -->
+          <div class="vk0-step" data-at="5" data-for="3.4">
+            <div class="vk0-top"><h2>Activamos el sistema</h2></div>
+            <div class="vk0-bottom"><p>Listo para trabajar con “lo justo”.</p></div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="vk0-step" data-at="9" data-for="3.4">
+            <div class="vk0-top"><h2>Tatuamos</h2></div>
+            <div class="vk0-bottom"><p>Más control, menos interrupciones.</p></div>
+          </div>
+
+          <!-- Step 5 (Final) -->
+          <div class="vk0-step" data-at="end" data-for="999" data-hold="1">
+            <div class="vk0-top"><h2>Así de sencillo, ¿te apuntas?</h2></div>
+            <div class="vk0-bottom">
+              <p>Entra en la lista para recibir el aviso primero.</p>
+              <div class="vk0-cta">
+                <a class="btn primary" href="lista.html">Lista de espera</a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
       </div>
     </section>
 
       <!-- Placeholder oculto por compatibilidad si tu main.js espera #earlyForm -->
       <form id="earlyForm" class="hidden" aria-hidden="true"></form>
-    </section>
   </main>
 
   <footer class="footer">
@@ -211,6 +217,16 @@
       };
       setVH();
 
+      // Ajuste: secuencia más larga => más scroll para que no vaya demasiado rápido
+      const scrollMult = Math.max(1, parseFloat(section.dataset.scrollMult || '1') || 1);
+      let baseSectionH = null;
+      const applyScrollMult = () => {
+        if (baseSectionH === null) baseSectionH = section.offsetHeight;
+        const baseline = Math.max(baseSectionH, window.innerHeight * 3);
+        section.style.height = `${Math.round(baseline * scrollMult)}px`;
+      };
+      applyScrollMult();
+
       // ---- PIN ROBUSTO (tipo Apple) ----
       let headerH = 0;
       let start = 0;
@@ -247,17 +263,48 @@
       window.addEventListener('scroll', updatePin, { passive: true });
       window.addEventListener('resize', () => {
         setVH();
+        applyScrollMult();
         recalc();
         updatePin();
         if (canvas) resizeCanvas();
       }, { passive: true });
-
       // ---- TEXTO (steps) ----
-      const steps = Array.from(section.querySelectorAll('.vk0-step')).map(el => ({
-        el,
-        start: parseFloat(el.dataset.start || '0'),
-        end: parseFloat(el.dataset.end || '1'),
-      }));
+      // Control de textos por SEGUNDOS (data-at/data-for). Mantiene compatibilidad con data-start/data-end.
+      const stepEls = Array.from(section.querySelectorAll('.vk0-step'));
+      let steps = [];
+      let stepFade = 0.08;
+
+      const buildSteps = () => {
+        const fps = parseFloat(section.dataset.fps || '50') || 50;
+        const framesFromDataset = canvas ? parseInt(canvas.dataset.frames || '0', 10) : 0;
+        const frames = (framesFromDataset && framesFromDataset > 0) ? framesFromDataset : totalFrames;
+        const durationSec = (frames && frames > 0) ? (frames / fps) : 1;
+
+        const fadeSec = parseFloat(section.dataset.fadeSec || '0.45') || 0.45;
+        stepFade = Math.min(0.08, Math.max(0.012, clamp01(fadeSec / durationSec)));
+
+        steps = stepEls.map(el => {
+          // Compatibilidad: porcentajes (0..1)
+          if (el.dataset.start && el.dataset.end) {
+            return { el, start: parseFloat(el.dataset.start || '0'), end: parseFloat(el.dataset.end || '1') };
+          }
+
+          const atRaw = (el.dataset.at || '0').trim().toLowerCase();
+          const forSecRaw = parseFloat(el.dataset.for || '2');
+          const forSec = Number.isFinite(forSecRaw) ? forSecRaw : 2;
+
+          let atSec = 0;
+          if (atRaw === 'end') atSec = Math.max(0, durationSec - 1.2);
+          else atSec = parseFloat(atRaw || '0') || 0;
+
+          const start = clamp01(atSec / durationSec);
+          const end = clamp01((atSec + forSec) / durationSec);
+          return { el, start, end };
+        });
+      };
+
+      buildSteps();
+
 
       const smoothstep = (a, b, x) => {
         const t = clamp01((x - a) / (b - a));
@@ -265,7 +312,7 @@
       };
 
       // Entrada/salida con transición breve pero “directa”
-      const windowFade = (p, start, end, fade = 0.08) => {
+      const windowFade = (p, start, end, fade = stepFade) => {
         const i = smoothstep(start, start + fade, p);
         const o = 1 - smoothstep(end - fade, end, p);
         return clamp01(i * o);
@@ -275,8 +322,8 @@
         for (const s of steps) {
           const hold = s.el.dataset.hold === '1';
           const o = hold
-          ? smoothstep(s.start, s.start + 0.08, p)         // aparece y se queda
-          : windowFade(p, s.start, s.end, 0.08);           // comportamiento normal
+          ? smoothstep(s.start, s.start + stepFade, p)         // aparece y se queda
+          : windowFade(p, s.start, s.end, stepFade);           // comportamiento normal
           const y = (1 - o) * 16;
           const blur = (1 - o) * 5;
           const scale = 0.985 + (o * 0.015);
@@ -403,6 +450,10 @@
         totalFrames = parseInt(canvas.dataset.frames || '0', 10);
         tplDesktop = canvas.dataset.desktop || '';
         tplMobile = canvas.dataset.mobile || '';
+
+        // Recalcula ventanas de texto (segundos -> progreso) según duración
+        buildSteps();
+        renderSteps(progressInSection());
 
         imgs = new Array(totalFrames + 1);
         loaded = new Array(totalFrames + 1).fill(false);
