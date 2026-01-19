@@ -571,6 +571,15 @@
       const video = document.getElementById('vk0-scroll-video');
       if (!section || !video) return;
 
+      // ---- VIEWPORT FIX (móvil) ----
+      // En iOS/Android, 100vh puede incluir barras del navegador y desplazar overlays.
+      // Usamos --vh para tener una altura real y posicionar bien el hint.
+      const setVH = () => {
+        document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+      };
+      setVH();
+      window.addEventListener('resize', setVH);
+
       // ---- PIN ROBUSTO (tipo Apple) ----
       // En algunos layouts/browsers, 'position: sticky' puede fallar por stacking/overflow.
       // Esto fuerza el "pin" mientras el scroll está dentro del tramo del HERO.
