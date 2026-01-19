@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const dw = iw * scale, dh = ih * scale;
     const dx = (cw - dw) / 2, dy = (ch - dh) / 2;
 
-    ctx.clearRect(0, 0, cw, ch);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.drawImage(img, dx, dy, dw, dh);
   }
 
