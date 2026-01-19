@@ -107,81 +107,129 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // === VK0 scroll-scrub (cerrada -> abierta -> cerrada) a lo largo de TODA la página ===
 (() => {
-  const video = document.getElementById("vk0-bg-video");
-  if (!video) return;
+  const canvas = document.getElementById("vk0-seq");
+  if (!canvas) return;
 
-  let duration = 0;
-  let targetTime = 0;
-  let smoothedTime = 0;
+  const ctx = canvas.getContext("2d", { alpha: false });
+  const totalFrames = parseInt(canvas.dataset.frames || "373", 10);
+
+  const tplDesktop = canvas.dataset.desktop;
+  const tplMobile  = canvas.dataset.mobile;
+
+  const isMobile = () => window.matchMedia("(max-width: 720px)").matches;
+  const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+
+  const frameUrl = (i) => {
+    const tpl = isMobile() ? tplMobile : tplDesktop;
+    const n = String(i).padStart(4, "0");
+    return tpl.replace("%04d", n);
+  };
+
+  function resizeCanvas() {
+    const dpr = Math.min(2, window.devicePixelRatio || 1);
+    const w = canvas.clientWidth;
+    const h = canvas.clientHeight;
+    canvas.width  = Math.round(w * dpr);
+    canvas.height = Math.round(h * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  function drawSmart(img) {
+    const cw = canvas.clientWidth, ch = canvas.clientHeight;
+    const iw = img.naturalWidth, ih = img.naturalHeight;
+
+    const contain = isMobile(); // móvil: sin recorte
+    const scale = contain ? Math.min(cw / iw, ch / ih) : Math.max(cw / iw, ch / ih);
+
+    const dw = iw * scale, dh = ih * scale;
+    const dx = (cw - dw) / 2, dy = (ch - dh) / 2;
+
+    ctx.clearRect(0, 0, cw, ch);
+    ctx.drawImage(img, dx, dy, dw, dh);
+  }
+
+  // Cache
+  const imgs = new Array(totalFrames + 1);
+  const loaded = new Array(totalFrames + 1).fill(false);
+
+  function loadFrame(i) {
+    if (i < 1 || i > totalFrames) return;
+    if (imgs[i]) return;
+    const img = new Image();
+    img.decoding = "async";
+    img.src = frameUrl(i);
+    imgs[i] = img;
+    img.onload = () => { loaded[i] = true; };
+  }
+
+  // Preload inicial (para que no aparezca negro)
+  for (let i = 1; i <= Math.min(40, totalFrames); i++) loadFrame(i);
+
+  function preloadWindow(center) {
+    const r = isMobile() ? 22 : 32; // más radio porque vas a 50fps
+    for (let i = center - r; i <= center + r; i++) loadFrame(i);
+  }
+
+  // Progreso dentro del hero pinned (usa altura de la sección)
+  const hero = document.querySelector(".vk0-scroll-hero");
+  function heroProgress() {
+    if (!hero) return 0;
+    const rect = hero.getBoundingClientRect();
+    const scrollable = hero.offsetHeight - window.innerHeight;
+    if (scrollable <= 1) return 0;
+    return clamp((-rect.top) / scrollable, 0, 1);
+  }
+
+  // Suavizado “Apple”
+  let current = 1;
+  let target  = 1;
   let running = false;
-  let lastScrollY = -1;
-  let settleFrames = 0;
 
-  const clamp01 = (x) => Math.min(1, Math.max(0, x));
-  const triangleWave = (p) => (p <= 0.5 ? p * 2 : (1 - p) * 2);
+  function tick() {
+    running = true;
+    current += (target - current) * 0.22; // sube a 0.28 si lo quieres más “directo”
 
-  function pageProgress(){
-    const doc = document.documentElement;
-    const maxScroll = (doc.scrollHeight - window.innerHeight) || 1;
-    return clamp01(window.scrollY / maxScroll);
-  }
+    const idx = clamp(Math.round(current), 1, totalFrames);
+    preloadWindow(idx);
 
-  function updateTarget(){
-    const p = pageProgress();        // 0..1
-    const tri = triangleWave(p);     // 0..1..0
-    targetTime = tri * duration;     // 0..dur..0
-  }
+    const img = imgs[idx];
+    if (img && (img.complete || loaded[idx])) drawSmart(img);
 
-  function loop(){
-    if (!running) return;
-
-    // suavizado (cuanto mayor, más rápido responde; 0.10–0.18 suele ir bien)
-    smoothedTime += (targetTime - smoothedTime) * 0.14;
-
-    // evita micro-jitter cuando ya está casi clavado
-    if (Math.abs(targetTime - smoothedTime) < 0.015) {
-      smoothedTime = targetTime;
-      settleFrames++;
+    if (Math.abs(target - current) > 0.02) {
+      requestAnimationFrame(tick);
     } else {
-      settleFrames = 0;
-    }
-
-    // aplicar tiempo
-    try { video.currentTime = smoothedTime; } catch(e) {}
-
-    // si no hay scroll nuevo y ya está estable, paramos el loop para no gastar CPU
-    const y = window.scrollY;
-    if (y === lastScrollY && settleFrames > 12) {
+      current = target;
       running = false;
-      return;
-    }
-    lastScrollY = y;
-
-    requestAnimationFrame(loop);
-  }
-
-  function kick(){
-    if (!duration) return;
-    updateTarget();
-    if (!running) {
-      running = true;
-      requestAnimationFrame(loop);
     }
   }
 
-  video.addEventListener("loadedmetadata", async () => {
-    duration = video.duration || 0;
-    smoothedTime = 0;
-    targetTime = 0;
+  function onScroll() {
+    const p = heroProgress();
+    target = 1 + p * (totalFrames - 1);
+    if (!running) requestAnimationFrame(tick);
+  }
 
-    // “calienta” el vídeo (mejora en Safari)
-    try { await video.play(); video.pause(); } catch(e) {}
-
-    kick();
+  // Cambiar entre secuencia desktop/mobile al cambiar breakpoint
+  const mq = window.matchMedia("(max-width: 720px)");
+  mq.addEventListener("change", () => {
+    for (let i = 1; i <= totalFrames; i++) { imgs[i] = null; loaded[i] = false; }
+    for (let i = 1; i <= Math.min(40, totalFrames); i++) loadFrame(i);
+    onScroll();
   });
 
-  window.addEventListener("scroll", kick, { passive: true });
-  window.addEventListener("resize", kick);
-  window.addEventListener("touchmove", kick, { passive: true });
-})();
+  window.addEventListener("resize", () => { resizeCanvas(); onScroll(); });
+  window.addEventListener("scroll", onScroll, { passive: true });
 
+  resizeCanvas();
+  loadFrame(1);
+
+  const first = setInterval(() => {
+    const img = imgs[1];
+    if (img && img.complete) {
+      drawSmart(img);
+      clearInterval(first);
+    }
+  }, 30);
+
+  onScroll();
+})();

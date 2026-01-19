@@ -115,16 +115,14 @@
     <!-- HERO -->
     <section id="top" class="vk0-scroll-hero" aria-label="VK0 scroll animation">
       <div class="vk0-sticky">
-        <video
-          id="vk0-scroll-video"
-          class="vk0-scroll-video"
-          src="assets/video/video_explosion.mp4"
-          preload="auto"
-          muted
-          playsinline
-          webkit-playsinline
-          poster="assets/img/vk0_horizontal.png"
-        ></video>
+        <canvas
+          id="vk0-seq"
+          class="vk0-scroll-canvas"
+          data-desktop="/assets/vk0seq/desktop/frame_%04d.webp"
+          data-mobile="/assets/vk0seq/mobile/frame_%04d.webp"
+          data-frames="373"
+          aria-hidden="true"
+        ></canvas>
 
         <div class="vk0-shade" aria-hidden="true"></div>
 
