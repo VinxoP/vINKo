@@ -578,141 +578,245 @@
   </script>
 
   
+  
   <!-- VK0 Scroll Animation (Apple-like) -->
   <script>
     window.addEventListener('DOMContentLoaded', () => {
       const section = document.querySelector('.vk0-scroll-hero');
-      const video = document.getElementById('vk0-scroll-video');
+      if (!section) return;
+
+      const sticky = section.querySelector('.vk0-sticky');
+      const canvas = document.getElementById('vk0-seq');
+      const header = document.querySelector('.header');
 
       // Fix 100vh en móvil (barras dinámicas)
       const setVH = () => {
         document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
       };
       setVH();
-      window.addEventListener('resize', setVH);
-      if (!section || !video) return;
 
       // ---- PIN ROBUSTO (tipo Apple) ----
-      // En algunos layouts/browsers, 'position: sticky' puede fallar por stacking/overflow.
-      // Esto fuerza el "pin" mientras el scroll está dentro del tramo del HERO.
-      const sticky = section.querySelector('.vk0-sticky');
-      const updatePin = () => {
-        if (!sticky) return;
-        const header = document.querySelector('.header');
-        const headerH = header ? header.offsetHeight : 0;
+      let headerH = 0;
+      let start = 0;
+      let end = 0;
+      let scrollable = 1;
 
-        const start = section.offsetTop - headerH;
-        const end = section.offsetTop + section.offsetHeight - window.innerHeight;
+      const recalc = () => {
+        headerH = header ? header.offsetHeight : 0;
+        start = section.offsetTop - headerH;
+        scrollable = Math.max(1, section.offsetHeight - window.innerHeight);
+        end = start + scrollable;
+
         const bottomTop = Math.max(0, section.offsetHeight - window.innerHeight);
         section.style.setProperty('--vk0-bottom-top', `${bottomTop}px`);
+      };
+      recalc();
+
+      const updatePin = () => {
+        if (!sticky) return;
+        const y = window.scrollY || window.pageYOffset || 0;
 
         sticky.classList.remove('is-fixed', 'is-bottom');
-        const y = window.scrollY || window.pageYOffset || 0;
         if (y >= start && y < end) sticky.classList.add('is-fixed');
         else if (y >= end) sticky.classList.add('is-bottom');
       };
 
+      const clamp01 = (x) => Math.min(1, Math.max(0, x));
+      const progressInSection = () => {
+        const y = window.scrollY || window.pageYOffset || 0;
+        return clamp01((y - start) / scrollable);
+      };
+
       updatePin();
       window.addEventListener('scroll', updatePin, { passive: true });
-      window.addEventListener('resize', updatePin);
+      window.addEventListener('resize', () => {
+        setVH();
+        recalc();
+        updatePin();
+        if (canvas) resizeCanvas();
+      }, { passive: true });
 
+      // ---- TEXTO (steps) ----
       const steps = Array.from(section.querySelectorAll('.vk0-step')).map(el => ({
         el,
         start: parseFloat(el.dataset.start || '0'),
         end: parseFloat(el.dataset.end || '1'),
       }));
 
-      const clamp01 = (x) => Math.min(1, Math.max(0, x));
       const smoothstep = (a, b, x) => {
         const t = clamp01((x - a) / (b - a));
         return t * t * (3 - 2 * t);
       };
 
-      // Opacidad con entrada/salida suave dentro de [start,end]
+      // Entrada/salida con transición breve pero “directa”
       const windowFade = (p, start, end, fade = 0.08) => {
         const i = smoothstep(start, start + fade, p);
         const o = 1 - smoothstep(end - fade, end, p);
         return clamp01(i * o);
       };
 
-      let duration = 0;
-      let targetTime = 0;
-      let smoothTime = 0;
-      let lastSet = 0;
-      let raf = 0;
-      let active = false;
-
-      // Ajustes “feel”
-      const easeVideo = 0.16;     // más bajo = más suave, más alto = más pegado
-      const epsilon = 1 / 45;     // no setear currentTime si el cambio es mínimo
-
-      function progressInSection() {
-        const rect = section.getBoundingClientRect();
-        const scrollable = section.offsetHeight - window.innerHeight;
-        if (scrollable <= 0) return 0;
-        return clamp01((-rect.top) / scrollable);
-      }
-
-      function render() {
-        const p = progressInSection();
-
-        // Video: 0 -> duración (una sola vez)
-        targetTime = p * duration;
-        smoothTime += (targetTime - smoothTime) * easeVideo;
-
-        if (Math.abs(smoothTime - lastSet) > epsilon) {
-          try { video.currentTime = smoothTime; } catch(e) {}
-          lastSet = smoothTime;
-        }
-
-        // Steps
+      const renderSteps = (p) => {
         for (const s of steps) {
-          const o = windowFade(p, s.start, s.end, 0.10);
-          const y = (1 - o) * 18;
-          const blur = (1 - o) * 6;
-          const scale = 0.98 + (o * 0.02);
+          const o = windowFade(p, s.start, s.end, 0.08);
+          const y = (1 - o) * 16;
+          const blur = (1 - o) * 5;
+          const scale = 0.985 + (o * 0.015);
+
           s.el.style.opacity = o.toFixed(3);
           s.el.style.transform = `translateY(${y.toFixed(1)}px) scale(${scale.toFixed(3)})`;
           s.el.style.filter = `blur(${blur.toFixed(2)}px)`;
           s.el.style.pointerEvents = o > 0.6 ? 'auto' : 'none';
         }
+      };
+
+      // ---- CANVAS SEQUENCE (Apple-level) ----
+      let ctx = null;
+      let totalFrames = 0;
+      let tplDesktop = '';
+      let tplMobile = '';
+
+      let imgs = [];
+      let loaded = [];
+
+      let current = 1;
+      let target = 1;
+
+      const easeFrames = 0.22; // sube a 0.28 si lo quieres más pegado al scroll
+
+      const isMobile = () => window.matchMedia('(max-width: 720px)').matches;
+
+      const frameUrl = (i) => {
+        const tpl = isMobile() ? tplMobile : tplDesktop;
+        const n = String(i).padStart(4, '0');
+        return tpl.replace('%04d', n);
+      };
+
+      function resizeCanvas() {
+        if (!canvas || !ctx) return;
+        const dpr = Math.min(2, window.devicePixelRatio || 1);
+        const w = canvas.clientWidth;
+        const h = canvas.clientHeight;
+
+        canvas.width = Math.round(w * dpr);
+        canvas.height = Math.round(h * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       }
 
-      function loop() {
-        if (!active) return;
-        render();
-        raf = requestAnimationFrame(loop);
+      function drawSmart(img) {
+        if (!canvas || !ctx) return;
+
+        const cw = canvas.clientWidth;
+        const ch = canvas.clientHeight;
+        const iw = img.naturalWidth;
+        const ih = img.naturalHeight;
+
+        // Móvil: contain (no recorta). Desktop: cover (cinemático).
+        const contain = isMobile();
+        const scale = contain ? Math.min(cw / iw, ch / ih) : Math.max(cw / iw, ch / ih);
+
+        const dw = iw * scale;
+        const dh = ih * scale;
+        const dx = (cw - dw) / 2;
+        const dy = (ch - dh) / 2;
+
+        ctx.clearRect(0, 0, cw, ch);
+        ctx.drawImage(img, dx, dy, dw, dh);
+      }
+
+      function loadFrame(i) {
+        if (!canvas || !ctx) return;
+        if (i < 1 || i > totalFrames) return;
+        if (imgs[i]) return;
+
+        const img = new Image();
+        img.decoding = 'async';
+        img.src = frameUrl(i);
+        imgs[i] = img;
+        img.onload = () => { loaded[i] = true; };
+      }
+
+      function preloadWindow(center) {
+        // Ventana alrededor del frame actual (50fps => más radio)
+        const r = isMobile() ? 24 : 34;
+        for (let i = center - r; i <= center + r; i++) loadFrame(i);
+      }
+
+      // Loop (solo mientras el HERO está en viewport)
+      let raf = 0;
+      let active = false;
+
+      function tick() {
+        if (!active) { raf = 0; return; }
+
+        const p = progressInSection();
+
+        // Steps siempre
+        renderSteps(p);
+
+        // Frames si hay secuencia
+        if (ctx && totalFrames > 0) {
+          target = 1 + p * (totalFrames - 1);
+          current += (target - current) * easeFrames;
+
+          const idx = Math.max(1, Math.min(totalFrames, Math.round(current)));
+          preloadWindow(idx);
+
+          const img = imgs[idx];
+          if (img && (img.complete || loaded[idx])) drawSmart(img);
+        }
+
+        raf = requestAnimationFrame(tick);
       }
 
       const io = new IntersectionObserver((entries) => {
         active = entries.some(e => e.isIntersecting);
-        if (active && !raf) {
-          raf = requestAnimationFrame(loop);
-        }
-        if (!active && raf) {
-          cancelAnimationFrame(raf);
-          raf = 0;
-        }
+        if (active && !raf) raf = requestAnimationFrame(tick);
       }, { threshold: 0.01 });
 
       io.observe(section);
 
-      video.addEventListener('loadedmetadata', async () => {
-        duration = video.duration || 0;
-        smoothTime = 0;
-        lastSet = 0;
+      // Init (primer render para que se vea texto inmediatamente)
+      renderSteps(progressInSection());
 
-        // “Warm-up” para Safari / iOS (mejora el scrubbing)
-        try { await video.play(); video.pause(); } catch(e) {}
-        try { video.currentTime = 0; } catch(e) {}
+      // Setup canvas (si existe)
+      if (canvas) {
+        ctx = canvas.getContext('2d', { alpha: false });
+        totalFrames = parseInt(canvas.dataset.frames || '0', 10);
+        tplDesktop = canvas.dataset.desktop || '';
+        tplMobile = canvas.dataset.mobile || '';
 
-        render();
-      });
+        imgs = new Array(totalFrames + 1);
+        loaded = new Array(totalFrames + 1).fill(false);
 
-      window.addEventListener('scroll', () => { if (active) render(); }, { passive: true });
-      window.addEventListener('resize', () => { if (active) render(); });
+        resizeCanvas();
+
+        // Preload inicial (rápido para evitar negro)
+        const initN = Math.min(50, totalFrames);
+        for (let i = 1; i <= initN; i++) loadFrame(i);
+        loadFrame(1);
+
+        // Dibuja el primer frame cuando esté listo
+        const drawFirst = () => {
+          const img = imgs[1];
+          if (img && img.complete) drawSmart(img);
+          else requestAnimationFrame(drawFirst);
+        };
+        requestAnimationFrame(drawFirst);
+
+        // Si cambia el breakpoint (mobile/desktop), vaciamos cache para usar la otra carpeta
+        const mq = window.matchMedia('(max-width: 720px)');
+        mq.addEventListener('change', () => {
+          imgs = new Array(totalFrames + 1);
+          loaded = new Array(totalFrames + 1).fill(false);
+          resizeCanvas();
+          for (let i = 1; i <= initN; i++) loadFrame(i);
+          loadFrame(1);
+          renderSteps(progressInSection());
+        });
+      }
     });
   </script>
+
 <script src="main.js?v=1.0.5" defer></script>
 </body>
 </html>
