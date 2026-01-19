@@ -1076,3 +1076,28 @@ textarea{resize: vertical; min-height: 90px}
 }
 /* Fallback: si JS no carga, muestra el primer step */
 .vk0-step:first-child{opacity:1; transform:none; filter:none;}
+/* VK0: el sticky debe ser el contenedor de referencia */
+.vk0-sticky{
+  position: relative; /* para posicionar el canvas en absoluto */
+  overflow: hidden;
+}
+
+/* Rotar SOLO en móvil (y solo en portrait, por si el móvil se gira) */
+@media (max-width: 720px) and (orientation: portrait){
+  .vk0-scroll-canvas{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    /* al rotar 90°, intercambiamos ancho/alto:
+       ancho = alto del viewport, alto = ancho del viewport */
+    width: calc(var(--vh, 1vh) * 100);
+    height: 100vw;
+
+    transform: translate(-50%, -50%) rotate(-90deg);
+    transform-origin: center center;
+
+    display: block;
+    background: #000;
+  }
+}
