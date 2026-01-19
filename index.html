@@ -25,13 +25,12 @@
   <meta name="twitter:description" content="Concepto en desarrollo rumbo a Kickstarter. Únete a la lista de espera o al Founder Council." />
   <meta name="twitter:image" content="https://vinkosystem.com/assets/img/vINKoSystem.png" />
 
-  <link rel="stylesheet" href="styles.css?v=1.0.12" />
+  <link rel="stylesheet" href="styles.css?v=1.0.13" />
 
   <!-- Preloads -->
   <link rel="preload" href="/assets/img/LogoBlanco.png" as="image">
   <link rel="preload" href="/assets/img/vINKoSystem.png" as="image">
-  <link rel="preload" href="/assets/img/vk0_concept.png" as="image"> 
-  <link rel="preload" href="/assets/video/video_explosion.mp4" as="video/mp4"> 
+  <link rel="preload" href="/assets/img/vk0_concept.png" as="image">
 
   <!-- AOS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
@@ -72,11 +71,8 @@
 </head>
 
 <body>
-  <!-- Accesibilidad 
-  <a class="skip-link" href="#main">Saltar al contenido</a>-->
-
   <header class="header">
-    <a class="brand" href="#top" aria-label="Ir al inicio">
+    <a class="brand" href="index.html#top" aria-label="Ir al inicio">
       <span class="brand-dot"></span>
       <span>vINKo System</span>
     </a>
@@ -90,13 +86,15 @@
 
     <div class="header-right" id="site-nav">
       <nav class="nav" aria-label="Navegación principal">
-        <a href="#problem">Problema</a>
-        <a href="#concept">La idea</a>
-        <a href="#benefits">Beneficios</a>
-        <a href="#founders">Founder Council</a>
-        <a href="#roadmap">Roadmap</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact" class="btn primary">Lista de espera</a>
+        <a href="vk0.html">VK0</a>
+        <a href="problema.html">Problema</a>
+        <a href="idea.html">La idea</a>
+        <a href="beneficios.html">Beneficios</a>
+        <a href="founder-council.html">Founder Council</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="faq.html">FAQ</a>
+        <a href="sobre-mi.html">Sobre mí</a>
+        <a href="lista.html" class="btn primary">Lista de espera</a>
       </nav>
 
       <!-- Selector de idioma (ES actual) -->
@@ -112,7 +110,7 @@
   </header>
 
   <main id="main">
-    <!-- HERO -->
+    <!-- HERO (explosión Apple-like) -->
     <section id="top" class="vk0-scroll-hero" aria-label="VK0 scroll animation">
       <div class="vk0-sticky">
         <canvas
@@ -130,7 +128,7 @@
           <div class="vk0-step" data-start="0.02" data-end="0.22">
             <div class="vk0-top">
               <div class="pill">Concepto patentado internacionalmente en desarrollo</div>
-              <h1>VK0</h1>
+              <h1>vINKo&nbsp;System</h1>
             </div>
             <div class="vk0-bottom">
               <p class="vk0-lead">Menos desperdicio. Más higiene. Más control.</p>
@@ -142,7 +140,7 @@
               <h2>Flujo de tinta más controlado</h2>
             </div>
             <div class="vk0-bottom">
-              <p>Consistencia operativa sin preparar “por si acaso”.</p>
+              <p>Consistencia operativa.</p>
             </div>
           </div>
 
@@ -151,7 +149,7 @@
               <h2>Rutina más limpia</h2>
             </div>
             <div class="vk0-bottom">
-              <p>Menos exposición y menos fricción en el workflow.</p>
+              <p>Menos exposición y menos fricción en el flujo de trabajo.</p>
             </div>
           </div>
 
@@ -162,8 +160,8 @@
             <div class="vk0-bottom">
               <p>Recibe avances y el aviso del Kickstarter antes que nadie.</p>
               <div class="vk0-cta">
-                <a class="btn primary" href="#contact">Únete a la lista de espera</a>
-                <a class="btn ghost" href="en.html" aria-label="Go to English">EN</a>
+                <a class="btn primary" href="lista.html">Únete a la lista de espera</a>
+                <a class="btn ghost" href="vk0.html">Ver VK0</a>
               </div>
             </div>
           </div>
@@ -176,341 +174,81 @@
       </div>
     </section>
 
-    <!-- PROBLEM -->
-    <section id="problem" class="section" data-aos="fade-up">
+    <!-- DESPUÉS DE LA EXPLOSIÓN: solo navegación a páginas -->
+    <section class="section alt" data-aos="fade-up">
       <div class="section-head">
-        <h2>El problema no es el artista. Es el sistema.</h2>
-        <p>
-          En estudio, la tinta se prepara con margen “por si acaso”, se manipula en abierto y se repiten pasos.
-          El resultado: <strong>desperdicio y menos control del flujo de trabajo</strong>.
-        </p>
+        <h2>Explora el proyecto</h2>
+        <p>Páginas independientes (rápidas y limpias). Aquí solo te llevo al punto.</p>
       </div>
 
       <div class="grid-3">
         <div class="card" data-aos="fade-up" data-aos-delay="0">
-          <h3>Desperdicio</h3>
-          <p>Se prepara más tinta de la que se usa y lo que sobra se tira. Es habitual y nadie lo quiere, pero ocurre.</p>
+          <h3>VK0</h3>
+          <p>La priemra máquina integrada con el sistema vINKo.</p>
+          <a class="btn ghost" href="vk0.html">Ver VK0</a>
         </div>
+
         <div class="card" data-aos="fade-up" data-aos-delay="80">
-          <h3>Higiene y Rutina</h3>
-          <p>Cuanto más abierto y manual, más puntos de limpieza y más fricción en el flujo de trabajo.</p>
+          <h3>Problema</h3>
+          <p>Por qué el desperdicio no debería ser "rutina".</p>
+          <a class="btn ghost" href="problema.html">Ver problema</a>
         </div>
+
         <div class="card" data-aos="fade-up" data-aos-delay="160">
-          <h3>Control</h3>
-          <p>La consistencia del suministro y la preparación influyen en la experiencia: tanto para artista como para estudio.</p>
+          <h3>La idea</h3>
+          <p>Enfoque conceptual.</p>
+          <a class="btn ghost" href="idea.html">Ver la idea</a>
         </div>
-      </div>
-    </section>
 
-    <!-- CONCEPT -->
-    <section id="concept" class="section alt" data-aos="fade-right">
-      <div class="section">
-        <div>
-          <div class="pill subtle">La idea</div>
-          <h2>Una nueva forma de gestionar la tinta, sin complicarte.</h2>
-          <p>
-            vINKo System explora un enfoque de <strong>flujo más controlado y operativo</strong>,
-            diseñado para reducir manipulación innecesaria y minimizar el desperdicio.
-          </p>
-
-          <div class="grid-2" style="margin-top:18px; gap:12px;">
-            <div class="card">
-              <h3>Operativa más limpia</h3>
-              <p>
-                Diseñado para disminuir pasos y exposición innecesaria, ayudando a mantener una rutina de estudio más simple.
-              </p>
-            </div>
-            <div class="card">
-              <h3>Control Y Consistencia</h3>
-              <p>
-                Orientado a una experiencia más consistente de preparación y suministro, con menos “por si acaso”.
-              </p>
-            </div>
-          </div>
-
-          <ul class="ticks">
-            <li>Enfoque en flujo de trabajo real de estudio: rapidez, orden y repetibilidad.</li>
-            <li>Concepto orientado a fabricación profesional.</li>
-            <li>Kickstarter como vía para llevarlo a calidad y validación apta para estudio.</li>
-          </ul>
-<!--
-          <div class="note">
-            * En fase pública no se comparte ingeniería interna ni detalles sensibles. Se prioriza seguridad e higiene.
-          </div>-->
-        </div>
-      </div>
-    </section>
-
-    <!-- BENEFITS -->
-    <section id="benefits" class="section" data-aos="fade-left">
-      <div class="section-head">
-        <h2>Lo que debería mejorar en tu día a día</h2>
-        <p>
-          Esto es lo que busco conseguir con una versión final fabricada y validada para estudio.
-          Tu feedback ahora ayuda a definir prioridades reales.
-        </p>
-      </div>
-
-      <div class="grid-3">
         <div class="card" data-aos="fade-up" data-aos-delay="0">
-          <h3>Menos tinta tirada</h3>
-          <p>Objetivo: reducir significativamente el desperdicio por sesión sin cambiar tu forma de tatuar.</p>
+          <h3>Beneficios</h3>
+          <p>Qué debería mejorar en el día a día de un artista.</p>
+          <a class="btn ghost" href="beneficios.html">Ver beneficios</a>
         </div>
+
         <div class="card" data-aos="fade-up" data-aos-delay="80">
-          <h3>Rutina más simple</h3>
-          <p>Menos fricción: menos pasos, menos elementos, más foco en el trabajo.</p>
+          <h3>Founder Council</h3>
+          <p>Estudios y artistas: feedback directo para diseñarlo bien.</p>
+          <a class="btn ghost" href="founder-council.html">Ver Founder Council</a>
         </div>
+
         <div class="card" data-aos="fade-up" data-aos-delay="160">
-          <h3>Más control</h3>
-          <p>Diseñado para aportar consistencia operativa: preparación y suministro con intención, no improvisación.</p>
+          <h3>Roadmap</h3>
+          <p>De concepto a tu estudio.</p>
+          <a class="btn ghost" href="roadmap.html">Ver roadmap</a>
         </div>
-      </div>
-    </section>
 
-    <!-- FOUNDERS (replanteado para no prometer uso en estudio) -->
-    <section id="founders" class="section alt" data-aos="zoom-in">
-      <div class="section-head">
-        <div class="pill subtle">Founder Council</div>
-        <h2>Estudios y artistas: ayudadme a diseñarlo bien</h2>
-        <p>
-          Busco un grupo reducido para <strong>co-diseño</strong> (feedback, prioridades, flujo real).
-          <strong>No es un programa de “probar en clientes”</strong>: es una fase de concepto y validación de necesidades.
-        </p>
-      </div>
-
-      <div class="grid-3">
         <div class="card" data-aos="fade-up" data-aos-delay="0">
-          <h3>Acceso prioritario</h3>
-          <p>Serás de los primeros en recibir avances, decisiones de diseño y el aviso de Kickstarter (24-48h antes).</p>
+          <h3>FAQ</h3>
+          <p>Respuestas rápidas.</p>
+          <a class="btn ghost" href="faq.html">Ver FAQ</a>
         </div>
+
         <div class="card" data-aos="fade-up" data-aos-delay="80">
-          <h3>Edición Founder</h3>
-          <p>Cuando exista un producto final para producción, podrás optar a packs Founder (limitados y numerados) con condiciones especiales.</p>
+          <h3>Sobre vINKo</h3>
+          <p>Quién está detrás y por qué existe vINKo System.</p>
+          <a class="btn ghost" href="sobre-mi.html">Ver historia</a>
         </div>
+
         <div class="card" data-aos="fade-up" data-aos-delay="160">
-          <h3>Tu voz cuenta</h3>
-          <p>Votarás prioridades (workflow, limpieza, consumibles, ergonomía).</p>
+          <h3>Lista de espera</h3>
+          <p>Updates reales + aviso de Kickstarter antes que nadie.</p>
+          <a class="btn primary" href="lista.html">Unirme</a>
         </div>
       </div>
 
-      <div class="cta-band">
+      <div class="cta-band" data-aos="fade-up">
         <div>
-          <h3>Únete al Founder Council</h3>
-          <p>Si eres estudio/artista, tu experiencia puede definir el producto final.</p>
+          <h3>¿Te aviso cuando haya novedades importantes?</h3>
+          <p>Lista de espera = updates y aviso de Kickstarter</p>
         </div>
-        <a class="btn primary" href="#contact">Quiero entrar</a>
-      </div>
-    </section>
-
-    <!-- ROADMAP -->
-    <section id="roadmap" class="section">
-      <div class="section-head">
-        <h2>Roadmap</h2>
-        <p>De concepto a un producto profesional apto para estudio (fabricación + validación).</p>
-      </div>
-
-      <div class="timeline">
-        <div class="step">
-          <span class="step-dot"></span>
-          <div>
-            <h4>Fase actual</h4>
-            <p>Concepto, renders/animaciones, entrevistas con estudios y cierre de requisitos reales.</p>
-          </div>
-        </div>
-        <div class="step">
-          <span class="step-dot"></span>
-          <div>
-            <h4>Kickstarter</h4>
-            <p>Apoyar el concepto para obtener finaciación de una producción limitada</p>
-          </div>
-        </div>
-        <div class="step">
-          <span class="step-dot"></span>
-          <div>
-            <h4>Diseño para fabricación (DFM)</h4>
-            <p>Materiales, tolerancias, ensamblaje y definición del sistema para fabricación profesional.</p>
-          </div>
-        </div>
-        <div class="step">
-          <span class="step-dot"></span>
-          <div>
-            <h4>Prototipos industriales</h4>
-            <p>Iteraciones con procesos adecuados.</p>
-          </div>
-        </div>
-        <div class="step">
-          <span class="step-dot"></span>
-          <div>
-            <h4>Validación higiene / seguridad</h4>
-            <p>Definición de procedimientos, pruebas y requisitos para operar en entorno de estudio.</p>
-          </div>
-        </div>
-        <div class="step">
-          <span class="step-dot"></span>
-          <div>
-            <h4>producción inicial</h4>
-            <p>Lanzamiento, fabricación del primer lote y prioridad para Founder Council / early adopters.</p>
-          </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn primary" href="lista.html">Lista de espera</a>
         </div>
       </div>
 
-      <div class="hero-micro" style="margin-top:16px;">
-        Las fechas se publicarán cuando el roadmap técnico y de fabricación esté cerrado. Apúntate para recibir la actualización.
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="section alt" data-aos="fade-up">
-      <div class="section-head">
-        <h2>Preguntas frecuentes</h2>
-        <p>Respuestas claras para esta fase (concepto + prelaunch).</p>
-      </div>
-
-      <div class="grid-2">
-        <div class="card">
-          <h3>¿Puedo comprarlo ya?</h3>
-          <p>No todavía. Ahora es fase de concepto y validación. El objetivo es lanzar en Kickstarter cuando el diseño esté listo para fabricación profesional.</p>
-        </div>
-        <div class="card">
-          <h3>¿Se puede usar en un estudio hoy?</h3>
-          <p>No. Un concepto/prototipo no apto no debe entrar en un entorno higiénico real. La prioridad es hacerlo bien: materiales, procesos y validación.</p>
-        </div>
-        <div class="card">
-          <h3>¿Qué es el Founder Council?</h3>
-          <p>Un grupo reducido para co-diseñar: feedback, prioridades y workflow. No es “probar con clientes”.</p>
-        </div>
-        <div class="card">
-          <h3>¿Cuándo sale el Kickstarter?</h3>
-          <p>Cuando el roadmap de fabricación y validación esté definido. Si te apuntas, te aviso antes que a nadie.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="section" data-aos="fade-up">
-      <div class="section-head">
-        <h2>Sobre mí</h2>
-        <p>
-          Soy <strong>Vicente Pina</strong>. Soy un artista del tatuaje con años de experiencia y aparte soy ingeniero electrónico. 
-          En 2023 tuve mi primera idea de concepto de maquina de tatuar integrada e inicié el proceso para patentarla.
-          Ahora con esa patente estoy construyendo vINKo System para resolver un problema que se repite en estudios:
-          desperdicio, limpieza y control. Si eres artista o estudio, tu experiencia puede marcar la diferencia.
-        </p>
-      </div>
-    </section>
-
-    <!-- CONTACT / FORM -->
-    <section id="contact" class="section alt">
-      <div class="section-split">
-        <div>
-          <div class="pill subtle">Lista de espera</div>
-          <h2>Recibe el aviso del Kickstarter y avances antes que nadie</h2>
-          <p>
-            Únete a la lista para recibir: avances, renders/animaciones, resultados de encuestas y el aviso de lanzamiento.
-            Si eres estudio/artista, marca tu rol para optar al <strong>Founder Council</strong>.
-          </p>
-
-          <div class="micro">
-            <strong>Importante:</strong> este proyecto está en fase conceptual. No se comparte ingeniería interna en abierto y no es un producto apto para estudio todavía.
-          </div>
-        </div>
-
-        <form class="form" id="earlyForm" autocomplete="on">
-          <div class="form-fields" id="formFields">
-            <label>
-              Nombre *
-              <input
-                type="text"
-                name="name"
-                placeholder="Tu nombre"
-                autocomplete="name"
-                required
-                minlength="2"
-              />
-            </label>
-
-            <label>
-              Email *
-              <input
-                type="email"
-                name="email"
-                placeholder="tu@email.com"
-                autocomplete="email"
-                required
-              />
-            </label>
-
-            <label>
-              Soy... *
-              <select name="role" id="roleSelect" required>
-                <option value="">Selecciona</option>
-                <option value="Artista">Artista</option>
-                <option value="Estudio">Estudio</option>
-                <option value="Distribuidor">Distribuidor</option>
-                <option value="Otro">Otro</option>
-              </select>
-            </label>
-
-            <!-- Redes SOLO si es ARTISTA (mantengo tu lógica) -->
-            <div id="socialsWrap" class="hidden">
-              <label>
-                Redes (IG/TikTok/etc.) (opcional)
-                <input
-                  type="text"
-                  name="socials"
-                  placeholder="@tuusuario o link"
-                  autocomplete="off"
-                />
-              </label>
-            </div>
-
-            <label>
-              País (opcional)
-              <input
-                type="text"
-                name="country"
-                placeholder="España"
-                autocomplete="country-name"
-              />
-            </label>
-
-            <label>
-              Teléfono (opcional)
-              <input
-                type="tel"
-                name="phone"
-                placeholder="+34 6XX XXX XXX"
-                autocomplete="tel"
-              />
-            </label>
-
-            <label>
-              Mensaje (opcional)
-              <textarea
-                name="message"
-                rows="4"
-                placeholder="¿Eres estudio o artista? ¿Qué te gustaría que resolviera este sistema en tu workflow?"
-              ></textarea>
-            </label>
-
-            <button class="btn primary full" id="submitBtn" type="submit">
-              Unirme
-            </button>
-
-            <p class="form-note" id="formNote">
-              Sin spam. 1-2 emails/mes. Aviso de Kickstarter + avances.
-            </p>
-          </div>
-
-          <!-- Panel de éxito -->
-          <div class="success-panel hidden" id="successPanel">
-            <h3>¡Hecho!</h3>
-            <p>
-              Formulario enviado con éxito. Gracias por apoyar <strong>vINKo System</strong>.
-            </p>
-          </div>
-        </form>
-      </div>
+      <!-- Placeholder oculto por compatibilidad si tu main.js espera #earlyForm -->
+      <form id="earlyForm" class="hidden" aria-hidden="true"></form>
     </section>
   </main>
 
@@ -521,17 +259,18 @@
       </div>
 
       <div class="footer-links">
-        <a href="#problem">Problema</a>
-        <a href="#concept">La idea</a>
-        <a href="#benefits">Beneficios</a>
-        <a href="#founders">Founder Council</a>
-        <a href="#roadmap">Roadmap</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Lista</a>
+        <a href="vk0.html">VK0</a>
+        <a href="problema.html">Problema</a>
+        <a href="idea.html">La idea</a>
+        <a href="beneficios.html">Beneficios</a>
+        <a href="founder-council.html">Founder Council</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="faq.html">FAQ</a>
+        <a href="sobre-mi.html">Sobre mí</a>
+        <a href="lista.html">Lista</a>
       </div>
 
       <div class="footer-right">
-        <!-- Redes sociales -->
         <div class="social-links" aria-label="Redes sociales de vINKo System">
           <a href="https://www.linkedin.com/company/vinko-system" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <img src="assets/img/linkedin.svg" alt="LinkedIn" class="social-icon" />
@@ -558,7 +297,7 @@
         </div>
 
         <div class="footer-meta" style="margin-top:6px;">
-          <a href="/privacy.html">Privacidad</a> · <a href="/cookies.html">Cookies</a> · <a href="#contact">Contacto</a>
+          <a href="/privacy.html">Privacidad</a> · <a href="/cookies.html">Cookies</a> · <a href="lista.html">Contacto</a>
         </div>
       </div>
     </div>
@@ -577,9 +316,7 @@
     });
   </script>
 
-  
-  
-  <!-- VK0 Scroll Animation (Apple-like) -->
+<!-- VK0 Scroll Animation (Apple-like) -->
   <script>
     window.addEventListener('DOMContentLoaded', () => {
       const section = document.querySelector('.vk0-scroll-hero');
@@ -820,3 +557,4 @@
 <script src="main.js?v=1.0.6" defer></script>
 </body>
 </html>
+

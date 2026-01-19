@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>vINKo System — Menos desperdicio. Más higiene. Más control.</title>
   <meta name="description" content="vINKo System es un concepto en desarrollo rumbo a Kickstarter para mejorar el flujo de trabajo de tinta en tatuaje/PMU: menos desperdicio, más higiene y más control. Únete a la lista de espera o al Founder Council." />
@@ -25,13 +25,13 @@
   <meta name="twitter:description" content="Concepto en desarrollo rumbo a Kickstarter. Únete a la lista de espera o al Founder Council." />
   <meta name="twitter:image" content="https://vinkosystem.com/assets/img/vINKoSystem.png" />
 
-  <link rel="stylesheet" href="styles.css?v=1.0.12" />
+  <link rel="stylesheet" href="styles.css?v=1.0.9" />
 
   <!-- Preloads -->
   <link rel="preload" href="/assets/img/LogoBlanco.png" as="image">
   <link rel="preload" href="/assets/img/vINKoSystem.png" as="image">
-  <link rel="preload" href="/assets/img/vk0_concept.png" as="image"> 
-  <link rel="preload" href="/assets/video/video_explosion.mp4" as="video/mp4"> 
+  <link rel="preload" href="/assets/img/vk0_concept.png" as="image">
+  <link rel="preload" href="/assets/video/video_explosion.mp4" as="video">
 
   <!-- AOS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
@@ -71,8 +71,23 @@
   </script>
 </head>
 
-<body>
-  <!-- Accesibilidad 
+  <body class="has-vk0-video">
+  <!-- VIDEO FIJO DE FONDO (SIEMPRE VISIBLE) -->
+  <div class="vk0-video-layer" aria-hidden="true">
+    <video
+      id="vk0-bg-video"
+      class="vk0-bg-video"
+      src="/assets/video/video_explosion.mp4"
+      preload="auto"
+      muted
+      playsinline
+      webkit-playsinline
+      poster="/assets/img/vk0_horizontal.png"
+    ></video>
+    <div class="vk0-video-shade"></div>
+  </div>
+  
+    <!--Accesibilidad 
   <a class="skip-link" href="#main">Saltar al contenido</a>-->
 
   <header class="header">
@@ -113,65 +128,42 @@
 
   <main id="main">
     <!-- HERO -->
-    <section id="top" class="vk0-scroll-hero" aria-label="VK0 scroll animation">
-      <div class="vk0-sticky">
-        <canvas
-          id="vk0-seq"
-          class="vk0-scroll-canvas"
-          data-desktop="/assets/vk0seq/desktop/frame_%04d.webp"
-          data-mobile="/assets/vk0seq/mobile/frame_%04d.webp"
-          data-frames="373"
-          aria-hidden="true"
-        ></canvas>
+    <section id="top" class="hero" data-aos="fade-up">
+      <div class="hero-bg"></div>
 
-        <div class="vk0-shade" aria-hidden="true"></div>
+      <div class="hero-content">
+        <div class="pill">Concepto patentado internacionalmente en desarrollo</div>
 
-        <div class="vk0-steps" aria-hidden="false">
-          <div class="vk0-step" data-start="0.02" data-end="0.22">
-            <div class="vk0-top">
-              <div class="pill">Concepto patentado internacionalmente en desarrollo</div>
-              <h1>VK0</h1>
-            </div>
-            <div class="vk0-bottom">
-              <p class="vk0-lead">Menos desperdicio. Más higiene. Más control.</p>
-            </div>
-          </div>
+        <h1>Menos desperdicio. Más higiene. Más control.</h1>
 
-          <div class="vk0-step" data-start="0.26" data-end="0.46">
-            <div class="vk0-top">
-              <h2>Flujo de tinta más controlado</h2>
-            </div>
-            <div class="vk0-bottom">
-              <p>Consistencia operativa sin preparar “por si acaso”.</p>
-            </div>
-          </div>
+        <p class="hero-sub">
+          vINKo System es un <strong>concepto de una nueva máquina de tatuar completamente integrada en desarrollo</strong> para mejorar el flujo de trabajo de tinta
+          en tatuaje/PMU: diseñado para reducir desperdicio y facilitar una operativa más limpia y consistente. El concepto abarca tanto una máquina 
+          tipo pen con el sistema patentado ya integrado, como una máquina pen con conector a un módulo externo del sistema para que se pueda usar en cualquier máquina 
+          de nueva generación.
+        </p>
 
-          <div class="vk0-step" data-start="0.50" data-end="0.72">
-            <div class="vk0-top">
-              <h2>Rutina más limpia</h2>
-            </div>
-            <div class="vk0-bottom">
-              <p>Menos exposición y menos fricción en el workflow.</p>
-            </div>
-          </div>
-
-          <div class="vk0-step" data-start="0.76" data-end="0.98">
-            <div class="vk0-top">
-              <h2>¿Quieres ser de los primeros?</h2>
-            </div>
-            <div class="vk0-bottom">
-              <p>Recibe avances y el aviso del Kickstarter antes que nadie.</p>
-              <div class="vk0-cta">
-                <a class="btn primary" href="#contact">Únete a la lista de espera</a>
-                <a class="btn ghost" href="en.html" aria-label="Go to English">EN</a>
-              </div>
-            </div>
-          </div>
+        <div class="note" style="margin-top:14px;">
+          Estamos en la fase de <strong>concepto</strong>.
+          <strong>No es apto para usar en estudio todavía</strong> (higiene, materiales y certificación).
+          El objetivo es construir una versión profesional y lanzarla en <strong>Kickstarter</strong>.
         </div>
 
-        <div class="vk0-scroll-hint" aria-hidden="true">
-          <span class="vk0-mouse"></span>
-          <span>Scroll</span>
+        <div class="hero-actions">
+          <a class="btn primary" href="#contact">Únete a la lista de espera</a>
+        </div>
+
+        <!-- HERO <div class="hero-micro">
+          Sin spam · 1–2 emails/mes · Aviso de lanzamiento + avances · Founder Council para estudios/artistas
+        </div>-->
+      </div>
+
+      <div class="hero-media">
+        <div class="media-card">
+          <img src="assets/img/vk0_concept.png" alt="Render conceptual en progreso de vINKo System" />
+          <div class="media-caption">
+            Concept render · Work in progress
+          </div>
         </div>
       </div>
     </section>
@@ -577,246 +569,6 @@
     });
   </script>
 
-  
-  
-  <!-- VK0 Scroll Animation (Apple-like) -->
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const section = document.querySelector('.vk0-scroll-hero');
-      if (!section) return;
-
-      const sticky = section.querySelector('.vk0-sticky');
-      const canvas = document.getElementById('vk0-seq');
-      const header = document.querySelector('.header');
-
-      // Fix 100vh en móvil (barras dinámicas)
-      const setVH = () => {
-        document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
-      };
-      setVH();
-
-      // ---- PIN ROBUSTO (tipo Apple) ----
-      let headerH = 0;
-      let start = 0;
-      let end = 0;
-      let scrollable = 1;
-
-      const recalc = () => {
-        headerH = header ? header.offsetHeight : 0;
-        start = section.offsetTop - headerH;
-        scrollable = Math.max(1, section.offsetHeight - window.innerHeight);
-        end = start + scrollable;
-
-        const bottomTop = Math.max(0, section.offsetHeight - window.innerHeight);
-        section.style.setProperty('--vk0-bottom-top', `${bottomTop}px`);
-      };
-      recalc();
-
-      const updatePin = () => {
-        if (!sticky) return;
-        const y = window.scrollY || window.pageYOffset || 0;
-
-        sticky.classList.remove('is-fixed', 'is-bottom');
-        if (y >= start && y < end) sticky.classList.add('is-fixed');
-        else if (y >= end) sticky.classList.add('is-bottom');
-      };
-
-      const clamp01 = (x) => Math.min(1, Math.max(0, x));
-      const progressInSection = () => {
-        const y = window.scrollY || window.pageYOffset || 0;
-        return clamp01((y - start) / scrollable);
-      };
-
-      updatePin();
-      window.addEventListener('scroll', updatePin, { passive: true });
-      window.addEventListener('resize', () => {
-        setVH();
-        recalc();
-        updatePin();
-        if (canvas) resizeCanvas();
-      }, { passive: true });
-
-      // ---- TEXTO (steps) ----
-      const steps = Array.from(section.querySelectorAll('.vk0-step')).map(el => ({
-        el,
-        start: parseFloat(el.dataset.start || '0'),
-        end: parseFloat(el.dataset.end || '1'),
-      }));
-
-      const smoothstep = (a, b, x) => {
-        const t = clamp01((x - a) / (b - a));
-        return t * t * (3 - 2 * t);
-      };
-
-      // Entrada/salida con transición breve pero “directa”
-      const windowFade = (p, start, end, fade = 0.08) => {
-        const i = smoothstep(start, start + fade, p);
-        const o = 1 - smoothstep(end - fade, end, p);
-        return clamp01(i * o);
-      };
-
-      const renderSteps = (p) => {
-        for (const s of steps) {
-          const o = windowFade(p, s.start, s.end, 0.08);
-          const y = (1 - o) * 16;
-          const blur = (1 - o) * 5;
-          const scale = 0.985 + (o * 0.015);
-
-          s.el.style.opacity = o.toFixed(3);
-          s.el.style.transform = `translateY(${y.toFixed(1)}px) scale(${scale.toFixed(3)})`;
-          s.el.style.filter = `blur(${blur.toFixed(2)}px)`;
-          s.el.style.pointerEvents = o > 0.6 ? 'auto' : 'none';
-        }
-      };
-
-      // ---- CANVAS SEQUENCE (Apple-level) ----
-      let ctx = null;
-      let totalFrames = 0;
-      let tplDesktop = '';
-      let tplMobile = '';
-
-      let imgs = [];
-      let loaded = [];
-
-      let current = 1;
-      let target = 1;
-
-      const easeFrames = 0.22; // sube a 0.28 si lo quieres más pegado al scroll
-
-      const isMobile = () => window.matchMedia('(max-width: 720px)').matches;
-
-      const frameUrl = (i) => {
-        const tpl = isMobile() ? tplMobile : tplDesktop;
-        const n = String(i).padStart(4, '0');
-        return tpl.replace('%04d', n);
-      };
-
-      function resizeCanvas() {
-        if (!canvas || !ctx) return;
-        const dpr = Math.min(2, window.devicePixelRatio || 1);
-        const w = canvas.clientWidth;
-        const h = canvas.clientHeight;
-
-        canvas.width = Math.round(w * dpr);
-        canvas.height = Math.round(h * dpr);
-        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      }
-
-      function drawSmart(img) {
-        if (!canvas || !ctx) return;
-
-        const cw = canvas.clientWidth;
-        const ch = canvas.clientHeight;
-        const iw = img.naturalWidth;
-        const ih = img.naturalHeight;
-
-        // Móvil: contain (no recorta). Desktop: cover (cinemático).
-        const contain = isMobile();
-        const scale = contain ? Math.min(cw / iw, ch / ih) : Math.max(cw / iw, ch / ih);
-
-        const dw = iw * scale;
-        const dh = ih * scale;
-        const dx = (cw - dw) / 2;
-        const dy = (ch - dh) / 2;
-
-        ctx.clearRect(0, 0, cw, ch);
-        ctx.drawImage(img, dx, dy, dw, dh);
-      }
-
-      function loadFrame(i) {
-        if (!canvas || !ctx) return;
-        if (i < 1 || i > totalFrames) return;
-        if (imgs[i]) return;
-
-        const img = new Image();
-        img.decoding = 'async';
-        img.src = frameUrl(i);
-        imgs[i] = img;
-        img.onload = () => { loaded[i] = true; };
-      }
-
-      function preloadWindow(center) {
-        // Ventana alrededor del frame actual (50fps => más radio)
-        const r = isMobile() ? 24 : 34;
-        for (let i = center - r; i <= center + r; i++) loadFrame(i);
-      }
-
-      // Loop (solo mientras el HERO está en viewport)
-      let raf = 0;
-      let active = false;
-
-      function tick() {
-        if (!active) { raf = 0; return; }
-
-        const p = progressInSection();
-
-        // Steps siempre
-        renderSteps(p);
-
-        // Frames si hay secuencia
-        if (ctx && totalFrames > 0) {
-          target = 1 + p * (totalFrames - 1);
-          current += (target - current) * easeFrames;
-
-          const idx = Math.max(1, Math.min(totalFrames, Math.round(current)));
-          preloadWindow(idx);
-
-          const img = imgs[idx];
-          if (img && (img.complete || loaded[idx])) drawSmart(img);
-        }
-
-        raf = requestAnimationFrame(tick);
-      }
-
-      const io = new IntersectionObserver((entries) => {
-        active = entries.some(e => e.isIntersecting);
-        if (active && !raf) raf = requestAnimationFrame(tick);
-      }, { threshold: 0.01 });
-
-      io.observe(section);
-
-      // Init (primer render para que se vea texto inmediatamente)
-      renderSteps(progressInSection());
-
-      // Setup canvas (si existe)
-      if (canvas) {
-        ctx = canvas.getContext('2d', { alpha: false });
-        totalFrames = parseInt(canvas.dataset.frames || '0', 10);
-        tplDesktop = canvas.dataset.desktop || '';
-        tplMobile = canvas.dataset.mobile || '';
-
-        imgs = new Array(totalFrames + 1);
-        loaded = new Array(totalFrames + 1).fill(false);
-
-        resizeCanvas();
-
-        // Preload inicial (rápido para evitar negro)
-        const initN = Math.min(50, totalFrames);
-        for (let i = 1; i <= initN; i++) loadFrame(i);
-        loadFrame(1);
-
-        // Dibuja el primer frame cuando esté listo
-        const drawFirst = () => {
-          const img = imgs[1];
-          if (img && img.complete) drawSmart(img);
-          else requestAnimationFrame(drawFirst);
-        };
-        requestAnimationFrame(drawFirst);
-
-        // Si cambia el breakpoint (mobile/desktop), vaciamos cache para usar la otra carpeta
-        const mq = window.matchMedia('(max-width: 720px)');
-        mq.addEventListener('change', () => {
-          imgs = new Array(totalFrames + 1);
-          loaded = new Array(totalFrames + 1).fill(false);
-          resizeCanvas();
-          for (let i = 1; i <= initN; i++) loadFrame(i);
-          loadFrame(1);
-          renderSteps(progressInSection());
-        });
-      }
-    });
-  </script>
-
-<script src="main.js?v=1.0.6" defer></script>
+  <script src="main.js?v=1.0.5" defer></script>
 </body>
 </html>
