@@ -1316,3 +1316,109 @@ body.page-system .vk0-scroll-hero .vk0-scroll-canvas{
   transform: scale(1.11) !important;
   transform-origin: center center !important;
 }
+/* Header siempre visible */
+.header{
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+
+  /* para que no “se mezcle” con el hero */
+  background: rgba(11,15,20,0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* iOS notch (opcional pero recomendable) */
+.header{
+  padding-top: env(safe-area-inset-top);
+}
+/* Botón menú: oculto en desktop, visible en móvil */
+.nav-toggle{
+  display: none;              /* desktop */
+  flex-shrink: 0;
+  width: auto;
+  height: auto;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.06);
+  color: inherit;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+/* Visible solo en móvil/tablet */
+@media (max-width: 980px){
+  .nav-toggle{ display: inline-flex; }
+}
+
+.nav-toggle .nav-toggle-label{
+  font-weight: 600;
+  letter-spacing: .2px;
+}
+
+/* Oculta las barras (no icono) */
+.nav-toggle .nav-toggle-bars{
+  display: none !important;
+}
+
+/* =====================
+   FIX: fixed header + Menu button only on mobile
+   Keep this block at the END of the CSS
+   ===================== */
+
+.header{
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  z-index: 9999 !important;
+
+  background: rgba(11,15,20,0.92) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+
+  padding: 14px var(--gutter) !important;
+  padding-top: calc(14px + env(safe-area-inset-top, 0px)) !important;
+}
+
+@media (max-width: 980px){
+  .header{
+    padding: 10px var(--gutter) !important;
+    padding-top: calc(10px + env(safe-area-inset-top, 0px)) !important;
+  }
+  .header-right{
+    top: calc(100% + 10px) !important;
+  }
+}
+
+/* Push content so it doesn't go under the fixed header */
+body{
+  padding-top: calc(76px + env(safe-area-inset-top, 0px));
+}
+@media (max-width: 980px){
+  body{
+    padding-top: calc(68px + env(safe-area-inset-top, 0px));
+  }
+}
+
+/* Menu button: only mobile, text only */
+.nav-toggle{ display: none !important; }
+@media (max-width: 980px){
+  .nav-toggle{
+    display: inline-flex !important;
+    width: auto !important;
+    height: auto !important;
+    padding: 10px 14px !important;
+    gap: 8px !important;
+  }
+  .nav-toggle .nav-toggle-bars{ display: none !important; }
+  .nav-toggle .nav-toggle-label{ font-weight: 600; letter-spacing: .2px; }
+}
