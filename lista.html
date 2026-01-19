@@ -73,7 +73,7 @@
   </header>
 
   <main id="main">
-    <!-- HERO -->
+    <!-- HERO 
     <section class="hero" id="top">
       <div class="hero-bg" aria-hidden="true"></div>
 
@@ -102,7 +102,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section>-->
 
     <!-- QUÉ RECIBES -->
     <section class="section" data-aos="fade-up">
@@ -128,108 +128,116 @@
     </section>
 
     <!-- FORM (TU MAIN.JS YA LO GESTIONA) -->
-    <section class="section alt" id="form" data-aos="fade-up">
-      <div class="section-head">
-        <h2>Únete a la lista</h2>
-        <p>Rápido y directo.</p>
-      </div>
-
-      <div class="grid-2" style="align-items:start;">
-        <div class="card" data-aos="fade-up" data-aos-delay="0">
-          <h3>Formulario</h3>
-          <p style="color:var(--muted); margin-top:6px;">
-            Tu <code>main.js</code> (Cloudflare) ya se encarga del envío.
+    <section id="contact" class="section alt">
+      <div class="section-split">
+        <div>
+          <div class="pill subtle">Lista de espera</div>
+          <h2>Recibe el aviso del Kickstarter y avances antes que nadie</h2>
+          <p>
+            Únete a la lista para recibir: avances, renders/animaciones, resultados de encuestas y el aviso de lanzamiento.
+            Si eres estudio/artista, marca tu rol para optar al <strong>Founder Council</strong>.
           </p>
 
-          <form id="waitlistForm" novalidate>
-            <div style="display:grid; gap:12px; margin-top:14px;">
-              <div>
-                <label for="email" style="display:block; font-weight:600; margin-bottom:6px;">Email *</label>
-                <input id="email" name="email" type="email" autocomplete="email" required
-                  placeholder="tu@email.com"
-                  style="width:100%; padding:12px 12px; border-radius:12px; border:1px solid rgba(255,255,255,0.14); background: rgba(10,12,16,0.35); color: rgba(255,255,255,0.92); outline:none;">
-              </div>
-
-              <div>
-                <label for="name" style="display:block; font-weight:600; margin-bottom:6px;">Nombre (opcional)</label>
-                <input id="name" name="name" type="text" autocomplete="name"
-                  placeholder="Vicente"
-                  style="width:100%; padding:12px 12px; border-radius:12px; border:1px solid rgba(255,255,255,0.14); background: rgba(10,12,16,0.35); color: rgba(255,255,255,0.92); outline:none;">
-              </div>
-
-              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px;">
-                <div>
-                  <label for="role" style="display:block; font-weight:600; margin-bottom:6px;">Soy…</label>
-                  <select id="role" name="role"
-                    style="width:100%; padding:12px 12px; border-radius:12px; border:1px solid rgba(255,255,255,0.14); background: rgba(10,12,16,0.35); color: rgba(255,255,255,0.92); outline:none;">
-                    <option value="">Selecciona</option>
-                    <option value="artist">Artista</option>
-                    <option value="studio">Estudio</option>
-                    <option value="other">Otro</option>
-                  </select>
-                </div>
-                <div>
-                  <label for="country" style="display:block; font-weight:600; margin-bottom:6px;">País (opcional)</label>
-                  <input id="country" name="country" type="text" autocomplete="country-name"
-                    placeholder="España"
-                    style="width:100%; padding:12px 12px; border-radius:12px; border:1px solid rgba(255,255,255,0.14); background: rgba(10,12,16,0.35); color: rgba(255,255,255,0.92); outline:none;">
-                </div>
-              </div>
-
-              <div>
-                <label for="city" style="display:block; font-weight:600; margin-bottom:6px;">Ciudad (opcional)</label>
-                <input id="city" name="city" type="text" autocomplete="address-level2"
-                  placeholder="Murcia"
-                  style="width:100%; padding:12px 12px; border-radius:12px; border:1px solid rgba(255,255,255,0.14); background: rgba(10,12,16,0.35); color: rgba(255,255,255,0.92); outline:none;">
-              </div>
-
-              <label style="display:flex; gap:10px; align-items:flex-start; cursor:pointer;">
-                <input id="founder" name="founder" type="checkbox" style="margin-top:3px;">
-                <span>Me interesa <strong>Founder Council</strong> (si encajo).</span>
-              </label>
-
-              <label style="display:flex; gap:10px; align-items:flex-start; cursor:pointer;">
-                <input id="consent" name="consent" type="checkbox" required style="margin-top:3px;">
-                <span>Acepto la <a href="/privacy.html">política de privacidad</a> y recibir emails de vINKo System.</span>
-              </label>
-
-              <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:6px;">
-                <button type="submit" class="btn primary">Unirme</button>
-                <a class="btn ghost" href="founder-council.html">¿Qué es Founder Council?</a>
-              </div>
-
-              <!-- Este contenedor lo puede usar tu main.js para mostrar mensajes -->
-              <div id="formMsg" style="min-height:22px; color: rgba(255,255,255,0.85);"></div>
-            </div>
-          </form>
-
-          <div class="note" style="margin-top:14px;">
-            * Puedes darte de baja cuando quieras (link en cada email).
+          <div class="micro">
+            <strong>Importante:</strong> este proyecto está en fase conceptual. No se comparte ingeniería interna en abierto y no es un producto apto para estudio todavía.
           </div>
         </div>
 
-        <div class="card" data-aos="fade-up" data-aos-delay="90">
-          <h3>Qué haré con tu email</h3>
-          <ul class="ticks">
-            <li>Updates puntuales cuando haya hitos reales.</li>
-            <li>Aviso del Kickstarter antes que nadie.</li>
-            <li>Si marcas Founder Council, podría escribirte para entender tu rutina (sin compromiso).</li>
-          </ul>
+        <form class="form" id="earlyForm" autocomplete="on">
+          <div class="form-fields" id="formFields">
+            <label>
+              Nombre *
+              <input
+                type="text"
+                name="name"
+                placeholder="Tu nombre"
+                autocomplete="name"
+                required
+                minlength="2"
+              />
+            </label>
 
-          <div class="note" style="margin-top:14px;">
-            No comparto tu email con terceros.
-          </div>
+            <label>
+              Email *
+              <input
+                type="email"
+                name="email"
+                placeholder="tu@email.com"
+                autocomplete="email"
+                required
+              />
+            </label>
 
-          <div style="margin-top:14px;">
-            <div class="pill subtle">Siguiente</div>
-            <h3 style="margin-top:10px;">¿Quieres entender el “por qué”?</h3>
-            <p style="color:var(--muted);">Mira el problema y la idea en 2 minutos.</p>
-            <div style="display:flex; gap:10px; flex-wrap:wrap;">
-              <a class="btn ghost" href="problema.html">Ver problema</a>
-              <a class="btn primary" href="idea.html">Ver la idea</a>
+            <label>
+              Soy... *
+              <select name="role" id="roleSelect" required>
+                <option value="">Selecciona</option>
+                <option value="Artista">Artista</option>
+                <option value="Estudio">Estudio</option>
+                <option value="Distribuidor">Distribuidor</option>
+                <option value="Otro">Otro</option>
+              </select>
+            </label>
+
+            <!-- Redes SOLO si es ARTISTA (mantengo tu lógica) -->
+            <div id="socialsWrap" class="hidden">
+              <label>
+                Redes (IG/TikTok/etc.) (opcional)
+                <input
+                  type="text"
+                  name="socials"
+                  placeholder="@tuusuario o link"
+                  autocomplete="off"
+                />
+              </label>
             </div>
+
+            <label>
+              País (opcional)
+              <input
+                type="text"
+                name="country"
+                placeholder="España"
+                autocomplete="country-name"
+              />
+            </label>
+
+            <label>
+              Teléfono (opcional)
+              <input
+                type="tel"
+                name="phone"
+                placeholder="+34 6XX XXX XXX"
+                autocomplete="tel"
+              />
+            </label>
+
+            <label>
+              Mensaje (opcional)
+              <textarea
+                name="message"
+                rows="4"
+                placeholder="¿Eres estudio o artista? ¿Qué te gustaría que resolviera este sistema en tu workflow?"
+              ></textarea>
+            </label>
+
+            <button class="btn primary full" id="submitBtn" type="submit">
+              Unirme
+            </button>
+
+            <p class="form-note" id="formNote">
+              Sin spam. 1-2 emails/mes. Aviso de Kickstarter + avances.
+            </p>
           </div>
-        </div>
+
+          <!-- Panel de éxito -->
+          <div class="success-panel hidden" id="successPanel">
+            <h3>¡Hecho!</h3>
+            <p>
+              Formulario enviado con éxito. Gracias por apoyar <strong>vINKo System</strong>.
+            </p>
+          </div>
+        </form>
       </div>
     </section>
   </main>
