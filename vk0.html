@@ -46,7 +46,7 @@
 
 <body>
   <header class="header">
-    <a class="brand" href="index.html" aria-label="Ir al inicio">
+    <a class="brand" href="vk0.html#top" aria-label="Ir al inicio">
       <span class="brand-dot"></span>
       <span>vINKo System</span>
     </a>
@@ -60,7 +60,7 @@
 
     <div class="header-right" id="site-nav">
       <nav class="nav" aria-label="Navegación principal">
-        <a href="vk0.html" aria-current="page">VK0</a>
+        <a href="vk0.html">VK0</a>
         <a href="problema.html">Problema</a>
         <a href="idea.html">La idea</a>
         <a href="beneficios.html">Beneficios</a>
@@ -71,6 +71,7 @@
         <a href="lista.html" class="btn primary">Lista de espera</a>
       </nav>
 
+      <!-- Selector de idioma (ES actual) -->
       <div class="lang-switch" aria-label="Idioma del sitio">
         <button class="lang current" type="button" aria-label="Idioma actual: español">
           <span class="flag">🇪🇸</span><span class="code">ES</span>
@@ -83,157 +84,132 @@
   </header>
 
   <main id="main">
-    <!-- HERO (página VK0) -->
-    <section class="hero" id="top">
-      <div class="hero-bg" aria-hidden="true"></div>
+    <!-- HERO (explosión Apple-like) -->
+    <section id="top" class="vk0-scroll-hero" aria-label="VK0 scroll animation">
+      <div class="vk0-sticky">
+        <canvas
+          id="vk0-seq"
+          class="vk0-scroll-canvas"
+          data-desktop="/assets/vk0-360/desktop/frame_%04d.webp"
+          data-mobile="/assets/vk0-360/mobile/frame_%04d.webp"
+          data-frames="373"
+          aria-hidden="true"
+        ></canvas>
 
-      <div class="hero-content">
-        <div class="pill">VK0</div>
-        <h1>La máquina integrada para vINKo System</h1>
-        <p class="hero-sub">
-          Un concepto en desarrollo para llevar el workflow a un nivel más <strong>controlado</strong> y <strong>ordenado</strong>,
-          con el objetivo de reducir desperdicio y simplificar la rutina.
-        </p>
+        <div class="vk0-shade" aria-hidden="true"></div>
 
-        <div class="hero-actions">
-          <a class="btn primary" href="lista.html">Unirme a la lista</a>
-          <a class="btn ghost" href="founder-council.html">Founder Council</a>
-          <a class="btn ghost" href="index.html">Ver animación</a>
+        <div class="vk0-steps" aria-hidden="false">
+        <!-- Step 1 -->
+        <div class="vk0-step" data-start="0.02" data-end="0.28">
+          <div class="vk0-top">
+            <div class="pill">VK0 — 360º</div>
+            <h1>vINKo&nbsp;System</h1>
+          </div>
+          <div class="vk0-bottom">
+            <p class="vk0-lead">Vista 360º del concepto.</p>
+          </div>
         </div>
 
-        <div class="hero-micro">
-          * Proyecto en fase conceptual. No se comparte ingeniería interna en abierto y no es un producto apto para uso en estudio todavía.
+        <!-- Step 2 -->
+        <div class="vk0-step" data-start="0.32" data-end="0.58">
+          <div class="vk0-top"><h2>Diseño integrado</h2></div>
+          <div class="vk0-bottom"><p>Una máquina pensada para encajar con el sistema.</p></div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="vk0-step" data-start="0.62" data-end="0.88">
+          <div class="vk0-top"><h2>Listo para conocer más</h2></div>
+          <div class="vk0-bottom">
+            <p>Apúntate y te aviso cuando haya novedades reales.</p>
+            <div class="vk0-cta">
+              <a class="btn primary" href="lista.html">Lista de espera</a>
+              <a class="btn ghost" href="founder-council.html">Founder Council</a>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div class="hero-media">
-        <div class="media-card">
-          <img src="/assets/img/vk0_concept.png" alt="Concepto VK0 (render)" style="width:100%; height:auto; display:block;">
-          <div class="media-caption">Concept render. Aspecto final sujeto a iteraciones de diseño para fabricación.</div>
+        <div class="vk0-scroll-hint" aria-hidden="true">
+          <span class="vk0-mouse"></span>
+          <span>Scroll</span>
         </div>
       </div>
     </section>
 
-    <!-- QUÉ ES -->
-    <section class="section" data-aos="fade-up">
+    <!-- DESPUÉS DE LA EXPLOSIÓN: solo navegación a páginas -->
+    <section class="section alt" data-aos="fade-up">
       <div class="section-head">
-        <h2>¿Qué es VK0?</h2>
-        <p>
-          VK0 es la <strong>máquina integrada</strong> pensada para encajar con vINKo System.
-          La idea: hacer que el flujo de trabajo sea más consistente y menos “por si acaso”.
-        </p>
+        <h2>Explora el proyecto</h2>
+        <p>Páginas independientes (rápidas y limpias). Aquí solo te llevo al punto.</p>
       </div>
 
       <div class="grid-3">
         <div class="card" data-aos="fade-up" data-aos-delay="0">
-          <h3>Integración</h3>
-          <p>Diseñada para trabajar como parte del sistema, no como un accesorio suelto.</p>
+          <h3>VK0</h3>
+          <p>La priemra máquina integrada con el sistema vINKo.</p>
+          <a class="btn ghost" href="vk0.html">Ver VK0</a>
         </div>
+
         <div class="card" data-aos="fade-up" data-aos-delay="80">
-          <h3>Rutina más simple</h3>
-          <p>Objetivo: menos pasos, menos elementos, menos fricción en la preparación.</p>
+          <h3>Problema</h3>
+          <p>Por qué el desperdicio no debería ser "rutina".</p>
+          <a class="btn ghost" href="problema.html">Ver problema</a>
         </div>
+
         <div class="card" data-aos="fade-up" data-aos-delay="160">
-          <h3>Consistencia</h3>
-          <p>Buscamos una experiencia más repetible: control y orden en el workflow.</p>
+          <h3>La idea</h3>
+          <p>Enfoque conceptual.</p>
+          <a class="btn ghost" href="idea.html">Ver la idea</a>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-delay="0">
+          <h3>Beneficios</h3>
+          <p>Qué debería mejorar en el día a día de un artista.</p>
+          <a class="btn ghost" href="beneficios.html">Ver beneficios</a>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-delay="80">
+          <h3>Founder Council</h3>
+          <p>Estudios y artistas: feedback directo para diseñarlo bien.</p>
+          <a class="btn ghost" href="founder-council.html">Ver Founder Council</a>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-delay="160">
+          <h3>Roadmap</h3>
+          <p>De concepto a tu estudio.</p>
+          <a class="btn ghost" href="roadmap.html">Ver roadmap</a>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-delay="0">
+          <h3>FAQ</h3>
+          <p>Respuestas rápidas.</p>
+          <a class="btn ghost" href="faq.html">Ver FAQ</a>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-delay="80">
+          <h3>Sobre vINKo</h3>
+          <p>Quién está detrás y por qué existe vINKo System.</p>
+          <a class="btn ghost" href="sobre-mi.html">Ver historia</a>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-delay="160">
+          <h3>Lista de espera</h3>
+          <p>Updates reales + aviso de Kickstarter antes que nadie.</p>
+          <a class="btn primary" href="lista.html">Unirme</a>
         </div>
       </div>
-    </section>
 
-    <!-- ENFOQUE -->
-    <section class="section alt" data-aos="fade-right">
-      <div class="section-split">
+      <div class="cta-band" data-aos="fade-up">
         <div>
-          <div class="pill subtle">Enfoque</div>
-          <h2>Diseño con foco en el día a día del estudio</h2>
-          <p style="color: var(--muted); line-height:1.6; margin:0;">
-            VK0 se plantea alrededor de un objetivo simple: que el sistema ayude al artista a trabajar con más orden,
-            reduciendo desperdicio y manteniendo una rutina más limpia y consistente.
-          </p>
-
-          <ul class="ticks">
-            <li>Menos “tinta extra por si acaso”.</li>
-            <li>Menos manipulación abierta en la rutina.</li>
-            <li>Más consistencia en la preparación y suministro.</li>
-          </ul>
-
-          <div class="note">
-            Nota: En esta fase la comunicación es conceptual (no ingeniería). La prioridad es llegar a un diseño fabricable y validado.
-          </div>
+          <h3>¿Te aviso cuando haya novedades importantes?</h3>
+          <p>Lista de espera = updates y aviso de Kickstarter</p>
         </div>
-
-        <div>
-          <div class="grid-2" style="gap:12px;">
-            <div class="card">
-              <h3>Para artistas</h3>
-              <p>Menos fricción y más foco en el trabajo. Workflow más ordenado.</p>
-            </div>
-            <div class="card">
-              <h3>Para estudios</h3>
-              <p>Objetivo: rutina más limpia y consistente, con menos desperdicio.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ESTADO / ROADMAP corto -->
-    <section class="section" data-aos="fade-up">
-      <div class="section-head">
-        <h2>Estado del proyecto</h2>
-        <p>De concepto a un producto fabricable y validado: paso a paso.</p>
-      </div>
-
-      <div class="timeline">
-        <div class="step">
-          <span class="step-dot"></span>
-          <div>
-            <h4>Fase actual</h4>
-            <p>Concepto público, animaciones/renders y entrevistas con estudios para cerrar requisitos.</p>
-          </div>
-        </div>
-        <div class="step">
-          <span class="step-dot"></span>
-          <div>
-            <h4>Kickstarter</h4>
-            <p>Financiación para llevar el diseño a fabricación profesional y una primera producción limitada.</p>
-          </div>
-        </div>
-        <div class="step">
-          <span class="step-dot"></span>
-          <div>
-            <h4>DFM + prototipos industriales</h4>
-            <p>Materiales, tolerancias y ensamblaje: iteraciones orientadas a producción real.</p>
-          </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn primary" href="lista.html">Lista de espera</a>
         </div>
       </div>
 
-      <div class="cta-band">
-        <div>
-          <h3>¿Quieres enterarte antes que nadie?</h3>
-          <p>Apúntate para recibir avances y el aviso de lanzamiento.</p>
-        </div>
-        <a class="btn primary" href="lista.html">Unirme</a>
-      </div>
-    </section>
-
-    <!-- MINI FAQ VK0 -->
-    <section class="section alt" data-aos="fade-up">
-      <div class="section-head">
-        <h2>Preguntas rápidas sobre VK0</h2>
-        <p>Respuestas directas para esta fase.</p>
-      </div>
-
-      <div class="grid-2">
-        <div class="card">
-          <h3>¿Es un producto final?</h3>
-          <p>No todavía. Es un concepto en desarrollo y el objetivo es llegar a un diseño fabricable y validado.</p>
-        </div>
-        <div class="card">
-          <h3>¿Cuándo podré verlo “real”?</h3>
-          <p>Cuando el roadmap técnico y de fabricación esté cerrado. Si te apuntas, te aviso primero.</p>
-        </div>
-      </div>
+      <!-- Placeholder oculto por compatibilidad si tu main.js espera #earlyForm -->
+      <form id="earlyForm" class="hidden" aria-hidden="true"></form>
     </section>
   </main>
 
@@ -292,12 +268,253 @@
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      AOS.init({ duration: 700, easing: "ease-out", offset: 80, once: true });
-      const y = document.getElementById("year");
-      if (y) y.textContent = new Date().getFullYear();
+      AOS.init({
+        duration: 700,
+        easing: "ease-out",
+        offset: 80,
+        once: true
+      });
     });
   </script>
 
-  <script src="main.js?v=1.0.6" defer></script>
+<!-- VK0 Scroll Animation (Apple-like) -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const section = document.querySelector('.vk0-scroll-hero');
+      if (!section) return;
+
+      const sticky = section.querySelector('.vk0-sticky');
+      const canvas = document.getElementById('vk0-seq');
+      const header = document.querySelector('.header');
+
+      // Fix 100vh en móvil (barras dinámicas)
+      const setVH = () => {
+        document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+      };
+      setVH();
+
+      // ---- PIN ROBUSTO (tipo Apple) ----
+      let headerH = 0;
+      let start = 0;
+      let end = 0;
+      let scrollable = 1;
+
+      const recalc = () => {
+        headerH = header ? header.offsetHeight : 0;
+        start = section.offsetTop - headerH;
+        scrollable = Math.max(1, section.offsetHeight - window.innerHeight);
+        end = start + scrollable;
+
+        const bottomTop = Math.max(0, section.offsetHeight - window.innerHeight);
+        section.style.setProperty('--vk0-bottom-top', `${bottomTop}px`);
+      };
+      recalc();
+
+      const updatePin = () => {
+        if (!sticky) return;
+        const y = window.scrollY || window.pageYOffset || 0;
+
+        sticky.classList.remove('is-fixed', 'is-bottom');
+        if (y >= start && y < end) sticky.classList.add('is-fixed');
+        else if (y >= end) sticky.classList.add('is-bottom');
+      };
+
+      const clamp01 = (x) => Math.min(1, Math.max(0, x));
+      const progressInSection = () => {
+        const y = window.scrollY || window.pageYOffset || 0;
+        return clamp01((y - start) / scrollable);
+      };
+
+      updatePin();
+      window.addEventListener('scroll', updatePin, { passive: true });
+      window.addEventListener('resize', () => {
+        setVH();
+        recalc();
+        updatePin();
+        if (canvas) resizeCanvas();
+      }, { passive: true });
+
+      // ---- TEXTO (steps) ----
+      const steps = Array.from(section.querySelectorAll('.vk0-step')).map(el => ({
+        el,
+        start: parseFloat(el.dataset.start || '0'),
+        end: parseFloat(el.dataset.end || '1'),
+      }));
+
+      const smoothstep = (a, b, x) => {
+        const t = clamp01((x - a) / (b - a));
+        return t * t * (3 - 2 * t);
+      };
+
+      // Entrada/salida con transición breve pero “directa”
+      const windowFade = (p, start, end, fade = 0.08) => {
+        const i = smoothstep(start, start + fade, p);
+        const o = 1 - smoothstep(end - fade, end, p);
+        return clamp01(i * o);
+      };
+
+      const renderSteps = (p) => {
+        for (const s of steps) {
+          const o = windowFade(p, s.start, s.end, 0.08);
+          const y = (1 - o) * 16;
+          const blur = (1 - o) * 5;
+          const scale = 0.985 + (o * 0.015);
+
+          s.el.style.opacity = o.toFixed(3);
+          s.el.style.transform = `translateY(${y.toFixed(1)}px) scale(${scale.toFixed(3)})`;
+          s.el.style.filter = `blur(${blur.toFixed(2)}px)`;
+          s.el.style.pointerEvents = o > 0.6 ? 'auto' : 'none';
+        }
+      };
+
+      // ---- CANVAS SEQUENCE (Apple-level) ----
+      let ctx = null;
+      let totalFrames = 0;
+      let tplDesktop = '';
+      let tplMobile = '';
+
+      let imgs = [];
+      let loaded = [];
+
+      let current = 1;
+      let target = 1;
+
+      const easeFrames = 0.22; // sube a 0.28 si lo quieres más pegado al scroll
+
+      const isMobile = () => window.matchMedia('(max-width: 720px)').matches;
+
+      const frameUrl = (i) => {
+        const tpl = isMobile() ? tplMobile : tplDesktop;
+        const n = String(i).padStart(4, '0');
+        return tpl.replace('%04d', n);
+      };
+
+      function resizeCanvas() {
+        if (!canvas || !ctx) return;
+        const dpr = Math.min(2, window.devicePixelRatio || 1);
+        const w = canvas.clientWidth;
+        const h = canvas.clientHeight;
+
+        canvas.width = Math.round(w * dpr);
+        canvas.height = Math.round(h * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+
+      function drawSmart(img) {
+        if (!canvas || !ctx) return;
+
+        const cw = canvas.clientWidth;
+        const ch = canvas.clientHeight;
+        const iw = img.naturalWidth;
+        const ih = img.naturalHeight;
+
+        // Móvil: contain (no recorta). Desktop: cover (cinemático).
+        const contain = isMobile();
+        const scale = contain ? Math.min(cw / iw, ch / ih) : Math.max(cw / iw, ch / ih);
+
+        const dw = iw * scale;
+        const dh = ih * scale;
+        const dx = (cw - dw) / 2;
+        const dy = (ch - dh) / 2;
+
+        ctx.clearRect(0, 0, cw, ch);
+        ctx.drawImage(img, dx, dy, dw, dh);
+      }
+
+      function loadFrame(i) {
+        if (!canvas || !ctx) return;
+        if (i < 1 || i > totalFrames) return;
+        if (imgs[i]) return;
+
+        const img = new Image();
+        img.decoding = 'async';
+        img.src = frameUrl(i);
+        imgs[i] = img;
+        img.onload = () => { loaded[i] = true; };
+      }
+
+      function preloadWindow(center) {
+        // Ventana alrededor del frame actual (50fps => más radio)
+        const r = isMobile() ? 24 : 34;
+        for (let i = center - r; i <= center + r; i++) loadFrame(i);
+      }
+
+      // Loop (solo mientras el HERO está en viewport)
+      let raf = 0;
+      let active = false;
+
+      function tick() {
+        if (!active) { raf = 0; return; }
+
+        const p = progressInSection();
+
+        // Steps siempre
+        renderSteps(p);
+
+        // Frames si hay secuencia
+        if (ctx && totalFrames > 0) {
+          target = 1 + p * (totalFrames - 1);
+          current += (target - current) * easeFrames;
+
+          const idx = Math.max(1, Math.min(totalFrames, Math.round(current)));
+          preloadWindow(idx);
+
+          const img = imgs[idx];
+          if (img && (img.complete || loaded[idx])) drawSmart(img);
+        }
+
+        raf = requestAnimationFrame(tick);
+      }
+
+      const io = new IntersectionObserver((entries) => {
+        active = entries.some(e => e.isIntersecting);
+        if (active && !raf) raf = requestAnimationFrame(tick);
+      }, { threshold: 0.01 });
+
+      io.observe(section);
+
+      // Init (primer render para que se vea texto inmediatamente)
+      renderSteps(progressInSection());
+
+      // Setup canvas (si existe)
+      if (canvas) {
+        ctx = canvas.getContext('2d', { alpha: false });
+        totalFrames = parseInt(canvas.dataset.frames || '0', 10);
+        tplDesktop = canvas.dataset.desktop || '';
+        tplMobile = canvas.dataset.mobile || '';
+
+        imgs = new Array(totalFrames + 1);
+        loaded = new Array(totalFrames + 1).fill(false);
+
+        resizeCanvas();
+
+        // Preload inicial (rápido para evitar negro)
+        const initN = Math.min(50, totalFrames);
+        for (let i = 1; i <= initN; i++) loadFrame(i);
+        loadFrame(1);
+
+        // Dibuja el primer frame cuando esté listo
+        const drawFirst = () => {
+          const img = imgs[1];
+          if (img && img.complete) drawSmart(img);
+          else requestAnimationFrame(drawFirst);
+        };
+        requestAnimationFrame(drawFirst);
+
+        // Si cambia el breakpoint (mobile/desktop), vaciamos cache para usar la otra carpeta
+        const mq = window.matchMedia('(max-width: 720px)');
+        mq.addEventListener('change', () => {
+          imgs = new Array(totalFrames + 1);
+          loaded = new Array(totalFrames + 1).fill(false);
+          resizeCanvas();
+          for (let i = 1; i <= initN; i++) loadFrame(i);
+          loadFrame(1);
+          renderSteps(progressInSection());
+        });
+      }
+    });
+  </script>
+
+<script src="main.js?v=1.0.6" defer></script>
 </body>
 </html>
