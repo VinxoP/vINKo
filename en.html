@@ -2,35 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
   <title>vINKo System — Less waste. More hygiene. More control.</title>
-  <meta name="description" content="vINKo System is a concept in development heading to Kickstarter to improve ink workflow in tattoo/PMU: less waste, better hygiene, and more control. Join the waitlist or the Founder Council." />
+  <meta name="description" content="vINKo System is a patented concept in development towards Kickstarter to improve tattoo/PMU ink workflow: less waste, more hygiene, and more control. Join the waitlist or the Founder Council." />
 
   <link rel="canonical" href="https://vinkosystem.com/en.html" />
   <link rel="alternate" href="https://vinkosystem.com/" hreflang="es" />
   <link rel="alternate" href="https://vinkosystem.com/en.html" hreflang="en" />
   <link rel="alternate" href="https://vinkosystem.com/" hreflang="x-default" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="vINKo System" />
   <meta property="og:title" content="vINKo System — Less waste. More hygiene. More control." />
-  <meta property="og:description" content="Concept in development heading to Kickstarter. Join the waitlist or the Founder Council (studios/artists) to co-design the system." />
+  <meta property="og:description" content="A patented concept in development towards Kickstarter. Join the waitlist or the Founder Council (studios/artists) to co-design the system." />
   <meta property="og:url" content="https://vinkosystem.com/en.html" />
   <meta property="og:image" content="https://vinkosystem.com/assets/img/vINKoSystem.png" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="vINKo System — Less waste. More hygiene. More control." />
-  <meta name="twitter:description" content="Concept in development heading to Kickstarter. Join the waitlist or the Founder Council." />
+  <meta name="twitter:description" content="A patented concept in development towards Kickstarter. Join the waitlist or the Founder Council." />
   <meta name="twitter:image" content="https://vinkosystem.com/assets/img/vINKoSystem.png" />
 
-  <link rel="stylesheet" href="styles.css?v=1.0.9" />
+  <link rel="stylesheet" href="styles.css?v=1.0.24" />
 
   <!-- Preloads -->
   <link rel="preload" href="/assets/img/LogoBlanco.png" as="image">
   <link rel="preload" href="/assets/img/vINKoSystem.png" as="image">
-  <link rel="preload" href="/assets/img/wip.png" as="image">
+  <link rel="preload" href="/assets/img/vk0_concept.png" as="image">
 
   <!-- AOS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
@@ -71,423 +75,182 @@
 </head>
 
 <body>
-  <!-- Accessibility
-  <a class="skip-link" href="#main">Skip to content</a>-->
-
   <header class="header">
-    <a class="brand" href="#top" aria-label="Go to top">
+    <a class="brand" href="en.html#top" aria-label="Go to top">
       <span class="brand-dot"></span>
-      <span>vINKo System</span>
+      <span>Home</span>
     </a>
 
-    <!-- Mobile menu button -->
+    <!-- Botón menú móvil -->
     <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+    <span class="nav-toggle-label">Menu</span>
+    <span class="nav-toggle-bars" aria-hidden="true">
       <span class="nav-toggle-bar"></span>
       <span class="nav-toggle-bar"></span>
       <span class="nav-toggle-bar"></span>
-    </button>
+    </span>
+  </button>
 
     <div class="header-right" id="site-nav">
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="#problem">Problem</a>
-        <a href="#concept">The idea</a>
-        <a href="#benefits">Benefits</a>
-        <a href="#founders">Founder Council</a>
-        <a href="#roadmap">Roadmap</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact" class="btn primary">Waitlist</a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="en-vk0.html">VK0</a>
+        <a href="en-system.html">vINKo System</a>
+        <a href="en-faq.html">FAQ</a>
+        <a href="en-sobre-mi.html">About</a>
+        <a href="en-lista.html" class="btn primary">Waitlist</a>
       </nav>
 
-      <!-- Language switcher (EN current) -->
+      <!-- Selector de idioma (ES actual) -->
       <div class="lang-switch" aria-label="Site language">
-        <a class="lang" href="/" aria-label="Switch to Spanish">
+        <button class="lang current" type="button" aria-label="Current language: English">
+          <span class="flag">🇪🇸</span><span class="code">ES</span>
+        </button>
+        <a class="lang" href="index.html" aria-label="Switch to Spanish">
           <span class="flag">🇪🇸</span><span class="code">ES</span>
         </a>
-        <button class="lang current" type="button" aria-label="Current language: English">
-          <span class="flag">🇬🇧</span><span class="code">EN</span>
-        </button>
       </div>
     </div>
   </header>
 
   <main id="main">
-    <!-- HERO -->
-    <section id="top" class="hero" data-aos="fade-up">
-      <div class="hero-bg"></div>
+    <!-- HERO (explosión Apple-like) -->
+    <section id="top" class="vk0-scroll-hero" aria-label="VK0 scroll animation">
+      <div class="vk0-sticky">
+        <canvas
+          id="vk0-seq"
+          class="vk0-scroll-canvas"
+          data-desktop="/assets/vk0seq/desktop/frame_%04d.webp"
+          data-mobile="/assets/vk0seq/mobile/frame_%04d.webp"
+          data-frames="373"
+          aria-hidden="true"
+        ></canvas>
 
-      <div class="hero-content">
-        <div class="pill">International patent-pending concept in development</div>
+        <div class="vk0-shade" aria-hidden="true"></div>
 
-        <h1>Less waste. More hygiene. More control.</h1>
-
-        <p class="hero-sub">
-          vINKo System is a <strong>new fully integrated tattoo machine concept in development</strong> designed to improve ink workflow
-          in tattoo/PMU: built to reduce waste and enable a cleaner, more consistent process. The concept covers both a
-          pen-style machine with the patented system integrated, as well as a pen machine with a connector to an external system module
-          so it can be used with any new-generation machine.
-        </p>
-
-        <div class="note" style="margin-top:14px;">
-          We are currently at the <strong>concept</strong> stage.
-          <strong>Not suitable for studio use yet</strong> (hygiene, materials, and certification).
-          The goal is to build a professional version and launch it on <strong>Kickstarter</strong>.
-        </div>
-
-        <div class="hero-actions">
-          <a class="btn primary" href="#contact">Join the waitlist</a>
-        </div>
-
-        <!-- HERO <div class="hero-micro">
-          No spam · 1–2 emails/month · Launch alert + updates · Founder Council for studios/artists
-        </div>-->
-      </div>
-
-      <div class="hero-media">
-        <div class="media-card">
-          <img src="assets/img/wip.png" alt="Concept render work in progress for vINKo System" />
-          <div class="media-caption">
-            Concept render · Work in progress
+        <div class="vk0-steps lato-bold" aria-hidden="false">
+          <div class="vk0-step" data-start="0.02" data-end="0.22">
+            <div class="vk0-top">
+              <div class="pill">International patent-pending concept in development</div>
+              <h1>vINKo&nbsp;System</h1>
+            </div>
+            <div class="vk0-bottom">
+              <p class="vk0-lead">Less waste. More hygiene. More control.</p>
+            </div>
           </div>
+
+          <div class="vk0-step" data-start="0.26" data-end="0.46">
+            <div class="vk0-top">
+              <h2>More controlled ink flow</h2>
+            </div>
+            <div class="vk0-bottom">
+              <p>Operational consistency.</p>
+            </div>
+          </div>
+
+          <div class="vk0-step" data-start="0.50" data-end="0.72">
+            <div class="vk0-top">
+              <h2>A cleaner routine</h2>
+            </div>
+            <div class="vk0-bottom">
+              <p>Less exposure and less friction in the workflow.</p>
+            </div>
+          </div>
+
+          <div class="vk0-step" data-start="0.76" data-end="0.98" data-hold="1">
+            <div class="vk0-top">
+              <h2>Want to be among the first?</h2>
+            </div>
+            <div class="vk0-bottom">
+              <p>Get progress updates and the Kickstarter launch alert first.</p>
+              <div class="vk0-cta">
+                <a class="btn primary" href="lista.html">Join the waitlist</a>
+                <a class="btn ghost" href="vk0.html">See VK0</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="vk0-scroll-hint" aria-hidden="true">
+          <span class="vk0-mouse"></span>
+          <span>Scroll</span>
         </div>
       </div>
     </section>
 
-    <!-- PROBLEM -->
-    <section id="problem" class="section" data-aos="fade-up">
+    <!-- DESPUÉS DE LA EXPLOSIÓN: solo navegación a páginas 
+    <section class="section alt" data-aos="fade-up">
       <div class="section-head">
-        <h2>The problem isn’t the artist. It’s the system.</h2>
-        <p>
-          In studios, ink is prepared “just in case”, handled openly, and steps get repeated.
-          The result: <strong>waste and less control over the workflow</strong>.
-        </p>
+        <h2>Explora el proyecto</h2>
       </div>
 
       <div class="grid-3">
         <div class="card" data-aos="fade-up" data-aos-delay="0">
-          <h3>Waste</h3>
-          <p>More ink is prepared than used, and leftovers are thrown away. It’s common—nobody wants it, but it happens.</p>
+          <h3>VK0</h3>
+          <p>La priemra máquina integrada con el sistema vINKo.</p>
+          <a class="btn ghost" href="vk0.html">See VK0</a>
         </div>
+
         <div class="card" data-aos="fade-up" data-aos-delay="80">
-          <h3>Hygiene & Routine</h3>
-          <p>The more open and manual the process, the more cleaning points and friction in the workflow.</p>
+          <h3>Problema</h3>
+          <p>Por qué el desperdicio no debería ser "rutina".</p>
+          <a class="btn ghost" href="problema.html">Ver problema</a>
         </div>
+
         <div class="card" data-aos="fade-up" data-aos-delay="160">
-          <h3>Control</h3>
-          <p>Supply consistency and preparation affect the experience—for both the artist and the studio.</p>
+          <h3>La idea</h3>
+          <p>Enfoque conceptual.</p>
+          <a class="btn ghost" href="idea.html">Ver la idea</a>
         </div>
-      </div>
-    </section>
 
-    <!-- CONCEPT -->
-    <section id="concept" class="section alt" data-aos="fade-right">
-      <div class="section">
-        <div>
-          <div class="pill subtle">The idea</div>
-          <h2>A new way to handle ink—without complicating your setup.</h2>
-          <p>
-            vINKo System explores a <strong>more controlled, studio-friendly workflow</strong>,
-            designed to reduce unnecessary handling and minimize waste.
-          </p>
-
-          <div class="grid-2" style="margin-top:18px; gap:12px;">
-            <div class="card">
-              <h3>Cleaner workflow</h3>
-              <p>
-                Designed to reduce steps and unnecessary exposure, helping keep a simpler studio routine.
-              </p>
-            </div>
-            <div class="card">
-              <h3>Control & Consistency</h3>
-              <p>
-                Aimed at a more consistent preparation and supply experience—with less “just in case”.
-              </p>
-            </div>
-          </div>
-
-          <ul class="ticks">
-            <li>Built around real studio workflow: speed, order, and repeatability.</li>
-            <li>Concept oriented toward professional manufacturing.</li>
-            <li>Kickstarter as the path to reach studio-grade quality and validation.</li>
-          </ul>
-
-          <!--
-          <div class="note">
-            * In the public phase, internal engineering and sensitive details are not shared. Safety and hygiene come first.
-          </div>-->
-        </div>
-      </div>
-    </section>
-
-    <!-- BENEFITS -->
-    <section id="benefits" class="section" data-aos="fade-left">
-      <div class="section-head">
-        <h2>What it should improve in your day-to-day</h2>
-        <p>
-          This is what I’m aiming to achieve with a final version manufactured and validated for studio use.
-          Your feedback now helps define real priorities.
-        </p>
-      </div>
-
-      <div class="grid-3">
         <div class="card" data-aos="fade-up" data-aos-delay="0">
-          <h3>Less ink thrown away</h3>
-          <p>Goal: significantly reduce per-session waste without changing how you tattoo.</p>
+          <h3>Beneficios</h3>
+          <p>Qué debería mejorar en el día a día de un artista.</p>
+          <a class="btn ghost" href="beneficios.html">Ver beneficios</a>
         </div>
+
         <div class="card" data-aos="fade-up" data-aos-delay="80">
-          <h3>Simpler routine</h3>
-          <p>Less friction: fewer steps, fewer items, more focus on the work.</p>
+          <h3>Founder Council</h3>
+          <p>Estudios y artistas: feedback directo para diseñarlo bien.</p>
+          <a class="btn ghost" href="founder-council.html">Ver Founder Council</a>
         </div>
+
         <div class="card" data-aos="fade-up" data-aos-delay="160">
-          <h3>More control</h3>
-          <p>Designed for operational consistency: intentional prep and supply—not improvisation.</p>
+          <h3>Roadmap</h3>
+          <p>De concepto a tu estudio.</p>
+          <a class="btn ghost" href="roadmap.html">Ver roadmap</a>
         </div>
-      </div>
-    </section>
 
-    <!-- FOUNDERS -->
-    <section id="founders" class="section alt" data-aos="zoom-in">
-      <div class="section-head">
-        <div class="pill subtle">Founder Council</div>
-        <h2>Studios & artists: help me design it right</h2>
-        <p>
-          I’m looking for a small group for <strong>co-design</strong> (feedback, priorities, real workflow).
-          <strong>This is not a “test on clients” program</strong>: it’s a concept stage to validate needs properly.
-        </p>
-      </div>
-
-      <div class="grid-3">
         <div class="card" data-aos="fade-up" data-aos-delay="0">
-          <h3>Priority access</h3>
-          <p>You’ll be among the first to get updates, design decisions, and the Kickstarter alert (24–48h early).</p>
+          <h3>FAQ</h3>
+          <p>Respuestas rápidas.</p>
+          <a class="btn ghost" href="faq.html">Ver FAQ</a>
         </div>
+
         <div class="card" data-aos="fade-up" data-aos-delay="80">
-          <h3>Founder Edition</h3>
-          <p>Once there’s a final production-ready product, you’ll be able to opt into Founder packs (limited & numbered) with special conditions.</p>
+          <h3>Sobre vINKo</h3>
+          <p>Quién está detrás y por qué existe vINKo System.</p>
+          <a class="btn ghost" href="sobre-mi.html">Ver historia</a>
         </div>
+
         <div class="card" data-aos="fade-up" data-aos-delay="160">
-          <h3>Your voice matters</h3>
-          <p>You’ll help vote on priorities (workflow, cleaning, consumables, ergonomics).</p>
+          <h3>Lista de espera</h3>
+          <p>Updates reales + aviso de Kickstarter antes que nadie.</p>
+          <a class="btn primary" href="lista.html">Unirme</a>
         </div>
       </div>
 
-      <div class="cta-band">
+      <div class="cta-band" data-aos="fade-up">
         <div>
-          <h3>Join the Founder Council</h3>
-          <p>If you’re a studio/artist, your experience can shape the final product.</p>
+          <h3>¿Te aviso cuando haya novedades importantes?</h3>
+          <p>Lista de espera = updates y aviso de Kickstarter</p>
         </div>
-        <a class="btn primary" href="#contact">I’m in</a>
-      </div>
-    </section>
-
-    <!-- ROADMAP -->
-    <section id="roadmap" class="section">
-      <div class="section-head">
-        <h2>Roadmap</h2>
-        <p>From concept to a professional product suitable for studio use (manufacturing + validation).</p>
-      </div>
-
-      <div class="timeline">
-        <div class="step">
-          <span class="step-dot"></span>
-          <div>
-            <h4>Current phase</h4>
-            <p>Concept, renders/animations, studio interviews, and defining real-world requirements.</p>
-          </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn primary" href="lista.html">Lista de espera</a>
         </div>
-        <div class="step">
-          <span class="step-dot"></span>
-          <div>
-            <h4>Kickstarter</h4>
-            <p>Support the concept to fund a limited initial production run.</p>
-          </div>
-        </div>
-        <div class="step">
-          <span class="step-dot"></span>
-          <div>
-            <h4>Design for Manufacturing (DFM)</h4>
-            <p>Materials, tolerances, assembly, and full definition of the system for professional manufacturing.</p>
-          </div>
-        </div>
-        <div class="step">
-          <span class="step-dot"></span>
-          <div>
-            <h4>Industrial prototypes</h4>
-            <p>Iterations using the right processes.</p>
-          </div>
-        </div>
-        <div class="step">
-          <span class="step-dot"></span>
-          <div>
-            <h4>Hygiene / safety validation</h4>
-            <p>Procedures, testing, and requirements to operate in a real studio environment.</p>
-          </div>
-        </div>
-        <div class="step">
-          <span class="step-dot"></span>
-          <div>
-            <h4>Initial production</h4>
-            <p>Launch, first batch manufacturing, and priority for Founder Council / early adopters.</p>
-          </div>
-        </div>
-      </div>
+      </div>-->
 
-      <div class="hero-micro" style="margin-top:16px;">
-        Dates will be published once the technical and manufacturing roadmap is locked. Join the list to get the update.
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="section alt" data-aos="fade-up">
-      <div class="section-head">
-        <h2>FAQ</h2>
-        <p>Clear answers for this phase (concept + prelaunch).</p>
-      </div>
-
-      <div class="grid-2">
-        <div class="card">
-          <h3>Can I buy it now?</h3>
-          <p>Not yet. This is the concept and validation phase. The goal is to launch on Kickstarter once the design is ready for professional manufacturing.</p>
-        </div>
-        <div class="card">
-          <h3>Can it be used in a studio today?</h3>
-          <p>No. A concept/prototype that isn’t validated should not enter a real hygienic environment. The priority is doing it properly: materials, processes, and validation.</p>
-        </div>
-        <div class="card">
-          <h3>What is the Founder Council?</h3>
-          <p>A small group to co-design: feedback, priorities, and workflow. It’s not “testing on clients”.</p>
-        </div>
-        <div class="card">
-          <h3>When is the Kickstarter launch?</h3>
-          <p>Once the manufacturing and validation roadmap is defined. If you join the list, you’ll know before anyone else.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="section" data-aos="fade-up">
-      <div class="section-head">
-        <h2>About me</h2>
-        <p>
-          I’m <strong>Vicente Pina</strong>. I’m a tattoo artist with years of experience, and I’m also an electronics engineer.
-          In 2023 I had my first idea for an integrated tattoo machine concept and started the patent process.
-          With that foundation, I’m building vINKo System to solve a recurring studio problem:
-          waste, cleanliness, and control. If you’re an artist or a studio, your experience can make the difference.
-        </p>
-      </div>
-    </section>
-
-    <!-- CONTACT / FORM -->
-    <section id="contact" class="section alt">
-      <div class="section-split">
-        <div>
-          <div class="pill subtle">Waitlist</div>
-          <h2>Get the Kickstarter alert and updates before anyone else</h2>
-          <p>
-            Join the list to receive: updates, renders/animations, survey results, and the launch alert.
-            If you’re a studio/artist, select your role to be considered for the <strong>Founder Council</strong>.
-          </p>
-
-          <div class="micro">
-            <strong>Important:</strong> this project is in the concept phase. Internal engineering isn’t shared publicly, and it’s not studio-ready yet.
-          </div>
-        </div>
-
-        <form class="form" id="earlyForm" autocomplete="on">
-          <div class="form-fields" id="formFields">
-            <label>
-              Name *
-              <input
-                type="text"
-                name="name"
-                placeholder="Your name"
-                autocomplete="name"
-                required
-                minlength="2"
-              />
-            </label>
-
-            <label>
-              Email *
-              <input
-                type="email"
-                name="email"
-                placeholder="you@email.com"
-                autocomplete="email"
-                required
-              />
-            </label>
-
-            <label>
-              I am... *
-              <select name="role" id="roleSelect" required>
-                <option value="">Select</option>
-                <option value="Artista">Artist</option>
-                <option value="Estudio">Studio</option>
-                <option value="Distribuidor">Distributor</option>
-                <option value="Otro">Other</option>
-              </select>
-            </label>
-
-            <!-- Socials ONLY if ARTIST (keeping your logic) -->
-            <div id="socialsWrap" class="hidden">
-              <label>
-                Socials (IG/TikTok/etc.) (optional)
-                <input
-                  type="text"
-                  name="socials"
-                  placeholder="@yourhandle or link"
-                  autocomplete="off"
-                />
-              </label>
-            </div>
-
-            <label>
-              Country (optional)
-              <input
-                type="text"
-                name="country"
-                placeholder="Spain"
-                autocomplete="country-name"
-              />
-            </label>
-
-            <label>
-              Phone (optional)
-              <input
-                type="tel"
-                name="phone"
-                placeholder="+34 6XX XXX XXX"
-                autocomplete="tel"
-              />
-            </label>
-
-            <label>
-              Message (optional)
-              <textarea
-                name="message"
-                rows="4"
-                placeholder="Are you a studio or an artist? What would you like this system to solve in your workflow?"
-              ></textarea>
-            </label>
-
-            <button class="btn primary full" id="submitBtn" type="submit">
-              Join
-            </button>
-
-            <p class="form-note" id="formNote">
-              No spam. 1–2 emails/month. Kickstarter alert + updates.
-            </p>
-          </div>
-
-          <!-- Success panel -->
-          <div class="success-panel hidden" id="successPanel">
-            <h3>Done!</h3>
-            <p>
-              Form submitted successfully. Thanks for supporting <strong>vINKo System</strong>.
-            </p>
-          </div>
-        </form>
-      </div>
+      <!-- Placeholder oculto por compatibilidad si tu main.js espera #earlyForm -->
+      <form id="earlyForm" class="hidden" aria-hidden="true"></form>
     </section>
   </main>
 
@@ -498,17 +261,14 @@
       </div>
 
       <div class="footer-links">
-        <a href="#problem">Problem</a>
-        <a href="#concept">The idea</a>
-        <a href="#benefits">Benefits</a>
-        <a href="#founders">Founder Council</a>
-        <a href="#roadmap">Roadmap</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Waitlist</a>
+        <a href="en-vk0.html">VK0</a>
+        <a href="en-system.html">vINKo System</a>
+        <a href="en-faq.html">FAQ</a>
+        <a href="en-sobre-mi.html">About</a>
+        <a href="en-lista.html">Waitlist</a>
       </div>
 
       <div class="footer-right">
-        <!-- Social links -->
         <div class="social-links" aria-label="vINKo System social links">
           <a href="https://www.linkedin.com/company/vinko-system" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <img src="assets/img/linkedin.svg" alt="LinkedIn" class="social-icon" />
@@ -522,12 +282,12 @@
         </div>
 
         <div class="lang-switch small" aria-label="Site language">
-          <a class="lang" href="/" aria-label="Switch to Spanish">
+          <button class="lang current" type="button" aria-label="Current language: English">
+            <span class="flag">🇪🇸</span><span class="code">ES</span>
+          </button>
+          <a class="lang" href="index.html" aria-label="Switch to Spanish">
             <span class="flag">🇪🇸</span><span class="code">ES</span>
           </a>
-          <button class="lang current" type="button" aria-label="Current language: English">
-            <span class="flag">🇬🇧</span><span class="code">EN</span>
-          </button>
         </div>
 
         <div class="footer-meta">
@@ -535,7 +295,7 @@
         </div>
 
         <div class="footer-meta" style="margin-top:6px;">
-          <a href="/privacy.html">Privacy</a> · <a href="/cookies.html">Cookies</a> · <a href="#contact">Contact</a>
+          <a href="/privacy.html">Privacy</a> · <a href="/cookies.html">Cookies</a> · <a href="lista.html">Contact</a>
         </div>
       </div>
     </div>
@@ -554,6 +314,248 @@
     });
   </script>
 
-  <script src="main.js?v=1.0.5" defer></script>
+<!-- VK0 Scroll Animation (Apple-like) -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const section = document.querySelector('.vk0-scroll-hero');
+      if (!section) return;
+
+      const sticky = section.querySelector('.vk0-sticky');
+      const canvas = document.getElementById('vk0-seq');
+      const header = document.querySelector('.header');
+
+      // Fix 100vh en móvil (barras dinámicas)
+      const setVH = () => {
+        document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+      };
+      setVH();
+
+      // ---- PIN ROBUSTO (tipo Apple) ----
+      let headerH = 0;
+      let start = 0;
+      let end = 0;
+      let scrollable = 1;
+
+      const recalc = () => {
+        headerH = header ? header.offsetHeight : 0;
+        start = section.offsetTop - headerH;
+        scrollable = Math.max(1, section.offsetHeight - window.innerHeight);
+        end = start + scrollable;
+
+        const bottomTop = Math.max(0, section.offsetHeight - window.innerHeight);
+        section.style.setProperty('--vk0-bottom-top', `${bottomTop}px`);
+      };
+      recalc();
+
+      const updatePin = () => {
+        if (!sticky) return;
+        const y = window.scrollY || window.pageYOffset || 0;
+
+        sticky.classList.remove('is-fixed', 'is-bottom');
+        if (y >= start && y < end) sticky.classList.add('is-fixed');
+        else if (y >= end) sticky.classList.add('is-bottom');
+      };
+
+      const clamp01 = (x) => Math.min(1, Math.max(0, x));
+      const progressInSection = () => {
+        const y = window.scrollY || window.pageYOffset || 0;
+        return clamp01((y - start) / scrollable);
+      };
+
+      updatePin();
+      window.addEventListener('scroll', updatePin, { passive: true });
+      window.addEventListener('resize', () => {
+        setVH();
+        recalc();
+        updatePin();
+        if (canvas) resizeCanvas();
+      }, { passive: true });
+
+      // ---- TEXTO (steps) ----
+      const steps = Array.from(section.querySelectorAll('.vk0-step')).map(el => ({
+        el,
+        start: parseFloat(el.dataset.start || '0'),
+        end: parseFloat(el.dataset.end || '1'),
+      }));
+
+      const smoothstep = (a, b, x) => {
+        const t = clamp01((x - a) / (b - a));
+        return t * t * (3 - 2 * t);
+      };
+
+      // Entrada/salida con transición breve pero “directa”
+      const windowFade = (p, start, end, fade = 0.08) => {
+        const i = smoothstep(start, start + fade, p);
+        const o = 1 - smoothstep(end - fade, end, p);
+        return clamp01(i * o);
+      };
+
+      const renderSteps = (p) => {
+        for (const s of steps) {
+          const hold = s.el.dataset.hold === '1';
+          const o = hold
+          ? smoothstep(s.start, s.start + 0.08, p)         // aparece y se queda
+          : windowFade(p, s.start, s.end, 0.08);           // comportamiento normal
+          const y = (1 - o) * 16;
+          const blur = (1 - o) * 5;
+          const scale = 0.985 + (o * 0.015);
+
+          s.el.style.opacity = o.toFixed(3);
+          s.el.style.transform = `translateY(${y.toFixed(1)}px) scale(${scale.toFixed(3)})`;
+          s.el.style.filter = `blur(${blur.toFixed(2)}px)`;
+          s.el.style.pointerEvents = o > 0.6 ? 'auto' : 'none';
+        }
+      };
+
+      // ---- CANVAS SEQUENCE (Apple-level) ----
+      let ctx = null;
+      let totalFrames = 0;
+      let tplDesktop = '';
+      let tplMobile = '';
+
+      let imgs = [];
+      let loaded = [];
+
+      let current = 1;
+      let target = 1;
+
+      const easeFrames = 0.22; // sube a 0.28 si lo quieres más pegado al scroll
+
+      const isMobile = () => window.matchMedia('(max-width: 720px)').matches;
+
+      const frameUrl = (i) => {
+        const tpl = isMobile() ? tplMobile : tplDesktop;
+        const n = String(i).padStart(4, '0');
+        return tpl.replace('%04d', n);
+      };
+
+      function resizeCanvas() {
+        if (!canvas || !ctx) return;
+        const dpr = Math.min(2, window.devicePixelRatio || 1);
+        const w = canvas.clientWidth;
+        const h = canvas.clientHeight;
+
+        canvas.width = Math.round(w * dpr);
+        canvas.height = Math.round(h * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+
+      function drawSmart(img) {
+        if (!canvas || !ctx) return;
+
+        const cw = canvas.clientWidth;
+        const ch = canvas.clientHeight;
+        const iw = img.naturalWidth;
+        const ih = img.naturalHeight;
+
+        // Móvil: contain (no recorta). Desktop: cover (cinemático).
+        const contain = isMobile();
+        const scale = contain ? Math.min(cw / iw, ch / ih) : Math.max(cw / iw, ch / ih);
+
+        const dw = iw * scale;
+        const dh = ih * scale;
+        const dx = (cw - dw) / 2;
+        const dy = (ch - dh) / 2;
+
+        ctx.clearRect(0, 0, cw, ch);
+        ctx.drawImage(img, dx, dy, dw, dh);
+      }
+
+      function loadFrame(i) {
+        if (!canvas || !ctx) return;
+        if (i < 1 || i > totalFrames) return;
+        if (imgs[i]) return;
+
+        const img = new Image();
+        img.decoding = 'async';
+        img.src = frameUrl(i);
+        imgs[i] = img;
+        img.onload = () => { loaded[i] = true; };
+      }
+
+      function preloadWindow(center) {
+        // Ventana alrededor del frame actual (50fps => más radio)
+        const r = isMobile() ? 24 : 34;
+        for (let i = center - r; i <= center + r; i++) loadFrame(i);
+      }
+
+      // Loop (solo mientras el HERO está en viewport)
+      let raf = 0;
+      let active = false;
+
+      function tick() {
+        if (!active) { raf = 0; return; }
+
+        const p = progressInSection();
+
+        // Steps siempre
+        renderSteps(p);
+
+        // Frames si hay secuencia
+        if (ctx && totalFrames > 0) {
+          target = 1 + p * (totalFrames - 1);
+          current += (target - current) * easeFrames;
+
+          const idx = Math.max(1, Math.min(totalFrames, Math.round(current)));
+          preloadWindow(idx);
+
+          const img = imgs[idx];
+          if (img && (img.complete || loaded[idx])) drawSmart(img);
+        }
+
+        raf = requestAnimationFrame(tick);
+      }
+
+      const io = new IntersectionObserver((entries) => {
+        active = entries.some(e => e.isIntersecting);
+        if (active && !raf) raf = requestAnimationFrame(tick);
+      }, { threshold: 0.01 });
+
+      io.observe(section);
+
+      // Init (primer render para que se vea texto inmediatamente)
+      renderSteps(progressInSection());
+
+      // Setup canvas (si existe)
+      if (canvas) {
+        ctx = canvas.getContext('2d', { alpha: false });
+        totalFrames = parseInt(canvas.dataset.frames || '0', 10);
+        tplDesktop = canvas.dataset.desktop || '';
+        tplMobile = canvas.dataset.mobile || '';
+
+        imgs = new Array(totalFrames + 1);
+        loaded = new Array(totalFrames + 1).fill(false);
+
+        resizeCanvas();
+
+        // Preload inicial (rápido para evitar negro)
+        const initN = Math.min(50, totalFrames);
+        for (let i = 1; i <= initN; i++) loadFrame(i);
+        loadFrame(1);
+
+        // Dibuja el primer frame cuando esté listo
+        const drawFirst = () => {
+          const img = imgs[1];
+          if (img && img.complete) drawSmart(img);
+          else requestAnimationFrame(drawFirst);
+        };
+        requestAnimationFrame(drawFirst);
+
+        // Si cambia el breakpoint (mobile/desktop), vaciamos cache para usar la otra carpeta
+        const mq = window.matchMedia('(max-width: 720px)');
+        mq.addEventListener('change', () => {
+          imgs = new Array(totalFrames + 1);
+          loaded = new Array(totalFrames + 1).fill(false);
+          resizeCanvas();
+          for (let i = 1; i <= initN; i++) loadFrame(i);
+          loadFrame(1);
+          renderSteps(progressInSection());
+        });
+      }
+    });
+  </script>
+
+<script src="main.js?v=1.0.6" defer></script>
 </body>
 </html>
+
