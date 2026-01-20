@@ -1,11 +1,11 @@
 :root{
   /* Fondo general gris que se oscurece */
-  --bg: #000000;    /* gris medio */
+  --bg: #1d1d1d;    /* gris medio */
   --bg-2:#000000;   /* gris muy oscuro */
 
   /* Paneles / cards en rojo oscuro */
-  --panel-2: #004225;   /* rojo vino muy oscuro */
-  --panel:#000000;      /* gris violáceo oscuro */
+  --panel-2: #454b48;   /* rojo vino muy oscuro */
+  --panel:#222423;      /* gris violáceo oscuro */
 
   --text:#f6f7fb;
   --muted:#b8beca;
@@ -1435,4 +1435,73 @@ section[id]{ scroll-margin-top: calc(var(--header-offset) + 12px); }
 /* VK0 overlay (cards/paneles): baja el bloque superior para que no lo tape el header */
 .vk0-top{
   top: calc(var(--header-offset) + var(--vk0-my-top) + env(safe-area-inset-top, 0px)) !important;
+}
+.lato-thin {
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.lato-light {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.lato-regular {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.lato-bold {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.lato-black {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.lato-thin-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.lato-light-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.lato-regular-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.lato-bold-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.lato-black-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+h2 {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+h3 {
+  font-family: "Lato", sans-serif;
+  font-weight: 550;
+  font-style: normal;
 }
