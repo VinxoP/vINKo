@@ -1505,3 +1505,19 @@ h3 {
   font-weight: 550;
   font-style: normal;
 }
+/* ===== FIX: sin hueco entre header fijo y HERO ===== */
+.vk0-scroll-hero{
+  margin-top: calc(-1 * (var(--header-offset) + env(safe-area-inset-top, 0px)));
+}
+
+/* ===== Hint “Desliza / Scroll” más visible ===== */
+.vk0-scroll-hint{
+  bottom: calc(30px + env(safe-area-inset-bottom, 0px)) !important;
+  font-size: 14px !important;
+}
+
+/* (opcional) icono del “ratón” un poco más grande */
+.vk0-mouse{
+  width: 20px !important;
+  height: 32px !important;
+}
