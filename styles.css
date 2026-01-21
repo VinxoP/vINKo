@@ -1521,3 +1521,13 @@ h3 {
   width: 20px !important;
   height: 32px !important;
 }
+/* ===== MÓVIL: mantener animación del hint ===== */
+@media (hover: none) and (pointer: coarse){
+  .vk0-mouse{ display: inline-block !important; } /* vuelve a mostrar el icono */
+  .vk0-scroll-hint{ gap: 10px !important; }
+
+  /* oculto el texto original (Scroll) y pongo el correcto por idioma */
+  .vk0-scroll-hint span:last-child{ display: none !important; }
+  html[lang="es"] .vk0-scroll-hint::after{ content: "Desliza" !important; }
+  html[lang="en"] .vk0-scroll-hint::after{ content: "Swipe" !important; }
+}
