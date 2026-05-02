@@ -5,51 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
   <title>Lista de espera — vINKo System</title>
-  <meta name="description" content="Únete a la lista de espera de vINKo System para recibir avances y el aviso del Kickstarter antes que nadie." />
+  <meta name="description" content="Apúntate a la lista de espera de vINKo System. Recibe avances reales y sé de los primeros en conocerlo cuando esté listo." />
 
   <link rel="canonical" href="https://vinkosystem.com/lista.html" />
   <link rel="alternate" href="https://vinkosystem.com/lista.html" hreflang="es" />
-  <link rel="alternate" href="https://vinkosystem.com/en.html" hreflang="en" />
+  <link rel="alternate" href="https://vinkosystem.com/en-lista.html" hreflang="en" />
   <link rel="alternate" href="https://vinkosystem.com/lista.html" hreflang="x-default" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="vINKo System" />
   <meta property="og:title" content="Lista de espera — vINKo System" />
-  <meta property="og:description" content="Recibe avances y el aviso del Kickstarter antes que nadie." />
+  <meta property="og:description" content="Apúntate y recibe avances reales cuando haya algo que contar." />
   <meta property="og:url" content="https://vinkosystem.com/lista.html" />
   <meta property="og:image" content="https://vinkosystem.com/assets/img/vINKoSystem.png" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Lista de espera — vINKo System" />
-  <meta name="twitter:description" content="Recibe avances y el aviso del Kickstarter antes que nadie." />
+  <meta name="twitter:description" content="Apúntate y recibe avances reales cuando haya algo que contar." />
   <meta name="twitter:image" content="https://vinkosystem.com/assets/img/vINKoSystem.png" />
 
-  <link rel="stylesheet" href="styles.css?v=1.0.26" />
-  <link rel="preload" href="/assets/img/LogoBlanco.png" as="image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="styles.css?v=2.0.0" />
+  <link rel="preload" href="/assets/img/LogoBlanco.png" as="image">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
 
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
   <link rel="icon" href="/assets/img/favicon.ico" sizes="any">
-  <meta name="theme-color" content="#0b0f14">
+  <meta name="theme-color" content="#07080c">
 </head>
 
 <body>
   <header class="header">
     <a class="brand" href="index.html" aria-label="Ir al inicio">
       <span class="brand-dot"></span>
-      <span>Ir al Inicio</span>
+      <span>vINKo System</span>
     </a>
 
     <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="site-nav">
-    <span class="nav-toggle-label">Menú</span>
-    <span class="nav-toggle-bars" aria-hidden="true">
-      <span class="nav-toggle-bar"></span>
-      <span class="nav-toggle-bar"></span>
-      <span class="nav-toggle-bar"></span>
-    </span>
-  </button>
+      <span class="nav-toggle-label">Menú</span>
+      <span class="nav-toggle-bars" aria-hidden="true">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </span>
+    </button>
 
     <div class="header-right" id="site-nav">
       <nav class="nav" aria-label="Navegación principal">
@@ -64,7 +67,7 @@
         <button class="lang current" type="button" aria-label="Idioma actual: español">
           <span class="flag">🇪🇸</span><span class="code">ES</span>
         </button>
-        <a class="lang" href="en.html" aria-label="Cambiar a inglés">
+        <a class="lang" href="en-lista.html" aria-label="Cambiar a inglés">
           <span class="flag">🇬🇧</span><span class="code">EN</span>
         </a>
       </div>
@@ -72,77 +75,51 @@
   </header>
 
   <main id="main">
-    <!-- HERO 
-    <section class="hero" id="top">
-      <div class="hero-bg" aria-hidden="true"></div>
-
-      <div class="hero-content">
-        <div class="pill">Lista de espera</div>
-        <h1>Recibe el aviso del Kickstarter antes que nadie</h1>
-        <p class="hero-sub">
-          Te enviaré updates solo cuando haya avances reales. Si eres <strong>estudio</strong> o <strong>artista</strong>,
-          podrás indicarlo en el formulario para optar a Founder Council.
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn primary" href="#form">Unirme ahora</a>
-          <a class="btn ghost" href="founder-council.html">Ver Founder Council</a>
-        </div>
-
-        <div class="hero-micro">
-          * Cero spam. Updates puntuales. Baja cuando quieras.
-        </div>
-      </div>
-
-      <div class="hero-media">
-        <div class="media-card">
-          <div class="media-caption">
-            Si encajas para Founder Council, te contactaré para una conversación corta. Sin compromiso.
-          </div>
-        </div>
-      </div>
-    </section>-->
 
     <!-- QUÉ RECIBES -->
-    <section class="section" data-aos="fade-up">
+    <section class="section" id="top" data-aos="fade-up">
       <div class="section-head">
-        <h2>¿Qué recibes al apuntarte?</h2>
-        <p>Solo lo importante.</p>
+        <div class="pill" style="margin: 0 auto 16px;">Lista de espera</div>
+        <h2>Sé de los primeros en conocerlo</h2>
+        <p>Sin ruido. Solo avances reales cuando haya algo que contar.</p>
       </div>
 
       <div class="grid-3">
         <div class="card" data-aos="fade-up" data-aos-delay="0">
-          <h3>Updates reales</h3>
-          <p>Cuando haya hitos.</p>
+          <h3>Avances reales</h3>
+          <p>Recibirás noticias solo cuando haya hitos concretos. Sin relleno.</p>
         </div>
         <div class="card" data-aos="fade-up" data-aos-delay="90">
-          <h3>Aviso de Kickstarter</h3>
-          <p>Te enteras antes que nadie del lanzamiento.</p>
+          <h3>Acceso prioritario</h3>
+          <p>Cuando llegue el momento, los de la lista serán los primeros en saberlo.</p>
         </div>
         <div class="card" data-aos="fade-up" data-aos-delay="180">
           <h3>Founder Council</h3>
-          <p>Si eres estudio/artista, puedes optar a aportar feedback directo.</p>
+          <p>Si eres estudio o artista, puedes aportar feedback directo al diseño del sistema.</p>
         </div>
       </div>
     </section>
 
-    <!-- FORM (TU MAIN.JS YA LO GESTIONA) -->
+    <!-- FORMULARIO -->
     <section id="contact" class="section alt">
       <div class="section-split">
-        <div>
-          <div class="pill subtle">Lista de espera</div>
-          <h2>Recibe el aviso del Kickstarter y avances antes que nadie</h2>
-          <p>
-            Únete a la lista para recibir: avances, renders/animaciones, resultados de encuestas y el aviso de lanzamiento.
-            Si eres estudio/artista, marca tu rol para optar al <strong>Founder Council</strong>.
+        <div data-aos="fade-up">
+          <div class="pill subtle" style="margin-bottom: 18px;">Formulario</div>
+          <h2>Apúntate a la lista</h2>
+          <p style="margin-top: 14px; color: var(--muted-2); line-height: 1.65;">
+            Deja tu email y te avisaré cuando haya novedades. Si eres artista o estudio,
+            indica tu rol para poder contactarte sobre el <strong>Founder Council</strong>
+            — feedback directo para diseñar esto bien.
           </p>
 
-          <div class="micro">
-            <strong>Importante:</strong> este proyecto está en fase conceptual. No se comparte ingeniería interna en abierto y no es un producto apto para estudio todavía.
-          </div>
+          <ul class="ticks">
+            <li>Cero spam. Solo lo que importe.</li>
+            <li>Baja cuando quieras, sin drama.</li>
+            <li>Proyecto en fase conceptual con patente internacional.</li>
+          </ul>
         </div>
 
-        <form class="form" id="earlyForm" autocomplete="on">
+        <form class="form" id="earlyForm" autocomplete="on" data-aos="fade-up" data-aos-delay="80">
           <div class="form-fields" id="formFields">
             <label>
               Nombre *
@@ -170,7 +147,7 @@
             <label>
               Soy... *
               <select name="role" id="roleSelect" required>
-                <option value="">Selecciona</option>
+                <option value="">Selecciona tu rol</option>
                 <option value="Artista">Artista</option>
                 <option value="Estudio">Estudio</option>
                 <option value="Distribuidor">Distribuidor</option>
@@ -179,21 +156,20 @@
               </select>
             </label>
 
-            <!-- Redes SOLO si es ARTISTA (mantengo tu lógica) -->
             <div id="socialsWrap" class="hidden">
               <label>
-                Redes (IG/TikTok/etc.) (opcional)
+                Redes (IG / TikTok / etc.) — opcional
                 <input
                   type="text"
                   name="socials"
-                  placeholder="@tuusuario o link"
+                  placeholder="@tuusuario o enlace"
                   autocomplete="off"
                 />
               </label>
             </div>
 
             <label>
-              País (opcional)
+              País — opcional
               <input
                 type="text"
                 name="country"
@@ -203,7 +179,7 @@
             </label>
 
             <label>
-              Teléfono (opcional)
+              Teléfono — opcional
               <input
                 type="tel"
                 name="phone"
@@ -213,24 +189,23 @@
             </label>
 
             <label>
-              Mensaje (opcional)
+              Mensaje — opcional
               <textarea
                 name="message"
                 rows="4"
-                placeholder="¿Eres estudio o artista? ¿Qué te gustaría que resolviera este sistema en tu workflow?"
+                placeholder="¿Qué te gustaría que resolviera este sistema en tu flujo de trabajo?"
               ></textarea>
             </label>
 
-            <button class="btn primary full" id="submitBtn" type="submit">
-              Unirme
+            <button class="btn full" id="submitBtn" type="submit">
+              Apuntarme
             </button>
           </div>
 
-          <!-- Panel de éxito -->
           <div class="success-panel hidden" id="successPanel">
             <h3>¡Hecho!</h3>
             <p>
-              Formulario enviado con éxito. Gracias por apoyar <strong>vINKo System</strong>.
+              Ya estás en la lista. Recibirás noticias de <strong>vINKo System</strong> cuando haya algo que contar.
             </p>
           </div>
         </form>
@@ -246,7 +221,7 @@
 
       <div class="footer-links">
         <a href="vk0.html">VK0</a>
-        <a href="vINKoSystem.html">Cómo funciona</a>
+        <a href="system.html">Cómo funciona</a>
         <a href="faq.html">FAQ</a>
         <a href="sobre-mi.html">Sobre mí</a>
         <a href="lista.html">Lista</a>
@@ -269,7 +244,7 @@
           <button class="lang current" type="button" aria-label="Idioma actual: español">
             <span class="flag">🇪🇸</span><span class="code">ES</span>
           </button>
-          <a class="lang" href="en.html" aria-label="Cambiar a inglés">
+          <a class="lang" href="en-lista.html" aria-label="Cambiar a inglés">
             <span class="flag">🇬🇧</span><span class="code">EN</span>
           </a>
         </div>
@@ -278,7 +253,7 @@
           © <span id="year"></span> vINKo System. Todos los derechos reservados.
         </div>
 
-        <div class="footer-meta" style="margin-top:6px;">
+        <div class="footer-meta">
           <a href="/privacy.html">Privacidad</a> · <a href="/cookies.html">Cookies</a> · <a href="lista.html">Contacto</a>
         </div>
       </div>
