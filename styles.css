@@ -943,11 +943,10 @@ textarea {
 .vk0-step h1 {
   font-family: 'Syne', sans-serif;
   margin: 10px 0 0;
-  font-size: clamp(34px, 6vw, 84px);
+  font-size: clamp(34px, 5.5vw, 78px);
   font-weight: 800;
   line-height: 1.02;
   letter-spacing: -0.025em;
-  white-space: nowrap;
 }
 
 .vk0-step h2 {
