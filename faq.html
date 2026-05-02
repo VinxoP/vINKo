@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
   <title>FAQ — vINKo System</title>
-  <meta name="description" content="Preguntas frecuentes sobre vINKo System y VK0: estado del proyecto, Kickstarter, Founder Council, privacidad, próximos pasos y disponibilidad." />
+  <meta name="description" content="Preguntas frecuentes sobre vINKo System y VK0: qué es, estado del proyecto, disponibilidad, Founder Council y privacidad." />
 
   <link rel="canonical" href="https://vinkosystem.com/faq.html" />
   <link rel="alternate" href="https://vinkosystem.com/faq.html" hreflang="es" />
-  <link rel="alternate" href="https://vinkosystem.com/en.html" hreflang="en" />
-  <linklink rel="alternate" href="https://vinkosystem.com/faq.html" hreflang="x-default" />
+  <link rel="alternate" href="https://vinkosystem.com/en-faq.html" hreflang="en" />
+  <link rel="alternate" href="https://vinkosystem.com/faq.html" hreflang="x-default" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="vINKo System" />
@@ -24,32 +24,35 @@
   <meta name="twitter:description" content="Preguntas frecuentes sobre vINKo System y VK0." />
   <meta name="twitter:image" content="https://vinkosystem.com/assets/img/vINKoSystem.png" />
 
-  <link rel="stylesheet" href="styles.css?v=1.0.24" />
-  <link rel="preload" href="/assets/img/LogoBlanco.png" as="image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="styles.css?v=2.0.0" />
+  <link rel="preload" href="/assets/img/LogoBlanco.png" as="image">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
 
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
   <link rel="icon" href="/assets/img/favicon.ico" sizes="any">
-  <meta name="theme-color" content="#0b0f14">
+  <meta name="theme-color" content="#07080c">
 </head>
 
 <body>
   <header class="header">
     <a class="brand" href="index.html" aria-label="Ir al inicio">
       <span class="brand-dot"></span>
-      <span>Ir al Inicio</span>
+      <span>vINKo System</span>
     </a>
 
     <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="site-nav">
-    <span class="nav-toggle-label">Menú</span>
-    <span class="nav-toggle-bars" aria-hidden="true">
-      <span class="nav-toggle-bar"></span>
-      <span class="nav-toggle-bar"></span>
-      <span class="nav-toggle-bar"></span>
-    </span>
-  </button>
+      <span class="nav-toggle-label">Menú</span>
+      <span class="nav-toggle-bars" aria-hidden="true">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </span>
+    </button>
 
     <div class="header-right" id="site-nav">
       <nav class="nav" aria-label="Navegación principal">
@@ -64,7 +67,7 @@
         <button class="lang current" type="button" aria-label="Idioma actual: español">
           <span class="flag">🇪🇸</span><span class="code">ES</span>
         </button>
-        <a class="lang" href="en.html" aria-label="Cambiar a inglés">
+        <a class="lang" href="en-faq.html" aria-label="Cambiar a inglés">
           <span class="flag">🇬🇧</span><span class="code">EN</span>
         </a>
       </div>
@@ -72,117 +75,90 @@
   </header>
 
   <main id="main">
-    <!-- HERO 
-    <section class="hero" id="top">
-      <div class="hero-bg" aria-hidden="true"></div>
 
-      <div class="hero-content">
-        <div class="pill">FAQ</div>
-        <h1>Preguntas frecuentes</h1>
-        <p class="hero-sub">
-          Respuestas directas para entender el proyecto, su estado y los próximos pasos.
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn primary" href="lista.html">Unirme a la lista</a>
-          <a class="btn ghost" href="founder-council.html">Founder Council</a>
-        </div>
-
-        <div class="hero-micro">
-          * La info pública es conceptual. Los detalles técnicos internos se mantienen privados.
-        </div>
-      </div>
-
-      <div class="hero-media">
-        <div class="media-card">
-          <div class="media-caption">
-            Si no ves aquí tu pregunta, escríbeme desde la lista de espera.
-          </div>
-        </div>
-      </div>
-    </section>-->
-
-    <!-- FAQ LIST -->
-    <section class="section" data-aos="fade-up">
+    <!-- GENERAL -->
+    <section class="section" id="top" data-aos="fade-up">
       <div class="section-head">
-        <h2>General</h2>
-        <p>Lo esencial para situarte.</p>
+        <div class="pill" style="margin: 0 auto 16px;">FAQ</div>
+        <h2>Preguntas frecuentes</h2>
+        <p>Respuestas directas sobre el proyecto, su estado y los próximos pasos.</p>
       </div>
 
       <div class="grid-2">
         <div class="card">
           <h3>¿Qué es vINKo System?</h3>
-          <p>vINKo System es un sistema patentado destinado para integrarse en el flujo de trabajo del tatuaje. 
-            Ya sea en una máquina integrada como la VK0 o un módulo externo para todo tipo de máquinas (en desarrollo de concepto). 
-            Estamos en desarrollo y lo que más nos importa es menos desperdicio, más higiene y más control.</p>
+          <p>Un sistema patentado diseñado para integrarse en el flujo de trabajo del tatuaje. Puede ir integrado en una máquina como la VK0 o como módulo externo para cualquier máquina. La prioridad: menos desperdicio, más higiene y más control de la tinta.</p>
         </div>
         <div class="card">
           <h3>¿Qué es VK0?</h3>
-          <p>Es la máquina integrada de tatuaje pensada para encajar con el sistema y optimizar la rutina.</p>
+          <p>La máquina de tatuaje integrada diseñada para trabajar con el sistema vINKo desde el primer momento, optimizando el flujo de trabajo completo.</p>
         </div>
         <div class="card">
           <h3>¿Está a la venta?</h3>
-          <p>No, todavía. Pero si estás interesado/a, apúntate en la lista de espera que te avisa antes que nadie.</p>
+          <p>No todavía. El proyecto está en fase de desarrollo. Si te interesa, apúntate a la lista de espera y serás de los primeros en enterarte.</p>
         </div>
         <div class="card">
-          <h3>¿Por qué no se publican detalles técnicos?</h3>
-          <p>Estamos en fase de desarrollo y todo el sistema está protegido internacionalmente (PCT). Se comparte lo necesario para entender el valor sin exponer ingeniería.</p>
+          <h3>¿Por qué no se publican los detalles técnicos?</h3>
+          <p>El sistema tiene patente internacional (PCT). Se comparte lo necesario para entender el valor sin exponer la ingeniería interna.</p>
         </div>
       </div>
     </section>
 
+    <!-- DISPONIBILIDAD -->
     <section class="section" data-aos="fade-up">
       <div class="section-head">
-        <h2>Kickstarter</h2>
-        <p>Qué significa y para qué se usaría.</p>
+        <h2>Disponibilidad</h2>
+        <p>Cuándo y cómo estará listo.</p>
       </div>
 
       <div class="grid-2">
         <div class="card">
-          <h3>¿Habrá Kickstarter?</h3>
-          <p>La intención es lanzar Kickstarter (crowdfunding) o ronda de financiación cuando el roadmap y el diseño estén listos para una producción limitada con calidad.</p>
+          <h3>¿Cuándo estará disponible?</h3>
+          <p>Cuando el diseño y la validación estén listos para una primera producción con calidad. No hay fecha fija aún — la lista de espera recibe el aviso antes que nadie.</p>
         </div>
         <div class="card">
-          <h3>¿Qué se financiaría?</h3>
-          <p>Iteración orientada a fabricación (DFM), pruebas/validaciones, y una primera pre-serie limitada.</p>
-        </div>
-        <div class="card">
-          <h3>¿Cuándo se anuncia?</h3>
-          <p>Cuando haya fecha real. La lista de espera recibe el aviso primero.</p>
+          <h3>¿Qué falta para llegar al mercado?</h3>
+          <p>Iteración orientada a fabricación (DFM), pruebas y validaciones, y una primera pre-serie limitada.</p>
         </div>
         <div class="card">
           <h3>¿Habrá unidades limitadas?</h3>
-          <p>Es posible en primeras fases. Si te interesa, apúntate para enterarte antes.</p>
+          <p>Es posible en las primeras fases. Si te interesa, apúntate para estar entre los primeros.</p>
+        </div>
+        <div class="card">
+          <h3>¿Cómo me entero de las novedades?</h3>
+          <p>Apúntate a la lista de espera. Solo enviamos noticias cuando hay algo concreto que contar.</p>
         </div>
       </div>
     </section>
 
+    <!-- FOUNDER COUNCIL -->
     <section class="section" data-aos="fade-up">
       <div class="section-head">
         <h2>Founder Council</h2>
-        <p>Para estudios/artistas que quieren estar cerca.</p>
+        <p>Para estudios y artistas que quieren estar cerca del proceso.</p>
       </div>
 
       <div class="grid-2">
         <div class="card">
-          <h3>¿Qué es Founder Council?</h3>
-          <p>Un grupo reducido para aportar feedback real y ayudar a decidir prioridades de diseño y experiencia.</p>
+          <h3>¿Qué es el Founder Council?</h3>
+          <p>Un grupo reducido de artistas y estudios que aportan feedback real para ayudar a decidir prioridades de diseño y experiencia de uso.</p>
         </div>
         <div class="card">
           <h3>¿Cuánto tiempo requiere?</h3>
-          <p>Poco. Feedback puntual cuando haya decisiones importantes.</p>
+          <p>Poco. Feedback puntual cuando hay decisiones importantes sobre el diseño o la funcionalidad.</p>
         </div>
         <div class="card">
           <h3>¿Tengo que firmar un NDA?</h3>
-          <p>Si estás interesado en invertir o ser parte de Founder Council, sí, un NDA ayuda a poder hablar y explicar el sistema con más libertad.</p>
+          <p>Si quieres estar en el Founder Council o hablar en detalle sobre el sistema, sí. El NDA permite compartir más sin comprometer la patente.</p>
         </div>
         <div class="card">
           <h3>¿Cómo me apunto?</h3>
-          <p>Apúntate en la lista indicando que eres estudio/artista.</p>
+          <p>Rellena el formulario de la lista de espera e indica que eres artista o estudio. Me pondré en contacto.</p>
         </div>
       </div>
     </section>
 
+    <!-- PRIVACIDAD -->
     <section class="section" data-aos="fade-up">
       <div class="section-head">
         <h2>Privacidad y comunicación</h2>
@@ -192,22 +168,20 @@
       <div class="grid-2">
         <div class="card">
           <h3>¿Qué datos guardáis?</h3>
-          <p>Solo lo necesario para enviarte updates.</p>
+          <p>Solo lo necesario para enviarte actualizaciones: nombre, email y el rol que indiques. Nada más.</p>
         </div>
         <div class="card">
-          <h3>¿Con qué frecuencia enviaréis emails?</h3>
-          <p>Poca. Solo cuando haya avances reales (hitos, fecha Kickstarter, etc.).</p>
+          <h3>¿Con qué frecuencia enviáis emails?</h3>
+          <p>Muy poca. Solo cuando hay avances reales. Nada de newsletters semanales ni relleno.</p>
         </div>
       </div>
 
       <div class="cta-band" data-aos="fade-up">
         <div>
-          <h3>¿Listo para seguir el proyecto?</h3>
-          <p>Únete a la lista!</p>
+          <h3>¿Quieres seguir el proyecto?</h3>
+          <p>Apúntate a la lista — solo te escribimos cuando haya algo que contar.</p>
         </div>
-        <div style="display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn primary" href="lista.html">Lista de espera</a>
-        </div>
+        <a class="btn primary" href="lista.html">Unirme a la lista</a>
       </div>
     </section>
   </main>
@@ -243,7 +217,7 @@
           <button class="lang current" type="button" aria-label="Idioma actual: español">
             <span class="flag">🇪🇸</span><span class="code">ES</span>
           </button>
-          <a class="lang" href="en.html" aria-label="Cambiar a inglés">
+          <a class="lang" href="en-faq.html" aria-label="Cambiar a inglés">
             <span class="flag">🇬🇧</span><span class="code">EN</span>
           </a>
         </div>
@@ -252,7 +226,7 @@
           © <span id="year"></span> vINKo System. Todos los derechos reservados.
         </div>
 
-        <div class="footer-meta" style="margin-top:6px;">
+        <div class="footer-meta">
           <a href="/privacy.html">Privacidad</a> · <a href="/cookies.html">Cookies</a> · <a href="lista.html">Contacto</a>
         </div>
       </div>

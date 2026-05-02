@@ -5,41 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
   <title>About me — vINKo System</title>
-  <meta name="description" content="Who’s behind vINKo System: a story shaped by engineering, studio experience, and an obsession with improving the workflow." />
+  <meta name="description" content="Vicente Pina Beti, engineer and founder of vINKo System. Why this project exists, where it comes from, and where it's going." />
 
   <link rel="canonical" href="https://vinkosystem.com/en-sobre-mi.html" />
   <link rel="alternate" href="https://vinkosystem.com/sobre-mi.html" hreflang="es" />
   <link rel="alternate" href="https://vinkosystem.com/en-sobre-mi.html" hreflang="en" />
-  <link rel="alternate" href="https://vinkosystem.com/en-sobre-mi.html" hreflang="x-default" />
+  <link rel="alternate" href="https://vinkosystem.com/sobre-mi.html" hreflang="x-default" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="vINKo System" />
   <meta property="og:title" content="About me — vINKo System" />
-  <meta property="og:description" content="Engineering + studio experience. Why vINKo System exists." />
+  <meta property="og:description" content="Vicente Pina Beti, engineer and founder of vINKo System. Why this project exists." />
   <meta property="og:url" content="https://vinkosystem.com/en-sobre-mi.html" />
   <meta property="og:image" content="https://vinkosystem.com/assets/img/vINKoSystem.png" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="About me — vINKo System" />
-  <meta name="twitter:description" content="Engineering + studio experience. Why vINKo System exists." />
+  <meta name="twitter:description" content="Vicente Pina Beti, engineer and founder of vINKo System. Why this project exists." />
   <meta name="twitter:image" content="https://vinkosystem.com/assets/img/vINKoSystem.png" />
 
-  <link rel="stylesheet" href="styles.css?v=1.0.26" />
-  <link rel="preload" href="/assets/img/LogoBlanco.png" as="image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="styles.css?v=2.0.0" />
+  <link rel="preload" href="/assets/img/LogoBlanco.png" as="image">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
 
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
   <link rel="icon" href="/assets/img/favicon.ico" sizes="any">
-  <meta name="theme-color" content="#0b0f14">
+  <meta name="theme-color" content="#07080c">
 </head>
 
 <body>
   <header class="header">
     <a class="brand" href="en.html" aria-label="Go to home">
       <span class="brand-dot"></span>
-      <span>Back to Home</span>
+      <span>vINKo System</span>
     </a>
 
     <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
@@ -52,7 +55,7 @@
     </button>
 
     <div class="header-right" id="site-nav">
-      <nav class="nav" aria-label="Primary navigation">
+      <nav class="nav" aria-label="Main navigation">
         <a href="en-vk0.html">VK0</a>
         <a href="en-system.html">How it works</a>
         <a href="en-faq.html">FAQ</a>
@@ -60,144 +63,181 @@
         <a href="en-lista.html" class="btn primary">Waitlist</a>
       </nav>
 
-      <div class="lang-switch small" aria-label="Site language">
-          <button class="lang current" type="button" aria-label="Current language: English">
-            <span class="flag">🇬🇧</span><span class="code">EN</span>
-          </button>
-          <a class="lang" href="system.html" aria-label="Switch to Spanish">
-            <span class="flag">🇪🇸</span><span class="code">ES</span>
-          </a>
-        </div>
+      <div class="lang-switch" aria-label="Site language">
+        <button class="lang current" type="button" aria-label="Current language: English">
+          <span class="flag">🇬🇧</span><span class="code">EN</span>
+        </button>
+        <a class="lang" href="sobre-mi.html" aria-label="Switch to Spanish">
+          <span class="flag">🇪🇸</span><span class="code">ES</span>
+        </a>
+      </div>
     </div>
   </header>
 
   <main id="main">
-    <!-- HERO
-    <section class="hero" id="top"aaa>
-      <div class="hero-bg" aria-hidden="true"></div>
 
-      <div class="hero-content">
-        <div class="pill">About</div>
-        <h1>Engineering + studio experience</h1>
-        <p class="hero-sub">
-          I’m <strong>Vicente Pina Beti</strong>. I’ve been close to the tattoo world and, as an engineer,
-          I’ve seen workflow pain points that can be improved radically.
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn primary" href="en-lista.html">Join the waitlist</a>
-          <a class="btn ghost" href="founder-council.html">Founder Council</a>
-        </div>
-
-        <div class="hero-micro">
-          * vINKo System is a project in development. This page tells the story and the “why”.
-        </div>
+    <!-- INTRO -->
+    <section class="section" id="top" data-aos="fade-up">
+      <div class="section-head">
+        <div class="pill" style="margin: 0 auto 16px;">About me</div>
+        <h2>I'm Vicente Pina Beti</h2>
+        <p>Engineer and founder of vINKo System. This is why this project exists.</p>
       </div>
 
-      <div class="hero-media">
-        <div class="media-card">
-          <div class="media-caption">
-            “I don’t want to build ‘just another machine’. I want to improve the process.”
+      <div class="section-split" style="align-items: start; gap: 48px;">
+        <div data-aos="fade-up">
+          <p style="font-size: 17px; line-height: 1.75; color: var(--muted-2);">
+            For years I've carried an idea that wouldn't leave me alone: the ink workflow in tattooing
+            has real problems that nobody has solved properly. Not minor problems —
+            problems of consistency, hygiene, and waste that repeat every session, in every
+            studio, and are accepted as "that's just how it works".
+          </p>
+          <p style="font-size: 17px; line-height: 1.75; color: var(--muted-2); margin-top: 18px;">
+            My way of seeing things is an engineer's. When I identify a problem, I don't stop at
+            "this could be better" — I look for the root cause, design the right solution, and do it in a way
+            that actually works in the real world, not just on paper.
+          </p>
+          <p style="font-size: 17px; line-height: 1.75; color: var(--muted-2); margin-top: 18px;">
+            vINKo System is the result of that obsession. A system designed from scratch to integrate
+            into the tattoo workflow and solve those problems elegantly. It already has an
+            international patent. And it's in development.
+          </p>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="80">
+          <div class="card">
+            <div class="pill subtle" style="margin-bottom: 14px;">International patent</div>
+            <h3>The system is protected</h3>
+            <p style="margin-top: 8px;">
+              Before going public, the system went through an international patent process (PCT).
+              It's not a vague concept — there's real engineering behind it, protected and documented.
+            </p>
+          </div>
+          <div class="card" style="margin-top: 14px;">
+            <h3>Direct contact</h3>
+            <p style="margin-top: 8px;">
+              If you're an artist, a studio, or want to talk about the project, the waitlist form
+              is the direct channel. I read everything.
+            </p>
+            <a class="btn primary" href="en-lista.html" style="margin-top: 14px; display: inline-flex;">Go to the form</a>
           </div>
         </div>
       </div>
-    </section>-->
+    </section>
 
     <!-- STORY -->
-    <section class="section" data-aos="fade-up">
+    <section class="section alt" data-aos="fade-up">
       <div class="section-head">
-        <h2>How vINKo System was born</h2>
-        <p>A very specific mix: real studio routine + an engineering mindset.</p>
+        <h2>How this began</h2>
+        <p>Four moments that explain the project better than any elevator pitch.</p>
       </div>
 
       <div class="grid-2">
         <div class="card" data-aos="fade-up" data-aos-delay="0">
-          <h3>1 — Observation</h3>
+          <div class="pill subtle" style="margin-bottom: 12px;">01</div>
+          <h3>The observation</h3>
           <p>
-            In a studio you start seeing patterns: prep “just in case”, ink that gets wasted, repeated steps,
-            and friction in the workflow that everyone accepts as “normal”.
+            When you're close to the tattoo world with an engineer's eyes, you start seeing things
+            that professionals miss because they're part of the routine. Ink prepared that
+            never gets used and gets discarded. Repetitive steps that create friction. Inconsistencies between
+            sessions compensated with experience, when they could be eliminated with design.
+            The problem isn't the artist's skill — it's that the system they work within
+            isn't optimised.
           </p>
         </div>
 
         <div class="card" data-aos="fade-up" data-aos-delay="90">
-          <h3>2 — The question</h3>
+          <div class="pill subtle" style="margin-bottom: 12px;">02</div>
+          <h3>The right question</h3>
           <p>
-            What if the system helped you work with more control and order, reducing waste without breaking the flow?
-            Not as an add-on… but as a process-by-design approach.
+            The question wasn't "how do I make a better machine?". Plenty of people are already doing that.
+            The question was: which part of the process generates the most waste, the most risk, and the most
+            inconsistency — and can it be solved at a system level?
+            The answer was clear. And from there, everything clicked.
           </p>
         </div>
 
-        <div class="card" data-aos="fade-up" data-aos-delay="180">
-          <h3>3 — The obsession</h3>
+        <div class="card" data-aos="fade-up" data-aos-delay="0">
+          <div class="pill subtle" style="margin-bottom: 12px;">03</div>
+          <h3>The real development</h3>
           <p>
-            What starts as an idea becomes prototypes, tests, and many iterations so the solution is
-            manufacturable and consistent — not just “a demo”.
+            An idea is nothing without engineering. What started as a concept went through design,
+            iterations, testing, and more iterations. The condition was clear: it has to be
+            manufacturable, it has to be consistent, and it has to fit into a real workflow
+            without adding complexity. It doesn't count if it only works in controlled conditions.
           </p>
         </div>
 
-        <div class="card" data-aos="fade-up" data-aos-delay="270">
-          <h3>4 — The goal</h3>
+        <div class="card" data-aos="fade-up" data-aos-delay="90">
+          <div class="pill subtle" style="margin-bottom: 12px;">04</div>
+          <h3>The goal now</h3>
           <p>
-            Build vINKo System step by step, with feedback from real studios, and launch it when it’s ready.
+            Build vINKo System step by step. With feedback from real studios and artists who
+            know the problem from the inside. Without rushing. Without compromising quality.
+            And launch it when it's ready — not before.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- PERSONAL PRINCIPLES -->
+    <!-- PRINCIPLES -->
     <section class="section" data-aos="fade-up">
-      <div class="section-split">
+      <div class="section-split" style="align-items: start;">
         <div>
-          <div class="pill subtle">Principles</div>
+          <div class="pill subtle" style="margin-bottom: 18px;">Principles</div>
           <h2>Non-negotiable</h2>
-          <p style="color: var(--muted); line-height:1.6; margin:0;">
-            This project isn’t about “hype”. It’s about building something real, high-quality,
-            and genuinely useful in a real studio.
+          <p style="color: var(--muted-2); line-height: 1.65; margin-top: 14px;">
+            This project isn't about visibility or hype. It's about building something that genuinely works
+            in a real studio. That defines every decision I make.
           </p>
 
-          <ul class="ticks">
-            <li>Quality and consistency.</li>
-            <li>Real feedback.</li>
-            <li>Less noise, more real progress.</li>
+          <ul class="ticks" style="margin-top: 22px;">
+            <li>Quality over speed. I'd rather take longer than ship something half-baked.</li>
+            <li>Real feedback from professionals, not generic surveys.</li>
+            <li>Transparency about the project's status. No smoke and mirrors.</li>
+            <li>Protected engineering, but open concept so the value is understood.</li>
+            <li>Communication only when there's something worth saying.</li>
           </ul>
-
-          <div class="note">
-            If you’re a studio/artist and want to contribute, join in.
-          </div>
         </div>
 
         <div>
-          <div class="card">
-            <h3>Where we are now</h3>
-            <p>
-              Public concept phase, validating direction with the community and preparing upcoming milestones.
-            </p>
-            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
-              <a class="btn primary" href="en-vk0.html">See VK0</a>
+          <div class="timeline">
+            <div class="step">
+              <span class="step-dot"></span>
+              <div>
+                <h4>Where we are</h4>
+                <p>Concept phase. The system has an international patent. Work is ongoing on the next development milestones.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-dot"></span>
+              <div>
+                <h4>What's next</h4>
+                <p>Design-for-manufacturing (DFM) iteration, validations, and an initial limited pre-series when the design is ready.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-dot"></span>
+              <div>
+                <h4>Founder Council</h4>
+                <p>A small group of artists and studios providing direct feedback on key design and functionality decisions.</p>
+              </div>
             </div>
           </div>
-
-          <div class="card" style="margin-top:12px;">
-            <h3>Contact</h3>
-            <p>
-              If you want to talk (studio, collaboration, feedback), the fastest way is to join the waitlist
-              and mark that you’re a studio/artist.
-            </p>
-            <a class="btn ghost" href="en-lista.html">Go to waitlist / contact</a>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- FINAL CTA -->
+    <!-- CTA -->
     <section class="section" data-aos="fade-up">
       <div class="cta-band">
         <div>
-          <h3>Want to follow the project closely?</h3>
-          <p>Waitlist for updates. Founder Council for direct feedback.</p>
+          <h3>Want to follow the project?</h3>
+          <p>Join the list. I only write when there's something worth sharing.</p>
         </div>
         <div style="display:flex; gap:10px; flex-wrap:wrap;">
           <a class="btn primary" href="en-lista.html">Join the waitlist</a>
+          <a class="btn ghost" href="en-vk0.html">See VK0</a>
         </div>
       </div>
     </section>
@@ -218,7 +258,7 @@
       </div>
 
       <div class="footer-right">
-        <div class="social-links" aria-label="vINKo System social media">
+        <div class="social-links" aria-label="vINKo System social links">
           <a href="https://www.linkedin.com/company/vinko-system" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <img src="assets/img/linkedin.svg" alt="LinkedIn" class="social-icon" />
           </a>
@@ -234,7 +274,7 @@
           <button class="lang current" type="button" aria-label="Current language: English">
             <span class="flag">🇬🇧</span><span class="code">EN</span>
           </button>
-          <a class="lang" href="system.html" aria-label="Switch to Spanish">
+          <a class="lang" href="sobre-mi.html" aria-label="Switch to Spanish">
             <span class="flag">🇪🇸</span><span class="code">ES</span>
           </a>
         </div>
@@ -243,8 +283,8 @@
           © <span id="year"></span> vINKo System. All rights reserved.
         </div>
 
-        <div class="footer-meta" style="margin-top:6px;">
-          <a href="/privacy.html">Privacy</a> · <a href="/cookies.html">Cookies</a> · <a href="en-lista.html">Contact</a>
+        <div class="footer-meta">
+          <a href="/privacy-en.html">Privacy</a> · <a href="/cookies-en.html">Cookies</a> · <a href="en-lista.html">Contact</a>
         </div>
       </div>
     </div>
