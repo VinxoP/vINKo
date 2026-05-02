@@ -249,11 +249,6 @@ document.addEventListener("DOMContentLoaded", () => {
     'system.html': 'en-system.html',
     'faq.html': 'en-faq.html',
     'lista.html': 'en-lista.html',
-
-    // legacy / typos used in some footers
-    'vINKoSystem.html': 'en-system.html',
-
-    // optional (create these files when ready)
     'sobre-mi.html': 'en-sobre-mi.html',
   };
 
