@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://vinkosystem.com/sitemap.xml
+Sitemap: https://vinkosolutions.com/sitemap.xml

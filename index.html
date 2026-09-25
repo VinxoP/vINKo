@@ -1,561 +1,586 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" class="no-js">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>vINKo System — VK0, la máquina de tatuaje de nueva generación</title>
+  <meta name="description" content="Vinko Solutions ha diseñado y fabricado la máquina de tatuaje de nueva generación: tu tinta en cartucho, cero desperdicio y sin contaminación cruzada.">
+  <link rel="canonical" href="https://vinkosolutions.com/">
+  <link rel="alternate" hreflang="es" href="https://vinkosolutions.com/">
+  <link rel="alternate" hreflang="en" href="https://vinkosolutions.com/en.html">
+  <link rel="alternate" hreflang="x-default" href="https://vinkosolutions.com/">
 
-  <title>vINKo System — La tinta, por fin controlada.</title>
-  <meta name="description" content="vINKo System — Un nuevo sistema de tinta para tatuaje. Concepto en desarrollo con patente internacional. Apúntate a la lista de espera y sé de los primeros en conocerlo." />
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="vINKo System">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="vINKo System — VK0, la máquina de tatuaje de nueva generación">
+  <meta property="og:description" content="Vinko Solutions ha diseñado y fabricado la máquina de tatuaje de nueva generación: tu tinta en cartucho, cero desperdicio y sin contaminación cruzada.">
+  <meta property="og:url" content="https://vinkosolutions.com/">
+  <meta property="og:image" content="https://vinkosolutions.com/assets/v2/img/og-vk0.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="vINKo System — VK0, la máquina de tatuaje de nueva generación">
+  <meta name="twitter:description" content="Vinko Solutions ha diseñado y fabricado la máquina de tatuaje de nueva generación: tu tinta en cartucho, cero desperdicio y sin contaminación cruzada.">
+  <meta name="twitter:image" content="https://vinkosolutions.com/assets/v2/img/og-vk0.jpg">
 
-  <link rel="canonical" href="https://vinkosystem.com/" />
-  <link rel="alternate" href="https://vinkosystem.com/" hreflang="es" />
-  <link rel="alternate" href="https://vinkosystem.com/en.html" hreflang="en" />
-  <link rel="alternate" href="https://vinkosystem.com/" hreflang="x-default" />
+  <link rel="icon" href="favicon.ico?v=3" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png?v=3">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png?v=3">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192x192.png?v=3">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=3">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#0b0f14">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
-  <!-- Open Graph / Twitter -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="vINKo System" />
-  <meta property="og:title" content="vINKo System — La tinta, por fin controlada." />
-  <meta property="og:description" content="Un nuevo sistema de tinta para tatuaje. Concepto en desarrollo con patente internacional. Apúntate y sé de los primeros en conocerlo." />
-  <meta property="og:url" content="https://vinkosystem.com/" />
-  <meta property="og:image" content="https://vinkosystem.com/assets/img/vINKoSystem.png" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="vINKo System — La tinta, por fin controlada." />
-  <meta name="twitter:description" content="Un nuevo sistema de tinta para tatuaje. Patente internacional. Apúntate a la lista de espera." />
-  <meta name="twitter:image" content="https://vinkosystem.com/assets/img/vINKoSystem.png" />
-
-  <link rel="stylesheet" href="styles.css?v=2.0.0" />
-
-  <!-- Preloads -->
-  <link rel="preload" href="/assets/img/LogoBlanco.png" as="image">
-  <link rel="preload" href="/assets/img/vINKoSystem.png" as="image">
-  <link rel="preload" href="/assets/img/vk0_concept.png" as="image">
-
-  <!-- AOS -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
-
-  <!-- Icons -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="48x48" href="/assets/img/favicon-48x48.png">
-  <link rel="icon" href="/assets/img/favicon.ico" sizes="any">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#0b0f14">
-
-  <!-- Schema -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap">
+  <link rel="stylesheet" href="site.css?v=2.4.0">
+  <script src="main.js?v=2.4.0" defer></script>
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"vINKo System",
-    "url":"https://www.vinkosystem.com/",
-    "logo":"https://www.vinkosystem.com/assets/img/favicon-512x512.png",
-    "sameAs":[
-      "https://www.linkedin.com/company/vinko-system",
-      "https://www.instagram.com/vinko.system",
-      "https://www.tiktok.com/@vinko.tech"
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "vINKo System",
+        "legalName": "VINKO Solutions SLU",
+        "url": "https://vinkosolutions.com/",
+        "logo": "https://vinkosolutions.com/assets/img/favicon-512x512.png",
+        "email": "info@vinkosolutions.com",
+        "founder": { "@type": "Person", "name": "Vicente Pina Beti" },
+        "sameAs": [
+          "https://www.linkedin.com/company/vinko-solutions",
+          "https://www.instagram.com/vinko.solutions",
+          "https://www.tiktok.com/@vinko.solutions"
+        ]
+      },
+      { "@type": "WebSite", "name": "vINKo System", "url": "https://vinkosolutions.com/" }
     ]
   }
   </script>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebSite",
-    "name":"vINKo System",
-    "url":"https://www.vinkosystem.com/"
-  }
-  </script>
 </head>
-
 <body>
-  <header class="header">
-    <a class="brand" href="index.html#top" aria-label="Ir al inicio">
-      <span class="brand-dot"></span>
-      <span>Inicio</span>
-    </a>
-
-    <!-- Botón menú móvil -->
-    <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="site-nav">
-    <span class="nav-toggle-label">Menú</span>
-    <span class="nav-toggle-bars" aria-hidden="true">
-      <span class="nav-toggle-bar"></span>
-      <span class="nav-toggle-bar"></span>
-      <span class="nav-toggle-bar"></span>
-    </span>
-  </button>
-
-    <div class="header-right" id="site-nav">
-      <nav class="nav" aria-label="Navegación principal">
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="vINKo System — inicio">
+        <img src="assets/v2/img/vinko-mark.png" alt="" width="24" height="27">
+        <span>vINKo<em>System</em></span>
+      </a>
+      <nav class="site-nav" id="site-nav" aria-label="Principal">
         <a href="vk0.html">VK0</a>
-        <a href="system.html">Cómo funciona</a>
+        <a href="system.html">El nuevo estándar</a>
+        <a href="piloto.html">Programa piloto</a>
         <a href="faq.html">FAQ</a>
-        <a href="sobre-mi.html">Sobre mí</a>
-        <a href="lista.html" class="btn primary">Lista de espera</a>
+        <a href="sobre-mi.html">Sobre vINKo</a>
+        <a class="btn btn-primary btn-sm" href="piloto.html#solicitud">Probar el VK0</a>
+        <div class="lang-switch" aria-label="Idioma / Language">
+          <a href="index.html" data-lang="es" lang="es" class="is-current" aria-current="true">ES</a>
+          <a href="en.html" data-lang="en" lang="en">EN</a>
+        </div>
       </nav>
-
-      <!-- Selector de idioma (ES actual) -->
-      <div class="lang-switch" aria-label="Idioma del sitio">
-        <button class="lang current" type="button" aria-label="Idioma actual: español">
-          <span class="flag">🇪🇸</span><span class="code">ES</span>
-        </button>
-        <a class="lang" href="en.html" aria-label="Cambiar a inglés">
-          <span class="flag">🇬🇧</span><span class="code">EN</span>
-        </a>
-      </div>
+      <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="site-nav"><span></span><span></span></button>
     </div>
   </header>
 
   <main id="main">
-    <!-- HERO (explosión Apple-like) -->
-    <section id="top" class="vk0-scroll-hero" aria-label="VK0 scroll animation">
-      <div class="vk0-sticky">
-        <canvas
-          id="vk0-seq"
-          class="vk0-scroll-canvas"
-          data-desktop="/assets/vk0seq/desktop/frame_%04d.webp"
-          data-mobile="/assets/vk0seq/mobile/frame_%04d.webp"
-          data-frames="373"
-          aria-hidden="true"
-        ></canvas>
-
-        <div class="vk0-shade" aria-hidden="true"></div>
-
-        <div class="vk0-steps" aria-hidden="false">
-          <div class="vk0-step" data-start="0.02" data-end="0.22">
-            <div class="vk0-top">
-              <div class="pill">Patente internacional</div>
-              <h1>vINKo&nbsp;System</h1>
-            </div>
-            <div class="vk0-bottom">
-              <p class="vk0-lead">La tinta, por fin controlada.</p>
-            </div>
-          </div>
-
-          <div class="vk0-step" data-start="0.26" data-end="0.46">
-            <div class="vk0-top">
-              <h2>Flujo de tinta preciso</h2>
-            </div>
-            <div class="vk0-bottom">
-              <p>Cada sesión con la misma consistencia. Sin improvisación.</p>
-            </div>
-          </div>
-
-          <div class="vk0-step" data-start="0.50" data-end="0.72">
-            <div class="vk0-top">
-              <h2>Rutina más limpia</h2>
-            </div>
-            <div class="vk0-bottom">
-              <p>Menos exposición. Menos fricción. Más foco en tatuar.</p>
-            </div>
-          </div>
-
-          <div class="vk0-step" data-start="0.76" data-end="0.98" data-hold="1">
-            <div class="vk0-top">
-              <h2>Sé de los primeros en conocerlo</h2>
-            </div>
-            <div class="vk0-bottom">
-              <p>Apúntate y recibe avances reales cuando haya algo que contar.</p>
-              <div class="vk0-cta">
-                <a class="btn primary" href="lista.html">Unirme a la lista</a>
-                <a class="btn ghost" href="vk0.html">Ver VK0</a>
-              </div>
-            </div>
-          </div>
+<!-- HERO -->
+    <section class="hero" id="top">
+      <div class="hero-media">
+        <video id="heroVideo" data-autoplay data-src="assets/v2/video/vk0-promo-1280.mp4" data-src-mobile="assets/v2/video/vk0-promo-720x1280.mp4" poster="assets/v2/img/poster-hero.webp" data-poster-mobile="assets/v2/img/poster-hero-m.webp" muted loop playsinline preload="none" aria-hidden="true"></video>
+      </div>
+      <div class="wrap hero-content">
+        <div class="pill-row">
+          <span class="pill"><span class="dot"></span>Programa piloto abierto</span>
         </div>
+        <h1 class="display">El nuevo estándar <span class="grad-text">del tatuaje.</span></h1>
+        <p class="lead">Vinko Solutions ha diseñado y fabricado la máquina de tatuaje de nueva generación, donde el desperdicio y la huella biológica se reducen a mínimos, reduciendo carga de trabajo y mejorando la higiene y eficiencia de uso.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="piloto.html#solicitud">Quiero probar el VK0 <span class="arrow">→</span></a>
+          <a class="btn" href="#despiece">Descubrir el VK0</a>
+        </div>
+        <div class="hero-foot">
+          <span class="scroll-cue"><i></i>Desliza para descubrirlo</span>
+        </div>
+      </div>
+      <button class="video-toggle" type="button" data-video-toggle="heroVideo" aria-label="Pausar o reproducir el vídeo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="i-pause"><path d="M7 4h3.5v16H7zM13.5 4H17v16h-3.5z" fill="currentColor" stroke="none"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="i-play"><path d="M7 4.5v15l12-7.5-12-7.5z" fill="currentColor"/></svg></button>
+    </section>
 
-        <div class="vk0-scroll-hint" aria-hidden="true">
-          <span class="vk0-mouse"></span>
-          <span>Scroll</span>
+    <!-- PROBLEMA -->
+    <section class="section" id="problema">
+      <div class="wrap">
+        <span class="eyebrow">El problema</span>
+        <p class="statement" data-reveal>Las máquinas de tatuaje han evolucionado. <strong>La forma de usar la tinta, no.</strong> <span class="dimmed">Vasos «por si acaso» y tinta nueva en cada cliente: lo que sobra acaba en la basura.</span></p>
+        <div class="grid grid-3 problem-grid">
+          <article class="card problem-card" data-reveal>
+            <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M9 7V4.5h6V7M6.5 7l1 13h9l1-13"/><path d="M10 11v5M14 11v5"/></svg></div>
+            <span class="num">01</span>
+            <h3 class="h3">Desperdicio</h3>
+            <p class="muted">Se prepara más tinta de la que se usa para no quedarse corto. Al terminar, lo que sobra acaba en la basura.</p>
+          </article>
+          <article class="card problem-card" data-reveal data-reveal-delay="1">
+            <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.3-7.5 9.5-4.3-1.2-7.5-4.9-7.5-9.5V6L12 3z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg></div>
+            <span class="num">02</span>
+            <h3 class="h3">Higiene que cuesta tinta</h3>
+            <p class="muted">Para evitar la contaminación cruzada, cada cliente empieza con vasos y tinta nuevos. Lo que sobra del anterior se tira.</p>
+          </article>
+          <article class="card problem-card" data-reveal data-reveal-delay="2">
+            <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+            <span class="num">03</span>
+            <h3 class="h3">Carga de trabajo</h3>
+            <p class="muted">Preparar, recargar, limpiar y tirar. Tiempo que no dedicas a tatuar.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- DESPUÉS DE LA EXPLOSIÓN: solo navegación a páginas 
-    <section class="section alt" data-aos="fade-up">
-      <div class="section-head">
-        <h2>Explora el proyecto</h2>
-      </div>
-
-      <div class="grid-3">
-        <div class="card" data-aos="fade-up" data-aos-delay="0">
-          <h3>VK0</h3>
-          <p>La priemra máquina integrada con el sistema vINKo.</p>
-          <a class="btn ghost" href="vk0.html">Ver VK0</a>
+    <!-- EL NUEVO ESTÁNDAR -->
+    <section class="section bg-soft" id="estandar">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Lo que hemos hecho</span>
+          <h2 class="h2">Así deberían funcionar todas las máquinas de tatuaje.</h2>
+          <p class="lead">En Vinko Solutions hemos elevado la máquina de tatuaje a un nuevo estándar: la tinta va en su propio cartucho, no se desperdicia y no hay contaminación cruzada. Y queremos que esté al alcance de todos los artistas del tatuaje del mundo.</p>
         </div>
-
-        <div class="card" data-aos="fade-up" data-aos-delay="80">
-          <h3>Problema</h3>
-          <p>Por qué el desperdicio no debería ser "rutina".</p>
-          <a class="btn ghost" href="problema.html">Ver problema</a>
+        <div class="grid grid-4">
+          <article class="card" data-reveal><div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="5" width="12" height="15" rx="3"/><path d="M10 5V3h4v2M9 11h6"/></svg></div><h3 class="h3">Tu tinta, en cartucho</h3><p class="muted">Llena el cartucho con la tinta que prefieras. Se acabaron los vasos.</p></article>
+          <article class="card" data-reveal data-reveal-delay="1"><div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5c3.2 4 5.5 7.2 5.5 10a5.5 5.5 0 0 1-11 0c0-2.8 2.3-6 5.5-10z"/></svg></div><h3 class="h3">Cero desperdicio</h3><p class="muted">Sin vasos ni sobrantes. Usas solo la tinta que necesitas.</p></article>
+          <article class="card" data-reveal data-reveal-delay="2"><div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.3-7.5 9.5-4.3-1.2-7.5-4.9-7.5-9.5V6L12 3z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg></div><h3 class="h3">Sin contaminación cruzada</h3><p class="muted">Más higiene para el artista y para cada cliente.</p></article>
+          <article class="card" data-reveal data-reveal-delay="3"><div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3 class="h3">Menos carga de trabajo</h3><p class="muted">Menos preparación y menos limpieza. Más tiempo tatuando.</p></article>
         </div>
-
-        <div class="card" data-aos="fade-up" data-aos-delay="160">
-          <h3>La idea</h3>
-          <p>Enfoque conceptual.</p>
-          <a class="btn ghost" href="idea.html">Ver la idea</a>
-        </div>
-
-        <div class="card" data-aos="fade-up" data-aos-delay="0">
-          <h3>Beneficios</h3>
-          <p>Qué debería mejorar en el día a día de un artista.</p>
-          <a class="btn ghost" href="beneficios.html">Ver beneficios</a>
-        </div>
-
-        <div class="card" data-aos="fade-up" data-aos-delay="80">
-          <h3>Founder Council</h3>
-          <p>Estudios y artistas: feedback directo para diseñarlo bien.</p>
-          <a class="btn ghost" href="founder-council.html">Ver Founder Council</a>
-        </div>
-
-        <div class="card" data-aos="fade-up" data-aos-delay="160">
-          <h3>Roadmap</h3>
-          <p>De concepto a tu estudio.</p>
-          <a class="btn ghost" href="roadmap.html">Ver roadmap</a>
-        </div>
-
-        <div class="card" data-aos="fade-up" data-aos-delay="0">
-          <h3>FAQ</h3>
-          <p>Respuestas rápidas.</p>
-          <a class="btn ghost" href="faq.html">Ver FAQ</a>
-        </div>
-
-        <div class="card" data-aos="fade-up" data-aos-delay="80">
-          <h3>Sobre vINKo</h3>
-          <p>Quién está detrás y por qué existe vINKo System.</p>
-          <a class="btn ghost" href="sobre-mi.html">Ver historia</a>
-        </div>
-
-        <div class="card" data-aos="fade-up" data-aos-delay="160">
-          <h3>Lista de espera</h3>
-          <p>Updates reales + aviso de Kickstarter antes que nadie.</p>
-          <a class="btn primary" href="lista.html">Unirme</a>
+        <div class="future-note" data-reveal>
+          <span class="tag">El siguiente paso</span>
+          <p><strong>Tintas en cartucho de fábrica.</strong> Hoy el cartucho llega vacío y lo llenas con tu tinta. Mañana queremos que las marcas de tinta vendan sus tintas ya envasadas en cartuchos para VK0: tinta regulada desde el origen.</p>
+          <a class="link-arrow" href="piloto.html?interes=empresa#solicitud">¿Eres una marca de tinta? Hablemos <span class="arrow">→</span></a>
         </div>
       </div>
+    </section>
 
-      <div class="cta-band" data-aos="fade-up">
-        <div>
-          <h3>¿Te aviso cuando haya novedades importantes?</h3>
-          <p>Lista de espera = updates y aviso de Kickstarter</p>
+    <!-- DESPIECE CON SCROLL -->
+    <section class="scrub" id="despiece" data-scrub aria-label="Despiece animado del VK0">
+      <div class="scrub-sticky on-studio">
+        <canvas data-frames="100" data-src="assets/v2/explode/d/%04d.webp" data-src-mobile="assets/v2/explode/m/%04d.webp" data-bg="#b2b2b2" role="img" aria-label="El VK0 se desmonta pieza a pieza al hacer scroll"></canvas>
+        <div class="scrub-loading">Cargando…</div>
+        <div class="scrub-head">
+          <div class="wrap">
+            <span class="eyebrow">VK0</span>
+            <h2 class="h2">La máquina de nueva generación.</h2>
+          </div>
         </div>
-        <div style="display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn primary" href="lista.html">Lista de espera</a>
+        <div class="scrub-captions">
+          <div class="scrub-caption" data-from="0.12" data-to="0.40">
+            <span class="step">01 · Diseñada desde cero</span>
+            <h3>Pensada para el nuevo estándar.</h3>
+            <p>Una máquina creada para trabajar como deberían trabajar todas.</p>
+          </div>
+          <div class="scrub-caption" data-from="0.40" data-to="0.70">
+            <span class="step">02 · Tinta en cartucho</span>
+            <h3>Tu tinta, en su cartucho.</h3>
+            <p>La tinta deja de estar abierta sobre la mesa.</p>
+          </div>
+          <div class="scrub-caption" data-from="0.70" data-to="1">
+            <span class="step">03 · Cero desperdicio</span>
+            <h3>Sin sobrantes. Sin contaminación cruzada.</h3>
+            <p>Más higiene y eficiencia en cada sesión.</p>
+          </div>
         </div>
-      </div>-->
+        <div class="scrub-progress" aria-hidden="true"><i></i></div>
+      </div>
+    </section>
 
-      <!-- Placeholder oculto por compatibilidad si tu main.js espera #earlyForm -->
-      <form id="earlyForm" class="hidden" aria-hidden="true"></form>
+    <!-- EXPLORADOR DE PIEZAS -->
+    <section class="section explorer on-studio" id="piezas" data-explorer>
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Explora el VK0</span>
+          <h2 class="h2">Pieza a pieza.</h2>
+          <p class="lead">Pulsa los puntos del despiece o elige una pieza de la lista.</p>
+        </div>
+        <div class="explorer-grid">
+          <div class="explorer-main">
+            <div class="explorer-stage">
+              <img src="assets/v2/explode/d/0100.webp" alt="Despiece del VK0 con sus piezas numeradas" width="1600" height="800" loading="lazy" decoding="async">
+              <canvas data-frames="100" data-src="assets/v2/explode/d/%04d.webp" data-src-mobile="assets/v2/explode/m/%04d.webp" data-bg="#b2b2b2" style="visibility:hidden" aria-hidden="true"></canvas>
+              <div class="explorer-tools">
+                <button class="btn btn-sm" type="button" data-explorer-toggle aria-pressed="false" data-label-assemble="Montar" data-label-explode="Desmontar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg><span class="label">Montar</span></button>
+              </div>
+              <button class="hotspot" type="button" data-part="cartucho" style="left:28.75%;top:71.25%" aria-label="1. Cartucho">1</button>
+          <button class="hotspot" type="button" data-part="tubo" style="left:45%;top:68.1%" aria-label="2. Tubo desechable">2</button>
+          <button class="hotspot" type="button" data-part="cuerpo" style="left:18.75%;top:30.6%" aria-label="3. Cuerpo de la máquina">3</button>
+          <button class="hotspot" type="button" data-part="motor" style="left:42.5%;top:30.6%" aria-label="4. Motor">4</button>
+          <button class="hotspot" type="button" data-part="frontal" style="left:53.1%;top:33.1%" aria-label="5. Cuerpo delantero">5</button>
+          <button class="hotspot" type="button" data-part="grip" style="left:70%;top:33.1%" aria-label="6. Grip">6</button>
+            </div>
+            <div class="part-list" role="tablist" aria-label="Piezas del VK0">
+              <button class="part-btn" type="button" role="tab" id="tab-cartucho" aria-controls="panel-cartucho" aria-selected="false" tabindex="-1" data-part="cartucho"><span class="n">1</span><span>Cartucho<span class="sub">Para tu tinta</span></span></button>
+            <button class="part-btn" type="button" role="tab" id="tab-tubo" aria-controls="panel-tubo" aria-selected="false" tabindex="-1" data-part="tubo"><span class="n">2</span><span>Tubo desechable<span class="sub">Uno nuevo en cada sesión</span></span></button>
+            <button class="part-btn" type="button" role="tab" id="tab-cuerpo" aria-controls="panel-cuerpo" aria-selected="false" tabindex="-1" data-part="cuerpo"><span class="n">3</span><span>Cuerpo de la máquina<span class="sub">Batería y pantalla TFT</span></span></button>
+            <button class="part-btn" type="button" role="tab" id="tab-motor" aria-controls="panel-motor" aria-selected="false" tabindex="-1" data-part="motor"><span class="n">4</span><span>Motor<span class="sub">Stroke de 2,5 a 4,5 mm</span></span></button>
+            <button class="part-btn" type="button" role="tab" id="tab-frontal" aria-controls="panel-frontal" aria-selected="false" tabindex="-1" data-part="frontal"><span class="n">5</span><span>Cuerpo delantero<span class="sub">Diseño modular</span></span></button>
+            <button class="part-btn" type="button" role="tab" id="tab-grip" aria-controls="panel-grip" aria-selected="false" tabindex="-1" data-part="grip"><span class="n">6</span><span>Grip<span class="sub">Ergonómico</span></span></button>
+            </div>
+          </div>
+          <div class="explorer-side">
+            <article class="part-panel" role="tabpanel" id="panel-cartucho" aria-labelledby="tab-cartucho" data-part="cartucho" hidden>
+              <span class="tag">Pieza 1 de 6</span>
+              <h3>Cartucho</h3>
+              <p class="part-desc">Cartucho diseñado exclusivamente para la máquina VK0, donde puedes incorporar la tinta que mejor se ajuste a tus sesiones.</p>
+              <div class="part-panel-nav">
+                <button class="btn" type="button" data-part-prev>← Anterior</button>
+                <button class="btn" type="button" data-part-next>Siguiente →</button>
+              </div>
+            </article>
+            <article class="part-panel" role="tabpanel" id="panel-tubo" aria-labelledby="tab-tubo" data-part="tubo" hidden>
+              <span class="tag">Pieza 2 de 6</span>
+              <h3>Tubo desechable</h3>
+              <p class="part-desc">Se conecta al cartucho y va dirigido hacia la aguja para que deposite la tinta durante la sesión. Una vez terminada la sesión, el tubo se retira y se usa uno nuevo.</p>
+              <div class="part-panel-nav">
+                <button class="btn" type="button" data-part-prev>← Anterior</button>
+                <button class="btn" type="button" data-part-next>Siguiente →</button>
+              </div>
+            </article>
+            <article class="part-panel" role="tabpanel" id="panel-cuerpo" aria-labelledby="tab-cuerpo" data-part="cuerpo" hidden>
+              <span class="tag">Pieza 3 de 6</span>
+              <h3>Cuerpo de la máquina</h3>
+              <p class="part-desc">Donde incorporamos la batería recargable, la pantalla TFT para ver toda la información de la máquina y mucho más.</p>
+              <div class="part-panel-nav">
+                <button class="btn" type="button" data-part-prev>← Anterior</button>
+                <button class="btn" type="button" data-part-next>Siguiente →</button>
+              </div>
+            </article>
+            <article class="part-panel" role="tabpanel" id="panel-motor" aria-labelledby="tab-motor" data-part="motor" hidden>
+              <span class="tag">Pieza 4 de 6</span>
+              <h3>Motor</h3>
+              <p class="part-desc">De alta calidad, para las sesiones más exigentes. Stroke fijo, personalizado al gusto del artista: de 2,5 mm a 4,5 mm.</p>
+              <div class="part-panel-nav">
+                <button class="btn" type="button" data-part-prev>← Anterior</button>
+                <button class="btn" type="button" data-part-next>Siguiente →</button>
+              </div>
+            </article>
+            <article class="part-panel" role="tabpanel" id="panel-frontal" aria-labelledby="tab-frontal" data-part="frontal" hidden>
+              <span class="tag">Pieza 5 de 6</span>
+              <h3>Cuerpo delantero</h3>
+              <p class="part-desc">Con diseño modular para que la máquina se desmonte con facilidad a la hora de limpiarla y mantenerla. También es útil para cambiar el stroke.</p>
+              <div class="part-panel-nav">
+                <button class="btn" type="button" data-part-prev>← Anterior</button>
+                <button class="btn" type="button" data-part-next>Siguiente →</button>
+              </div>
+            </article>
+            <article class="part-panel" role="tabpanel" id="panel-grip" aria-labelledby="tab-grip" data-part="grip" hidden>
+              <span class="tag">Pieza 6 de 6</span>
+              <h3>Grip</h3>
+              <p class="part-desc">Ergonómico y diseñado para que lo ajustes a tu gusto, pero siempre pensando en la guía del tubo desechable.</p>
+              <div class="part-panel-nav">
+                <button class="btn" type="button" data-part-prev>← Anterior</button>
+                <button class="btn" type="button" data-part-next>Siguiente →</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ASÍ DE SIMPLE -->
+    <section class="section" id="como-se-usa">
+      <div class="wrap split">
+        <div data-reveal>
+          <span class="eyebrow">Así de simple</span>
+          <h2 class="h2">Tres gestos. Cero vasos.</h2>
+          <div class="steps" style="margin-top:34px">
+            <div class="step-card">
+              <h3>Llena el cartucho</h3>
+              <p>Con la tinta que prefieras, y colócalo en la máquina.</p>
+            </div>
+            <div class="step-card">
+              <h3>Enciende</h3>
+              <p>El VK0 está listo para trabajar.</p>
+            </div>
+            <div class="step-card">
+              <h3>Tatúa</h3>
+              <p>Tú solo te ocupas del trabajo. Al terminar, cambias el tubo desechable y listo.</p>
+            </div>
+          </div>
+          <p style="margin-top:26px"><a class="link-arrow" href="system.html">Descubre el nuevo estándar <span class="arrow">→</span></a></p>
+        </div>
+        <figure data-reveal data-reveal-delay="1" style="margin:0">
+          <div class="media-frame">
+            <img src="assets/v2/img/sistema.webp" alt="VK0 junto a su pedal y un cartucho de tinta" width="1600" height="900" loading="lazy">
+          </div>
+          <figcaption class="media-caption">VK0, pedal y cartucho de tinta.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- VISOR 360 -->
+    <section class="section" id="visor-360">
+      <div class="wrap">
+        <div class="section-head center" data-reveal>
+          <span class="eyebrow">Visor 360°</span>
+          <h2 class="h2">Gíralo. Míralo desde todos los ángulos.</h2>
+          <p class="lead">Arrastra sobre la imagen para girar el VK0 o elige una vista.</p>
+        </div>
+        <div class="spin" data-spin data-frames="72" data-reveal>
+          <div class="spin-stage" tabindex="0" role="img" aria-label="Vista 360° del VK0. Usa las flechas izquierda y derecha para girarlo.">
+            <canvas></canvas>
+            <div class="spin-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M7 9l-3 3 3 3M17 9l3 3-3 3"/></svg>Arrastra para girar</div>
+          </div>
+          <div class="spin-controls">
+            <div class="segmented" role="group" aria-label="Vista">
+              <button type="button" data-spin-view data-src="assets/v2/spin/angulo/%04d.webp" data-src-mobile="assets/v2/spin-m/angulo/%04d.webp" aria-pressed="true">Ángulo</button>
+              <button type="button" data-spin-view data-src="assets/v2/spin/recta/%04d.webp" data-src-mobile="assets/v2/spin-m/recta/%04d.webp" aria-pressed="false">Vertical</button>
+              <button type="button" data-spin-view data-src="assets/v2/spin/tumbada/%04d.webp" aria-pressed="false">Tumbada</button>
+            </div>
+            <input class="spin-range" type="range" min="1" max="72" value="1" step="1" aria-label="Rotación">
+            <button class="spin-play" type="button" data-label-pause="Pausar giro" data-label-play="Reanudar giro" aria-label="Pausar giro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="i-pause"><path d="M7 4h3.5v16H7zM13.5 4H17v16h-3.5z" fill="currentColor" stroke="none"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="i-play"><path d="M7 4.5v15l12-7.5-12-7.5z" fill="currentColor"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KIT -->
+    <section class="section" id="kit">
+      <div class="wrap split reverse">
+        <div data-reveal>
+          <span class="eyebrow">El kit</span>
+          <h2 class="h2">Todo el sistema, en un maletín.</h2>
+          <p class="lead">Máquina, pedal y cartuchos viajan juntos en un maletín rígido con su espuma a medida.</p>
+          <ul class="kit-list">
+            <li><span class="k">01</span><span><strong>VK0</strong><span>La máquina de nueva generación.</span></span></li>
+            <li><span class="k">02</span><span><strong>Pedal</strong><span>Control cómodo, sin soltar la máquina.</span></span></li>
+            <li><span class="k">03</span><span><strong>Cartuchos</strong><span>Llegan vacíos, listos para tu tinta.</span></span></li>
+            <li><span class="k">04</span><span><strong>Maletín rígido</strong><span>Todo protegido y en su sitio.</span></span></li>
+          </ul>
+          <p class="media-caption">Contenido orientativo del kit.</p>
+        </div>
+        <div data-reveal data-reveal-delay="1">
+          <div class="media-frame">
+            <video id="kitVideo" data-autoplay data-src="assets/v2/video/vk0-kit-1280.mp4" poster="assets/v2/img/kit.webp" muted playsinline preload="none" aria-label="Animación del maletín del VK0 abriéndose"></video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARA QUIÉN -->
+    <section class="section bg-soft" id="para-quien">
+      <div class="wrap">
+        <div class="section-head center" data-reveal>
+          <span class="eyebrow">Para quién</span>
+          <h2 class="h2">Al alcance de todos los artistas del tatuaje del mundo.</h2>
+          <p class="lead">Artistas, estudios y empresas del sector: el nuevo estándar es para todos.</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="card audience-card" data-reveal>
+            <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></div>
+            <span class="who">Artistas</span>
+            <h3 class="h3">Más tiempo tatuando, menos tiempo preparando.</h3>
+            <ul class="check-list">
+              <li>Sin vasos ni sobrantes.</li>
+              <li>Más higiene para ti y tus clientes.</li>
+              <li>Menos preparación y menos limpieza.</li>
+              <li>Una mesa más limpia y ordenada.</li>
+            </ul>
+            <a class="btn" href="piloto.html?interes=piloto&amp;rol=Artista#solicitud">Probar el VK0 <span class="arrow">→</span></a>
+          </article>
+          <article class="card audience-card featured" data-reveal data-reveal-delay="1">
+            <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V9l9-5 9 5v12"/><path d="M9 21v-6h6v6"/></svg></div>
+            <span class="who">Estudios</span>
+            <h3 class="h3">Un estudio de nueva generación.</h3>
+            <ul class="check-list">
+              <li>Sin contaminación cruzada entre clientes.</li>
+              <li>Menos consumo de tinta y menos residuos.</li>
+              <li>Menos carga de trabajo para todo el equipo.</li>
+              <li>Una imagen innovadora ante tus clientes.</li>
+            </ul>
+            <a class="btn btn-primary" href="piloto.html?interes=piloto&amp;rol=Estudio#solicitud">Solicitar prueba en mi estudio <span class="arrow">→</span></a>
+          </article>
+          <article class="card audience-card" data-reveal data-reveal-delay="2">
+            <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5h6v2M3 12h18"/></svg></div>
+            <span class="who">Empresas</span>
+            <h3 class="h3">Distribuidores, marcas e inversores.</h3>
+            <ul class="check-list">
+              <li>Un nuevo estándar para toda la industria.</li>
+              <li>Marcas de tinta: vuestras tintas, envasadas en cartuchos para VK0.</li>
+              <li>Distribución y colaboración desde el inicio.</li>
+              <li>Información detallada bajo NDA.</li>
+            </ul>
+            <a class="btn" href="piloto.html?interes=empresa#solicitud">Hablemos <span class="arrow">→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRAMA PILOTO -->
+    <section class="section">
+      <div class="wrap">
+        <div class="cta-band" data-reveal>
+          <span class="eyebrow">Programa piloto</span>
+          <h2 class="h2">Buscamos artistas y estudios para probar el VK0.</h2>
+          <p class="lead">Plazas limitadas. Sé de los primeros en trabajar con el nuevo estándar.</p>
+          <div class="steps grid-4" style="margin-top:36px">
+            <div class="step-card"><h3>Solicitud</h3><p>Un formulario de un minuto.</p></div>
+            <div class="step-card"><h3>Conversación</h3><p>Una llamada breve para conocerte.</p></div>
+            <div class="step-card"><h3>Prueba</h3><p>Trabaja con el VK0.</p></div>
+            <div class="step-card"><h3>Opinión</h3><p>Tu experiencia cuenta.</p></div>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="piloto.html#solicitud">Solicitar plaza <span class="arrow">→</span></a>
+            <a class="btn" href="piloto.html">Cómo funciona el programa</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section-tight">
+      <div class="wrap wrap-narrow">
+        <div class="section-head center" data-reveal>
+          <span class="eyebrow">Preguntas frecuentes</span>
+          <h2 class="h2">Lo que más nos preguntan.</h2>
+        </div>
+        <div class="faq" data-reveal>
+          <details>
+            <summary>¿Qué es el VK0?</summary>
+            <div class="answer"><p>La máquina de tatuaje de nueva generación diseñada y fabricada por Vinko Solutions: tu tinta en cartucho, cero desperdicio y sin contaminación cruzada.</p></div>
+          </details>
+          <details>
+            <summary>¿Cómo se carga la tinta?</summary>
+            <div class="answer"><p>El cartucho viene vacío: lo llenas con la tinta que prefieras y lo colocas en la máquina. En el futuro queremos que las marcas de tinta vendan sus tintas ya envasadas en cartuchos para VK0.</p></div>
+          </details>
+          <details>
+            <summary>¿Puedo probarlo?</summary>
+            <div class="answer"><p>Sí, a través del <a class="accent" href="piloto.html">programa piloto</a>. Las plazas son limitadas.</p></div>
+          </details>
+          <details>
+            <summary>¿Cuándo estará a la venta y cuánto costará?</summary>
+            <div class="answer"><p>Lo anunciaremos primero a quienes estén en el programa piloto y en la lista de espera.</p></div>
+          </details>
+        </div>
+        <p class="center" style="margin-top:28px"><a class="link-arrow" href="faq.html">Ver todas las preguntas <span class="arrow">→</span></a></p>
+      </div>
+    </section>
+
+    <!-- FORMULARIO -->
+    <section class="section bg-soft" id="unete">
+      <div class="wrap split">
+        <div data-reveal>
+          <span class="eyebrow">Únete</span>
+          <h2 class="h2">Sé de los primeros en probarlo.</h2>
+          <p class="lead">Déjanos tus datos y cuéntanos quién eres. Solo te escribimos cuando haya algo que contar.</p>
+          <ul class="check-list" style="margin-top:26px">
+            <li><strong>Prioridad</strong> para el programa piloto.</li>
+            <li><strong>Novedades reales</strong>, sin spam.</li>
+            <li><strong>Tus datos</strong>, solo para esto (RGPD).</li>
+          </ul>
+        </div>
+        <div data-reveal data-reveal-delay="1">
+          <form class="form-card" id="earlyForm" autocomplete="on" novalidate>
+          <div id="formFields">
+            <h3>Solicitud</h3>
+            <p class="muted small">Tarda menos de un minuto.</p>
+            <div class="form-grid">
+              <div class="field full" role="radiogroup" aria-labelledby="f-interest">
+                <span class="label" id="f-interest">Me interesa…</span>
+                <div class="choice-row">
+                  <label class="choice"><input type="radio" name="interest" value="piloto" checked><span>Probar el VK0</span></label>
+                  <label class="choice"><input type="radio" name="interest" value="novedades"><span>Recibir novedades</span></label>
+                  <label class="choice"><input type="radio" name="interest" value="empresa"><span>Colaborar como empresa</span></label>
+                </div>
+              </div>
+              <div class="field">
+                <label for="f-name">Nombre *</label>
+                <input id="f-name" type="text" name="name" placeholder="Tu nombre" autocomplete="name" required minlength="2">
+              </div>
+              <div class="field">
+                <label for="f-email">Email *</label>
+                <input id="f-email" type="email" name="email" placeholder="you@email.com" autocomplete="email" required>
+              </div>
+              <div class="field">
+                <label for="roleSelect">Soy… *</label>
+                <select id="roleSelect" name="role" required>
+                  <option value="">Selecciona</option>
+                  <option value="Artista">Artista</option>
+                  <option value="Estudio">Estudio</option>
+                  <option value="Distribuidor">Distribuidor / marca</option>
+                  <option value="Inversor">Inversor</option>
+                  <option value="Otro">Otro</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="f-country">País <span class="opt">— opcional</span></label>
+                <input id="f-country" type="text" name="country" placeholder="España" autocomplete="country-name">
+              </div>
+              <div class="field full hidden" id="socialsWrap">
+                <label for="f-socials">Instagram / TikTok <span class="opt">— opcional</span></label>
+                <input id="f-socials" type="text" name="socials" placeholder="@tuusuario o enlace" autocomplete="off">
+              </div>
+              <div class="field full hidden" id="companyWrap">
+                <label for="f-company">Empresa o estudio <span class="opt">— opcional</span></label>
+                <input id="f-company" type="text" name="company" placeholder="Nombre de la empresa" autocomplete="organization">
+              </div>
+              <div class="field full">
+                <label for="f-phone">Teléfono <span class="opt">— opcional</span></label>
+                <input id="f-phone" type="tel" name="phone" placeholder="+34 600 000 000" autocomplete="tel">
+              </div>
+              <div class="field full">
+                <label for="f-message">Mensaje <span class="opt">— opcional</span></label>
+                <textarea id="f-message" name="message" rows="4" placeholder="¿Qué te gustaría que resolviera el VK0 en tu día a día?"></textarea>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-block" id="submitBtn" type="submit">Enviar solicitud <span class="arrow">→</span></button>
+            <p class="form-note" id="formNote" role="alert" aria-live="polite"></p>
+            <p class="consent">Al enviar aceptas la <a href="privacy.html">política de privacidad</a>. Solo te escribiremos cuando haya algo que contar y puedes darte de baja cuando quieras.</p>
+          </div>
+          <div class="success-panel hidden" id="successPanel" tabindex="-1">
+            <div class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" stroke-width="2.4"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+            <h3>¡Solicitud recibida!</h3>
+            <p>Gracias. Te escribiremos desde <strong>info@vinkosolutions.com</strong>. Si has pedido probar el VK0, te contactaremos para una conversación breve.</p>
+          </div>
+        </form>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="brand small">
-        <span class="brand-dot"></span><span>vINKo System</span>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html"><img src="assets/v2/img/vinko-mark.png" alt="" width="24" height="27"><span>vINKo<em>System</em></span></a>
+          <p>La máquina de tatuaje de nueva generación: tu tinta en cartucho, cero desperdicio y sin contaminación cruzada. Diseñada y fabricada por Vinko Solutions.</p>
+          <div class="socials">
+            <a href="https://www.instagram.com/vinko.solutions" target="_blank" rel="noopener" aria-label="Instagram"><img src="assets/img/instagram.svg" alt=""></a>
+            <a href="https://www.tiktok.com/@vinko.solutions" target="_blank" rel="noopener" aria-label="TikTok"><img src="assets/img/tiktok.svg" alt=""></a>
+            <a href="https://www.linkedin.com/company/vinko-solutions" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="assets/img/linkedin.svg" alt=""></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Producto</h4>
+          <a href="vk0.html">VK0</a>
+          <a href="system.html">El nuevo estándar</a>
+          <a href="vk0.html#piezas">Explorar piezas</a>
+          <a href="vk0.html#visor-360">Visor 360°</a>
+        </div>
+        <div class="footer-col">
+          <h4>Participa</h4>
+          <a href="piloto.html">Programa piloto</a>
+          <a href="lista.html">Lista de espera</a>
+          <a href="faq.html">Preguntas frecuentes</a>
+          <a href="sobre-mi.html">Sobre vINKo</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <a href="mailto:info@vinkosolutions.com">info@vinkosolutions.com</a>
+          <a href="https://www.instagram.com/vinko.solutions" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.tiktok.com/@vinko.solutions" target="_blank" rel="noopener">TikTok</a>
+          <a href="https://www.linkedin.com/company/vinko-solutions" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
       </div>
-
-      <div class="footer-links">
-        <a href="vk0.html">VK0</a>
-        <a href="system.html">Cómo funciona</a>
-        <a href="faq.html">FAQ</a>
-        <a href="sobre-mi.html">Sobre mí</a>
-        <a href="lista.html">Lista</a>
-      </div>
-
-      <div class="footer-right">
-        <div class="social-links" aria-label="Redes sociales de vINKo System">
-          <a href="https://www.linkedin.com/company/vinko-system" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <img src="assets/img/linkedin.svg" alt="LinkedIn" class="social-icon" />
-          </a>
-          <a href="https://www.instagram.com/vinko.system" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <img src="assets/img/instagram.svg" alt="Instagram" class="social-icon" />
-          </a>
-          <a href="https://www.tiktok.com/@vinko.tech" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-            <img src="assets/img/tiktok.svg" alt="TikTok" class="social-icon" />
-          </a>
-        </div>
-
-        <div class="lang-switch small" aria-label="Idioma del sitio">
-          <button class="lang current" type="button" aria-label="Idioma actual: español">
-            <span class="flag">🇪🇸</span><span class="code">ES</span>
-          </button>
-          <a class="lang" href="en.html" aria-label="Cambiar a inglés">
-            <span class="flag">🇬🇧</span><span class="code">EN</span>
-          </a>
-        </div>
-
-        <div class="footer-meta">
-          © <span id="year"></span> vINKo System. Todos los derechos reservados.
-        </div>
-
-        <div class="footer-meta" style="margin-top:6px;">
-          <a href="/privacy.html">Privacidad</a> · <a href="/cookies.html">Cookies</a> · <a href="lista.html">Contacto</a>
-        </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> vINKo System · VINKO Solutions SLU. Todos los derechos reservados.</span>
+        <span><a href="privacy.html">Privacidad</a> · <a href="cookies.html">Cookies</a> · <a href="index.html" data-lang="es" class="lang-footer">ES</a> / <a href="en.html" data-lang="en" class="lang-footer">EN</a></span>
       </div>
     </div>
   </footer>
-
-  <!-- AOS JS -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      AOS.init({
-        duration: 700,
-        easing: "ease-out",
-        offset: 80,
-        once: true
-      });
-    });
-  </script>
-
-<!-- VK0 Scroll Animation (Apple-like) -->
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const section = document.querySelector('.vk0-scroll-hero');
-      if (!section) return;
-
-      const sticky = section.querySelector('.vk0-sticky');
-      const canvas = document.getElementById('vk0-seq');
-      const header = document.querySelector('.header');
-
-      // Fix 100vh en móvil (barras dinámicas)
-      const setVH = () => {
-        document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
-      };
-      setVH();
-
-      // ---- PIN ROBUSTO (tipo Apple) ----
-      let headerH = 0;
-      let start = 0;
-      let end = 0;
-      let scrollable = 1;
-
-      const recalc = () => {
-        headerH = header ? header.offsetHeight : 0;
-        start = section.offsetTop - headerH;
-        scrollable = Math.max(1, section.offsetHeight - window.innerHeight);
-        end = start + scrollable;
-
-        const bottomTop = Math.max(0, section.offsetHeight - window.innerHeight);
-        section.style.setProperty('--vk0-bottom-top', `${bottomTop}px`);
-      };
-      recalc();
-
-      const updatePin = () => {
-        if (!sticky) return;
-        const y = window.scrollY || window.pageYOffset || 0;
-
-        sticky.classList.remove('is-fixed', 'is-bottom');
-        if (y >= start && y < end) sticky.classList.add('is-fixed');
-        else if (y >= end) sticky.classList.add('is-bottom');
-      };
-
-      const clamp01 = (x) => Math.min(1, Math.max(0, x));
-      const progressInSection = () => {
-        const y = window.scrollY || window.pageYOffset || 0;
-        return clamp01((y - start) / scrollable);
-      };
-
-      updatePin();
-      window.addEventListener('scroll', updatePin, { passive: true });
-      window.addEventListener('resize', () => {
-        setVH();
-        recalc();
-        updatePin();
-        if (canvas) resizeCanvas();
-      }, { passive: true });
-
-      // ---- TEXTO (steps) ----
-      const steps = Array.from(section.querySelectorAll('.vk0-step')).map(el => ({
-        el,
-        start: parseFloat(el.dataset.start || '0'),
-        end: parseFloat(el.dataset.end || '1'),
-      }));
-
-      const smoothstep = (a, b, x) => {
-        const t = clamp01((x - a) / (b - a));
-        return t * t * (3 - 2 * t);
-      };
-
-      // Entrada/salida con transición breve pero “directa”
-      const windowFade = (p, start, end, fade = 0.08) => {
-        const i = smoothstep(start, start + fade, p);
-        const o = 1 - smoothstep(end - fade, end, p);
-        return clamp01(i * o);
-      };
-
-      const renderSteps = (p) => {
-        for (const s of steps) {
-          const hold = s.el.dataset.hold === '1';
-          const o = hold
-          ? smoothstep(s.start, s.start + 0.08, p)         // aparece y se queda
-          : windowFade(p, s.start, s.end, 0.08);           // comportamiento normal
-          const y = (1 - o) * 16;
-          const blur = (1 - o) * 5;
-          const scale = 0.985 + (o * 0.015);
-
-          s.el.style.opacity = o.toFixed(3);
-          s.el.style.transform = `translateY(${y.toFixed(1)}px) scale(${scale.toFixed(3)})`;
-          s.el.style.filter = `blur(${blur.toFixed(2)}px)`;
-          s.el.style.pointerEvents = o > 0.6 ? 'auto' : 'none';
-        }
-      };
-
-      // ---- CANVAS SEQUENCE (Apple-level) ----
-      let ctx = null;
-      let totalFrames = 0;
-      let tplDesktop = '';
-      let tplMobile = '';
-
-      let imgs = [];
-      let loaded = [];
-
-      let current = 1;
-      let target = 1;
-
-      const easeFrames = 0.22; // sube a 0.28 si lo quieres más pegado al scroll
-
-      const isMobile = () => window.matchMedia('(max-width: 720px)').matches;
-
-      const frameUrl = (i) => {
-        const tpl = isMobile() ? tplMobile : tplDesktop;
-        const n = String(i).padStart(4, '0');
-        return tpl.replace('%04d', n);
-      };
-
-      function resizeCanvas() {
-        if (!canvas || !ctx) return;
-        const dpr = Math.min(2, window.devicePixelRatio || 1);
-        const w = canvas.clientWidth;
-        const h = canvas.clientHeight;
-
-        canvas.width = Math.round(w * dpr);
-        canvas.height = Math.round(h * dpr);
-        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      }
-
-      function drawSmart(img) {
-        if (!canvas || !ctx) return;
-
-        const cw = canvas.clientWidth;
-        const ch = canvas.clientHeight;
-        const iw = img.naturalWidth;
-        const ih = img.naturalHeight;
-
-        // Móvil: contain (no recorta). Desktop: cover (cinemático).
-        const contain = isMobile();
-        const scale = contain ? Math.min(cw / iw, ch / ih) : Math.max(cw / iw, ch / ih);
-
-        const dw = iw * scale;
-        const dh = ih * scale;
-        const dx = (cw - dw) / 2;
-        const dy = (ch - dh) / 2;
-
-        ctx.clearRect(0, 0, cw, ch);
-        ctx.drawImage(img, dx, dy, dw, dh);
-      }
-
-      function loadFrame(i) {
-        if (!canvas || !ctx) return;
-        if (i < 1 || i > totalFrames) return;
-        if (imgs[i]) return;
-
-        const img = new Image();
-        img.decoding = 'async';
-        img.src = frameUrl(i);
-        imgs[i] = img;
-        img.onload = () => { loaded[i] = true; };
-      }
-
-      function preloadWindow(center) {
-        // Ventana alrededor del frame actual (50fps => más radio)
-        const r = isMobile() ? 24 : 34;
-        for (let i = center - r; i <= center + r; i++) loadFrame(i);
-      }
-
-      // Loop (solo mientras el HERO está en viewport)
-      let raf = 0;
-      let active = false;
-
-      function tick() {
-        if (!active) { raf = 0; return; }
-
-        const p = progressInSection();
-
-        // Steps siempre
-        renderSteps(p);
-
-        // Frames si hay secuencia
-        if (ctx && totalFrames > 0) {
-          target = 1 + p * (totalFrames - 1);
-          current += (target - current) * easeFrames;
-
-          const idx = Math.max(1, Math.min(totalFrames, Math.round(current)));
-          preloadWindow(idx);
-
-          const img = imgs[idx];
-          if (img && (img.complete || loaded[idx])) drawSmart(img);
-        }
-
-        raf = requestAnimationFrame(tick);
-      }
-
-      const io = new IntersectionObserver((entries) => {
-        active = entries.some(e => e.isIntersecting);
-        if (active && !raf) raf = requestAnimationFrame(tick);
-      }, { threshold: 0.01 });
-
-      io.observe(section);
-
-      // Init (primer render para que se vea texto inmediatamente)
-      renderSteps(progressInSection());
-
-      // Setup canvas (si existe)
-      if (canvas) {
-        ctx = canvas.getContext('2d', { alpha: false });
-        totalFrames = parseInt(canvas.dataset.frames || '0', 10);
-        tplDesktop = canvas.dataset.desktop || '';
-        tplMobile = canvas.dataset.mobile || '';
-
-        imgs = new Array(totalFrames + 1);
-        loaded = new Array(totalFrames + 1).fill(false);
-
-        resizeCanvas();
-
-        // Preload inicial (rápido para evitar negro)
-        const initN = Math.min(50, totalFrames);
-        for (let i = 1; i <= initN; i++) loadFrame(i);
-        loadFrame(1);
-
-        // Dibuja el primer frame cuando esté listo
-        const drawFirst = () => {
-          const img = imgs[1];
-          if (img && img.complete) drawSmart(img);
-          else requestAnimationFrame(drawFirst);
-        };
-        requestAnimationFrame(drawFirst);
-
-        // Si cambia el breakpoint (mobile/desktop), vaciamos cache para usar la otra carpeta
-        const mq = window.matchMedia('(max-width: 720px)');
-        mq.addEventListener('change', () => {
-          imgs = new Array(totalFrames + 1);
-          loaded = new Array(totalFrames + 1).fill(false);
-          resizeCanvas();
-          for (let i = 1; i <= initN; i++) loadFrame(i);
-          loadFrame(1);
-          renderSteps(progressInSection());
-        });
-      }
-    });
-  </script>
-
-<script src="main.js?v=1.0.7" defer></script>
 </body>
 </html>
-

@@ -1,132 +1,64 @@
-/* vINKo language routing & persistence
-   - Paste this at the END of main.js (recommended)
-   - Or save as lang.js and include it on every page BEFORE main.js.
-*/
+/* vINKo language routing & persistence (copia standalone del bloque 11 de main.js)
+   Usar solo en páginas que NO cargan main.js. Mantener sincronizado con main.js. */
 (function () {
   'use strict';
-
+  const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
+  const LANG = (document.documentElement.lang || 'es').slice(0, 2).toLowerCase();
+  // ---------- 11. Language Router ----------
+  // Persiste el idioma en localStorage (vinko_lang), redirige al equivalente
+  // y reescribe los links internos. Copia standalone en lang-router-snippet.js
   const LANG_KEY = 'vinko_lang';
-
-  // Spanish -> English page mapping (add more as you translate more pages)
   const ES_TO_EN = {
     'index.html': 'en.html',
     'vk0.html': 'en-vk0.html',
     'system.html': 'en-system.html',
+    'piloto.html': 'en-pilot.html',
     'faq.html': 'en-faq.html',
     'lista.html': 'en-lista.html',
-
-    // legacy / typos used in some footers
-    'vINKoSystem.html': 'en-system.html',
-
-    // optional (create these files when ready)
     'sobre-mi.html': 'en-sobre-mi.html',
+    'privacy.html': 'privacy-en.html',
+    'cookies.html': 'cookies-en.html',
   };
-
-  const EN_TO_ES = Object.fromEntries(
-    Object.entries(ES_TO_EN)
-      .filter(([, en]) => en && en.endsWith('.html'))
-      .map(([es, en]) => [en, es])
-  );
-
+  const EN_TO_ES = Object.fromEntries(Object.entries(ES_TO_EN).map(([es, en]) => [en, es]));
   const isExternal = (href) => /^(https?:)?\/\//i.test(href);
-  const isSpecial = (href) => /^(mailto:|tel:|sms:)/i.test(href);
+  const isSpecial = (href) => /^(mailto:|tel:|sms:|javascript:)/i.test(href);
+  const getFile = () => { const f = window.location.pathname.split('/').pop(); return f && f.length ? f : 'index.html'; };
+  const langFromFile = (file) => (file === 'en.html' || file.startsWith('en-') || file.endsWith('-en.html')) ? 'en' : 'es';
+  const getLang = () => { try { return localStorage.getItem(LANG_KEY) || null; } catch { return null; } };
+  const setLang = (l) => { try { localStorage.setItem(LANG_KEY, l); } catch { /* sin storage */ } };
+  const mapToLang = (file, lang) => (lang === 'en' ? (ES_TO_EN[file] || (EN_TO_ES[file] ? file : null)) : (EN_TO_ES[file] || (ES_TO_EN[file] ? file : null)));
 
-  const getFile = () => {
-    const p = window.location.pathname;
-    const file = p.split('/').pop();
-    return file && file.length ? file : 'index.html';
-  };
-
-  const langFromFile = (file) => (file === 'en.html' || file.startsWith('en-')) ? 'en' : 'es';
-
-  const getLang = () => {
-    try { return localStorage.getItem(LANG_KEY) || null; } catch { return null; }
-  };
-
-  const setLang = (lang) => {
-    try { localStorage.setItem(LANG_KEY, lang); } catch {}
-  };
-
-  const mapToLang = (file, lang) => {
-    if (lang === 'en') return ES_TO_EN[file] || (file === 'index.html' ? 'en.html' : null);
-    return EN_TO_ES[file] || (file === 'en.html' ? 'index.html' : null);
-  };
-
-  // 1) Persist language + redirect if user is on the wrong-language page
   (function enforceLanguage() {
     const file = getFile();
-    const currentLang = langFromFile(file);
+    const current = langFromFile(file);
     const stored = getLang();
-
-    if (!stored) {
-      setLang(currentLang);
-      return;
-    }
-
-    if (stored !== currentLang) {
+    if (!stored) { setLang(current); return; }
+    if (stored !== current) {
       const target = mapToLang(file, stored);
-      if (target) {
-        const qs = window.location.search || '';
-        const hash = window.location.hash || '';
-        // Keep query/hash
-        window.location.replace(target + qs + hash);
-      }
+      if (target && target !== file) window.location.replace(target + window.location.search + window.location.hash);
     }
   })();
 
-  // Helpers to rewrite hrefs while preserving ?query and #hash
-  const splitHref = (href) => {
-    const [beforeHash, hashPart] = href.split('#');
-    const hash = hashPart ? '#' + hashPart : '';
-    const [pathPart, queryPart] = beforeHash.split('?');
-    const query = queryPart ? '?' + queryPart : '';
-    return { path: pathPart, query, hash };
-  };
-
-  const rewriteInternalLinks = () => {
-    const lang = getLang() || 'es';
-
-    document.querySelectorAll('a[href]').forEach(a => {
+  document.addEventListener('DOMContentLoaded', () => {
+    const lang = getLang() || LANG;
+    $$('a[href]').forEach((a) => {
       const raw = a.getAttribute('href');
-      if (!raw) return;
-      if (raw.startsWith('#')) return;
-      if (isExternal(raw) || isSpecial(raw)) return;
-
-      const { path, query, hash } = splitHref(raw);
-
-      // Ignore root-absolute routes like /privacy.html (you can add EN versions later)
+      if (!raw || raw.startsWith('#') || isExternal(raw) || isSpecial(raw) || a.hasAttribute('data-lang')) return;
+      const m = raw.match(/^([^?#]*)(\?[^#]*)?(#.*)?$/);
+      const path = m[1];
       if (path.startsWith('/')) return;
-
-      const base = path || 'index.html';
-      const mapped = mapToLang(base, lang);
-      if (!mapped) return;
-
-      const next = mapped + query + hash;
-      if (next !== raw) a.setAttribute('href', next);
+      const mapped = mapToLang(path || getFile(), lang);
+      if (mapped && path && mapped !== path) a.setAttribute('href', mapped + (m[2] || '') + (m[3] || ''));
     });
-  };
 
-  const setupLangSwitch = () => {
-    document.querySelectorAll('.lang-switch a.lang').forEach(link => {
+    $$('a[data-lang]').forEach((link) => {
       link.addEventListener('click', (e) => {
-        const codeEl = link.querySelector('.code');
-        const code = (codeEl ? codeEl.textContent : link.textContent || '').trim().toLowerCase();
-        const desired = code === 'en' ? 'en' : (code === 'es' ? 'es' : null);
-        if (!desired) return;
-
+        const desired = link.dataset.lang;
         e.preventDefault();
         setLang(desired);
-
-        const file = getFile();
-        const target = mapToLang(file, desired) || (desired === 'en' ? 'en.html' : 'index.html');
-        const hash = window.location.hash || '';
-        window.location.href = target + hash;
-      }, { passive: false });
+        const target = mapToLang(getFile(), desired) || (desired === 'en' ? 'en.html' : 'index.html');
+        window.location.href = target + window.location.hash;
+      });
     });
-  };
-
-  document.addEventListener('DOMContentLoaded', () => {
-    rewriteInternalLinks();
-    setupLangSwitch();
   });
 })();

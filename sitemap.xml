@@ -1,65 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://vinkosystem.com/</loc>
+    <loc>https://vinkosolutions.com/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vinkosolutions.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vinkosolutions.com/en.html"/>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://vinkosystem.com/system.html</loc>
-    <priority>0.8</priority>
-    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://vinkosystem.com/faq.html</loc>
-    <priority>0.8</priority>
+    <loc>https://vinkosolutions.com/en.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vinkosolutions.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vinkosolutions.com/en.html"/>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://vinkosystem.com/lista.html</loc>
-    <priority>0.8</priority>
+    <loc>https://vinkosolutions.com/vk0.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vinkosolutions.com/vk0.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vinkosolutions.com/en-vk0.html"/>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://vinkosystem.com/sobre-mi.html</loc>
-    <priority>0.8</priority>
+    <loc>https://vinkosolutions.com/en-vk0.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vinkosolutions.com/vk0.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vinkosolutions.com/en-vk0.html"/>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vinkosystem.com/vk0.html</loc>
-    <priority>0.8</priority>
+    <loc>https://vinkosolutions.com/system.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vinkosolutions.com/system.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vinkosolutions.com/en-system.html"/>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://vinkosystem.com/en.html</loc>
-    <priority>0.8</priority>
-    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://vinkosystem.com/en-system.html</loc>
-    <priority>0.8</priority>
+    <loc>https://vinkosolutions.com/en-system.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vinkosolutions.com/system.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vinkosolutions.com/en-system.html"/>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vinkosystem.com/en-faq.html</loc>
-    <priority>0.8</priority>
+    <loc>https://vinkosolutions.com/piloto.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vinkosolutions.com/piloto.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vinkosolutions.com/en-pilot.html"/>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://vinkosystem.com/en-lista.html</loc>
-    <priority>0.8</priority>
+    <loc>https://vinkosolutions.com/en-pilot.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vinkosolutions.com/piloto.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vinkosolutions.com/en-pilot.html"/>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vinkosystem.com/en-sobre-mi.html</loc>
-    <priority>0.8</priority>
+    <loc>https://vinkosolutions.com/faq.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vinkosolutions.com/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vinkosolutions.com/en-faq.html"/>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://vinkosystem.com/en-vk0.html</loc>
-    <priority>0.8</priority>
+    <loc>https://vinkosolutions.com/en-faq.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vinkosolutions.com/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vinkosolutions.com/en-faq.html"/>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://vinkosolutions.com/sobre-mi.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vinkosolutions.com/sobre-mi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vinkosolutions.com/en-sobre-mi.html"/>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vinkosolutions.com/en-sobre-mi.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vinkosolutions.com/sobre-mi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vinkosolutions.com/en-sobre-mi.html"/>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://vinkosolutions.com/lista.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vinkosolutions.com/lista.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vinkosolutions.com/en-lista.html"/>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vinkosolutions.com/en-lista.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://vinkosolutions.com/lista.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vinkosolutions.com/en-lista.html"/>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
