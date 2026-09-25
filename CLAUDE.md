@@ -1,4 +1,4 @@
-# vINKo System — Contexto del proyecto
+# Vinko Solutions — Contexto del proyecto (web)
 
 ## Producto
 
@@ -142,6 +142,7 @@ Vanilla JS sin dependencias (AOS eliminado). Bloques:
 
 - **Idea central:** Vinko Solutions ha diseñado y fabricado la máquina de tatuaje de nueva generación y la ha elevado a un **nuevo estándar**: la tinta en su propio cartucho, cero desperdicio, sin contaminación cruzada, menos carga de trabajo, más higiene y eficiencia. Al alcance de todos los artistas del tatuaje del mundo.
 - **Cartucho:** hoy llega **vacío** y el artista lo llena con la tinta que prefiera. Tubo desechable: uno nuevo en cada sesión. **Visión de futuro:** que las marcas de tinta vendan sus tintas ya envasadas en cartuchos para VK0 (tinta regulada desde el origen) — usar como argumento para empresas, nunca como algo que ya existe.
+- **Marca de la web: «Vinko Solutions»** (empresa: VINKO Solutions SLU). «vINKo System» queda reservado para el futuro nombre de marca del sistema patentado: no usarlo en la web por ahora.
 - **No mencionar la patente** en la web.
 - **Sin detalles técnicos ni funcionales** (nada de motor/excéntrica, voltaje, frecuencia, circuitos, cómo se mueve la tinta por dentro, firmware). Solo beneficios básicos.
 - **Excepción — fichas del explorador de piezas** (`PARTS`): 6 piezas con los títulos y textos dados por Vicente (Cartucho, Tubo desechable, Cuerpo de la máquina, Motor, Cuerpo delantero, Grip). Incluyen batería recargable, pantalla TFT y stroke fijo de 2,5 a 4,5 mm. No añadir más datos técnicos por cuenta propia.

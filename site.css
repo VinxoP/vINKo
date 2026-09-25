@@ -1,5 +1,5 @@
 /* =========================================================
-   vINKo System — site.css (rediseño 2026, prototipo 2)
+   Vinko Solutions — site.css (rediseño 2026, prototipo 2)
    100% custom, sin frameworks. Breakpoint principal: 720px
    ========================================================= */
 
@@ -526,7 +526,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .step-card h3 { font-size: 1.16rem; margin-bottom: 8px; }
 .step-card p { color: var(--muted); font-size: 0.96rem; margin: 0; }
 
-/* Comparativa Hoy vs vINKo */
+/* Comparativa Antes vs Con VK0 */
 .compare { max-width: 980px; margin: 0 auto; }
 .compare-tabs { display: flex; justify-content: center; margin-bottom: 30px; }
 .compare-panel { display: grid; gap: 12px; }

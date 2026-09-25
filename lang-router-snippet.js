@@ -1,4 +1,4 @@
-/* vINKo language routing & persistence (copia standalone del bloque 11 de main.js)
+/* Vinko language routing & persistence (copia standalone del bloque 11 de main.js)
    Usar solo en páginas que NO cargan main.js. Mantener sincronizado con main.js. */
 (function () {
   'use strict';

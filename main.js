@@ -1,5 +1,5 @@
 /* =========================================================
-   vINKo System — main.js (rediseño 2026)
+   Vinko Solutions — main.js (rediseño 2026)
    Vanilla JS, sin dependencias.
    Bloques:
      1. Utilidades
