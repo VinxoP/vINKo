@@ -662,7 +662,8 @@
         const desired = link.dataset.lang;
         e.preventDefault();
         setLang(desired);
-        const target = mapToLang(getFile(), desired) || (desired === 'en' ? 'en.html' : 'index.html');
+        // Sin equivalente para esta página (p. ej. la 404): usar el href del propio enlace
+        const target = mapToLang(getFile(), desired) || link.getAttribute('href') || (desired === 'en' ? 'en.html' : 'index.html');
         window.location.href = target + window.location.hash;
       });
     });

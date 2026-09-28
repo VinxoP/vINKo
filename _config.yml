@@ -1,0 +1,26 @@
+# Configuración de publicación de GitHub Pages (Jekyll).
+# Solo controla QUÉ archivos se publican en vinkosolutions.com: los excluidos
+# siguen en el repositorio, pero no son accesibles desde la web.
+# Ojo: esta lista sustituye a la de Jekyll por defecto, por eso incluye node_modules y vendor.
+
+exclude:
+  # Dependencias y entorno de desarrollo
+  - node_modules
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - package-lock.json
+  - server.js
+  # Documentación interna del proyecto
+  - CLAUDE.md
+  - README.md
+  # Plantillas de email (se copian en Brevo; sus imágenes están en assets/email)
+  - email-templates
+  # Diseño anterior (legacy): se conserva en el repo, pero no se publica
+  - index_antiguo.html
+  - index_antiguo_antiguo.html
+  - en_antiguo.html
+  - styles_antiguo.css
+  - styles.css
+  - lang-router-snippet.js

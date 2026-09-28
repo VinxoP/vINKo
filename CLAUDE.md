@@ -41,6 +41,10 @@ Todas las páginas existen en versión **ES** (base) y **EN** (prefijo `en-`):
 | `privacy.html` | `privacy-en.html` | Política de privacidad (GDPR) |
 | `cookies.html` | `cookies-en.html` | Política de cookies |
 
+Publicación: `_config.yml` (Jekyll de GitHub Pages) excluye de la web los archivos internos (CLAUDE.md, README, server.js, package*.json, node_modules), `email-templates/` y el diseño antiguo (`*_antiguo*`, `styles*.css`, `lang-router-snippet.js`). Siguen en el repo, pero no son públicos. `404.html` es bilingüe y usa `<base href="/">`.
+
+SEO: JSON-LD de Organization + WebSite + VideoObject en la home, BreadcrumbList en páginas interiores y FAQPage en la FAQ (generado desde las preguntas). No usar `Product` hasta tener precio (sin offers/review Google lo marca como error).
+
 Redirecciones (páginas antiguas → nuevas): `problema.html`, `idea.html`, `beneficios.html`, `roadmap.html`, `founder-council.html` (→ `piloto.html`).
 
 Archivos legacy/deprecated: `en_antiguo.html`, `index_antiguo.html`, `index_antiguo_antiguo.html`, `styles_antiguo.css`, `styles.css` (diseño anterior) — no tocar.
