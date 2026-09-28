@@ -18,6 +18,7 @@
     'sobre-mi.html': 'en-sobre-mi.html',
     'privacy.html': 'privacy-en.html',
     'cookies.html': 'cookies-en.html',
+    'tinta-sobrante-tatuaje.html': 'en-leftover-tattoo-ink.html',
   };
   const EN_TO_ES = Object.fromEntries(Object.entries(ES_TO_EN).map(([es, en]) => [en, es]));
   const isExternal = (href) => /^(https?:)?\/\//i.test(href);

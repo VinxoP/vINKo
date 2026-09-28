@@ -12,6 +12,7 @@
      8. Visor 360°
      9. Pestañas (comparativa)
     10. Formulario lista de espera / piloto
+   10b. Calculadora de tinta sobrante (guía)
     11. Language Router
    ========================================================= */
 
@@ -610,6 +611,30 @@
     updateButtonState();
   });
 
+  // ---------- 10b. Calculadora de tinta sobrante (guía) ----------
+  onReady(() => {
+    $$('[data-ink-calc]').forEach((calc) => {
+      const loc = calc.dataset.locale || 'es-ES';
+      const num = (name) => {
+        const el = calc.querySelector(`[name="${name}"]`);
+        const v = parseFloat(String(el ? el.value : '').replace(',', '.'));
+        return Number.isFinite(v) && v >= 0 ? v : 0;
+      };
+      const fmt = (v, d = 0) => v.toLocaleString(loc, { minimumFractionDigits: d, maximumFractionDigits: d });
+      const out = (k, v) => { const el = calc.querySelector(`[data-out="${k}"]`); if (el) el.textContent = v; };
+      const update = () => {
+        // vasos × sobrante por vaso × sesiones por semana × 48 semanas de trabajo
+        const ml = num('cups') * num('left') * num('sessions') * 48;
+        const size = num('size') || 1;
+        out('ml', fmt(ml));
+        out('bottles', fmt(ml / size, 1));
+        out('cost', fmt((ml / size) * num('price')));
+      };
+      calc.addEventListener('input', update);
+      update();
+    });
+  });
+
   // ---------- 11. Language Router ----------
   // Persiste el idioma en localStorage (vinko_lang), redirige al equivalente
   // y reescribe los links internos. Copia standalone en lang-router-snippet.js
@@ -624,6 +649,7 @@
     'sobre-mi.html': 'en-sobre-mi.html',
     'privacy.html': 'privacy-en.html',
     'cookies.html': 'cookies-en.html',
+    'tinta-sobrante-tatuaje.html': 'en-leftover-tattoo-ink.html',
   };
   const EN_TO_ES = Object.fromEntries(Object.entries(ES_TO_EN).map(([es, en]) => [en, es]));
   const isExternal = (href) => /^(https?:)?\/\//i.test(href);
