@@ -38,6 +38,7 @@ Todas las páginas existen en versión **ES** (base) y **EN** (prefijo `en-`):
 | `faq.html` | `en-faq.html` | Preguntas frecuentes |
 | `lista.html` | `en-lista.html` | Formulario lista de espera |
 | `sobre-mi.html` | `en-sobre-mi.html` | Historia del fundador + hoja de ruta (`#roadmap`) |
+| `tinta-sobrante-tatuaje.html` | `en-leftover-tattoo-ink.html` | Guía SEO pilar 1: tinta sobrante (calculadora `[data-ink-calc]`, Article + FAQPage). Guion en el vault: `08_Web_Marketing/SEO/` |
 | `privacy.html` | `privacy-en.html` | Política de privacidad (GDPR) |
 | `cookies.html` | `cookies-en.html` | Política de cookies |
 
